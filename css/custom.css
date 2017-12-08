@@ -1,0 +1,23 @@
+/* Body Styling properties example */
+body {
+	font-family: Garamond, 'Book Antiqua', Palatino, serif;
+	font-size: 16px;
+}
+
+h1 {
+	font-style: normal;
+	font-size: 48px;
+}
+
+h3 {
+	font-family: 'Franklin Gothic', sans-serif;
+	font-size: 24px;
+}
+
+a{
+	color: #34576d;
+}
+
+a:hover {
+	color: #333333;
+}
