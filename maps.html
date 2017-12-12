@@ -10,13 +10,14 @@
     <meta name="author" content="">
 
     <title>Kray's Portfolio</title>
-
+	
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/3-col-portfolio.css" rel="stylesheet">
 	<link href="css/custom.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,7 +28,6 @@
 </head>
 
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -66,21 +66,24 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Kray Freestone
-                    <small>GIS Enthusiast</small>
+                <h1 class="page-header">Leaflet Map
                 </h1>
             </div>
         </div>
         <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            
-        </div>
-        <!-- /.row -->
-		
+																	<!---->
+        <!-- Our web map and content will go her -->
+        <div id="mymap" style="width: 705px; height: 375px"></div>
+			<script>
+				// Create variable to hold map element, give initial settings to map
+				var map = L.map('mymap').setView([51.505, -0.09], 13);
+				// Add OpenStreetMap tile layer to map element
+				L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+					attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+				}).addTo(map);
+			</script>
         <hr>
-
+<!---->
         <!-- Footer -->
         <footer>
             <div class="row">
@@ -99,7 +102,10 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+	
+	<!-- Add the Leaflet JavaScript library -->
+	<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+	
 </body>
 
 </html>
