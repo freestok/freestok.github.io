@@ -17,7 +17,9 @@
     <!-- Custom CSS -->
     <link href="css/3-col-portfolio.css" rel="stylesheet">
 	<link href="css/custom.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+	<link rel="stylesheet" href="css/leaflet.css" />
+	<!-- Add the Leaflet JavaScript library -->
+	<script src="js/leaflet.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -73,10 +75,10 @@
         <!-- /.row -->
 																	<!---->
         <!-- Our web map and content will go her -->
-        <div id="mymap" style="width: 705px; height: 375px"></div>
+        <div id="map" style="width: 705px; height: 375px"></div>
 			<script>
 				// Create variable to hold map element, give initial settings to map
-				var map = L.map('mymap').setView([51.505, -0.09], 13);
+				var map = L.map('map',{ center:[42.362432, -71.086086], zoom: 14});
 				// Add OpenStreetMap tile layer to map element
 				L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 					attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -96,15 +98,14 @@
 
     </div>
     <!-- /.container -->
-
+	
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 	
-	<!-- Add the Leaflet JavaScript library -->
-	<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+	
 	
 </body>
 
