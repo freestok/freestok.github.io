@@ -18,8 +18,7 @@
     <link href="css/3-col-portfolio.css" rel="stylesheet">
 	<link href="css/custom.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/leaflet.css" />
-	<!-- Add the Leaflet JavaScript library -->
-	<script src="js/leaflet.js"></script>
+	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -73,19 +72,68 @@
             </div>
         </div>
         <!-- /.row -->
-																	<!---->
+		
         <!-- Our web map and content will go her -->
         <div id="map" style="width: 705px; height: 375px"></div>
-			<script>
-				// Create variable to hold map element, give initial settings to map
-				var map = L.map('map',{ center:[42.362432, -71.086086], zoom: 14});
-				// Add OpenStreetMap tile layer to map element
-				L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-					attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+		<!-- Add the Leaflet JavaScript library -->
+		<script src="js/leaflet.js"></script>
+		<script>
+			// Create variable to hold map element, give initial settings to map
+			var map = L.map('map',{ center: [42.362432, -71.086086], zoom: 14});
+			// Add OpenStreetMap tile layer to map element
+			L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>,\
+				Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+			}).addTo(map);
+			// Create point feature for Kendall Square T Station
+			var myDataPoint = L.marker([42.362432, -71.086086]).addTo(map);
+	
+			// Create line feature for Mass Ave Bridge, style and add to map
+			var myDataLine = L.polyline([[42.357227, -71.092631], [42.351411, -71.089723]],
+				{color: 'red', weight: 10}).addTo(map);
+			
+			// Create area feature for MIT, style and add to map
+			var myArea = L.polygon([[42.353770, -71.103606], [42.355447, -71.104475],
+				[42.362681, -71.089830], [42.361829, -71.079230]], 
+				{color: 'blue', weight: 4}).addTo(map);
+			
+			// Bind popup to data point object -- multi-line writing possible via variables 
+			// since .bindPopup only takes one argument
+			var myDataPointpu = "<h3>Kendall Square</h3>" + 
+				"<p>Cambridge, MA<br>Information about Kendall Square.</p>"
+			myDataPoint.bindPopup(myDataPointpu);
+			
+			// Bind popup to line object
+			myDataLine.bindPopup("Mass Ave Bridge");
+			
+			// Bind popup to area object
+			myArea.bindPopup("MIT Campus");
+			//Create an empty popup
+			var popup = L.popup();
+			
+			//Write function to set properties of the pop-up
+			function onMapClick(e) {
+				popup
+					.setLatLng(e.latlng)
+					.setContent('You clicked the map at ' + e.latlng.toString())
+					.openOn(map);
+			}
+			
+			//Listen for a click event on the map element
+			map.on('click', onMapClick);
+			
+			$.getJSON("data/coffee_cafes.geojson",function(data){
+				// add GeoJSON layer to the map once the file is loaded
+				L.geoJson(data,{
+					onEachFeature: function (feature, layer) {
+						layer.bindPopup(feature.properties.name);
+					}
 				}).addTo(map);
-			</script>
+			});
+		</script>
         <hr>
-<!---->
         <!-- Footer -->
         <footer>
             <div class="row">
@@ -98,9 +146,7 @@
 
     </div>
     <!-- /.container -->
-	
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
