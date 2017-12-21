@@ -12,12 +12,13 @@
     <title>Kray's Portfolio</title>
 	
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Custom CSS -->
-    <link href="css/3-col-portfolio.css" rel="stylesheet">
-	<link href="css/custom.css" rel="stylesheet">
+    <link href="css/3-col-portfolio.css" rel="stylesheet"/>
+	
 	<link rel="stylesheet" href="css/leaflet.css" />
+	<link rel="stylesheet" href="css/custom.css"/>
 	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,7 +26,13 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+	<style>
+	#toggleButton {
+		background-color: #34576d;
+		color: #ffffff;
+		border: none;
+	}
+	</style>
 </head>
 
 <body>
@@ -76,11 +83,7 @@
         <!-- Our web map and content will go here -->
         <div id="map" style="width: 705px; height: 375px"></div>
 		<div id="controls" style="margin: 15px;">
-			<button id='addButton'>Show All Coffee Shops</button>
-			<button id='removeButton'>Hide All Coffee Shops</button>
-			<button id='toggleButton'>Toggle All Coffee Shops</button>
-			<button id='filterSBux'>Starbucks</button>
-			<button id='filterDD'>Dunkin' Donuts</button>
+			<button id='toggleButton'>Display Rodent Violations</button>
 		</div>
 		
 		<!-- jQuery -->
@@ -90,25 +93,44 @@
 		
 		<script>
 			// Create variable to hold map element, give initial settings to map
-			var map = L.map('map',{ center: [42.362432, -71.086086], zoom: 14});
+			var map = L.map('map',{ center: [42.376773,-71.111670], zoom: 13});
 			
-			// Add OpenStreetMap tile layer to map element
-			L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>,\
-				Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+			// Add Tile Layer from MAPC and MassGIS
+			L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png', {
+				attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+				maxZoom: 17,
+				minZoom: 9
 			}).addTo(map);
 			
-			// null variable that'll hold our data
-			var coffeeShopPoints = null;
+			//Add Rodent Violation GeoJSON Data
+			//Null variable that will hold rodent violation data
+			var violationPoints = null;
 			
-			$.getJSON('data/coffee_cafes.geojson',function(data){
-				// set coffeeShops to GeoJSON, add GeoJSON layer to the map once the file is loaded
-				coffeeShopPoints = L.geoJson(data,{
-					onEachFeature: function(feature,layer) {
-						layer.bindPopup(feature.properties.name);
+			//Get GeoJSON and put it on the map when it loads
+			$.getJSON('data/rodent_violations.geojson',function(data){
+				// set violationPoints to the dataset, and add rodent violation GeoJSON layer to the map
+				violationPoints = L.geoJson(data,{
+					onEachFeature: function (feature, layer){
+						layer.bindPopup(feature.properties.address);
+					}, pointToLayer: function (feature, latlng){
+						var marker = L.marker(latlng,{icon: rodentIcon});
+						return marker;
 					}
 				}).addTo(map);
 			});
+			
+			// Create Custom Icons Here
+			// Rodent Icon
+			var rodentIcon = L.icon({
+				iconUrl: 'images/rodent.png',
+				shadowUrl: 'images/rodent_shadow.png',
+				iconSize: [36,36],
+				shadowSize: [36,36],
+				iconAnchor: [18,18],
+				shadowAnchor: [18,18],
+				popupAnchor: [0,-6]
+			});
+		
 		</script>
         <hr>
         <!-- Footer -->
