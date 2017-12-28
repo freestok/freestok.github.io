@@ -32,6 +32,36 @@
 		color: #ffffff;
 		border: none;
 	}
+	
+	.legend {
+			line-height: 18px;
+			color: #333333;
+			padding: 6px 8px;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+
+	.legend i {
+		width: 18px;
+		height: 18px;
+		float: left;
+		margin-right: 18px;
+		opacity: 0.7;
+	}
+
+	.legend img {
+		width: 18px;
+		height: 18px;
+		float: left;
+	}
+
+	.legend p {
+		font-size: 12px;
+		line-height: 18px;
+		margin: 0;
+	}
 	</style>
 </head>
 
@@ -113,7 +143,11 @@
 					onEachFeature: function (feature, layer){
 						layer.bindPopup(feature.properties.address);
 					}, pointToLayer: function (feature, latlng){
-						var marker = L.marker(latlng,{icon: rodentIcon});
+						if (feature.properties.status == 'Cited'){
+							var marker = L.marker(latlng,{icon: citedIcon});
+						} else {
+							var marker = L.marker(latlng,{icon: correctedIcon});
+						};
 						return marker;
 					}
 				}).addTo(map);
@@ -121,16 +155,76 @@
 			
 			// Create Custom Icons Here
 			// Rodent Icon
-			var rodentIcon = L.icon({
-				iconUrl: 'images/rodent.png',
-				shadowUrl: 'images/rodent_shadow.png',
-				iconSize: [36,36],
-				shadowSize: [36,36],
-				iconAnchor: [18,18],
-				shadowAnchor: [18,18],
-				popupAnchor: [0,-6]
+			// classes begin with a capital letter (Icon vs icon)
+			var rodentIcon = L.Icon.extend({
+				options:{
+					shadowUrl: 'images/rodent_shadow.png',
+					iconSize: [36,36],
+					shadowSize: [36,36],
+					iconAnchor: [18,18],
+					shadowAnchor: [18,18],
+					popupAnchor: [0,-6]
+				}
 			});
-		
+			
+			// create specific icons
+			var citedIcon = new rodentIcon({iconUrl: 'images/rodent_open.png'});
+			var correctedIcon = new rodentIcon({iconUrl: 'images/rodent.png'});
+			
+			// null variable that'll hold neighborhoods layer
+			var neighborhoodsLayer = null;
+			
+			// add neighborhood polygons
+			$.getJSON('data/cambridge_neighborhoods.geojson',function(data){
+				neighborhoodsLayer = L.geoJson(data, {style: style}).addTo(map);
+			});
+			
+			// set function for color ramp
+			function setColor(density){
+				return density > 85 ? '#a50f15' :
+					   density > 15 ? '#de2d26' :
+					   density > 8 ? '#fb6a4a' :
+					   density > 4 ? '#fcae91' :
+									 '#fee5d9';
+			};
+			
+			// set style function that sets fil color property equal to rodent density
+			function style(feature) {
+				return {
+					fillColor: setColor(feature.properties.rodentDensity),
+					fillOpacity: 0.7,
+					weight: 2,
+					opacity: 1,
+					color: '#ffffff',
+					dashArray: '3'
+				};
+			}
+			
+			// create Leaflet control object for legend
+			var legend = L.control({position: 'topright'});
+			
+			// function that runs when legend is added to map
+			legend.onAdd = function (map) {
+				// create div element and populate it with HTML
+						var div = L.DomUtil.create('div', 'legend');		    
+				div.innerHTML += '<b>Violation Density</b><br />';
+				div.innerHTML += 'by Neighborhood<br />';
+				div.innerHTML += '<small>Violations/Sq. Mi.</small><br />';  
+				div.innerHTML += '<i style="background: #a50f15"></i><p>85+</p>';
+				div.innerHTML += '<i style="background: #de2d26"></i><p>15-85</p>';
+				div.innerHTML += '<i style="background: #fb6a4a"></i><p>8-15</p>';
+				div.innerHTML += '<i style="background: #fcae91"></i><p>4-8</p>';
+				div.innerHTML += '<i style="background: #fee5d9"></i><p>0-4</p>';
+				div.innerHTML += '<hr>Individual Violations';
+				div.innerHTML += '<br /><img src="images/rodent_open.png">Cited';
+				div.innerHTML += '<br /><img src="images/rodent.png">Corrected';
+				
+				// return the Legend div containing the HTML content
+				return div;
+			};
+			
+			// add legend to map
+			legend.addTo(map);
 		</script>
         <hr>
         <!-- Footer -->
