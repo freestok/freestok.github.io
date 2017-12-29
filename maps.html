@@ -19,6 +19,7 @@
 	
 	<link rel="stylesheet" href="css/leaflet.css" />
 	<link rel="stylesheet" href="css/custom.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,11 +28,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	<style>
-	#toggleButton {
-		background-color: #34576d;
-		color: #ffffff;
-		border: none;
-	}
 	
 	.legend {
 			line-height: 18px;
@@ -62,7 +58,19 @@
 		line-height: 18px;
 		margin: 0;
 	}
+	#map {
+			width: 750px;
+			margin: 0 auto;
+			height: 375px;
+	}
+	#credits p {
+		margin-top: 5px;
+		font-size: 12px;
+		text-align: left;
+		line-height: 16px;
+	}
 	</style>
+	
 </head>
 
 <body>
@@ -111,9 +119,9 @@
         <!-- /.row -->
 		
         <!-- Our web map and content will go here -->
-        <div id="map" style="width: 705px; height: 375px"></div>
-		<div id="controls" style="margin: 15px;">
-			<button id='toggleButton'>Display Rodent Violations</button>
+        <div id="map"></div>
+		<div id="controls">
+			<div id="credits"><p>Violations cited by Housing Inpectors from March to Sept 2014. Data from <a href="https://data.cambridgema.gov/">Cambridge Open Data</a><br><a href="http://duspviz.mit.edu/web-map-workshop/map-symbolization/">#webMapWorkshop</a></p></div>
 		</div>
 		
 		<!-- jQuery -->
@@ -188,7 +196,7 @@
 									 '#fee5d9';
 			};
 			
-			// set style function that sets fil color property equal to rodent density
+			// set style function that sets fill color property equal to rodent density
 			function style(feature) {
 				return {
 					fillColor: setColor(feature.properties.rodentDensity),
@@ -225,6 +233,9 @@
 			
 			// add legend to map
 			legend.addTo(map);
+			
+			// add scale bar to map
+			L.control.scale({position: 'bottomleft'}).addTo(map);
 		</script>
         <hr>
         <!-- Footer -->
