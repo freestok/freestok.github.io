@@ -239,8 +239,23 @@ body {
 	padding: 10% 5%;
 	color: black;
 	text-align:center;
+	justify-content:center;
+	align-items:center;
+	flex-flow:column nowrap;
 }
 
+.tableSq{
+	display:table;
+	height:100%;
+	width:100%;
+}
+
+.table-cell{
+	display:table-cell;
+	vertical-align:middle;
+	height:100%;
+	width:100%;
+}
 .img_1-1{
 	background-image:url('../img/woodlawn_e.png');
 }
