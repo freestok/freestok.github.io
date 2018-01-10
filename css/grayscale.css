@@ -253,12 +253,7 @@ body {
 	width:100%;
 }
 
-.contentSq .rs{
-	width:auto;
-	height:auto;
-	max-height:90%;
-	max-width:100%;
-}
+
 .img_1-1{
 	background-image:url('../img/woodlawn_e.png');
 }
@@ -269,3 +264,18 @@ body {
 	background-image:url('../img/mesopotamia.jpg');
 }
 
+
+					
+
+.menu-container{
+	color: #fff;
+	background-color: #5995DA;
+	padding: 20px 0;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.menu{
+	border: 1px solid #fff; /*for debugging*/
+	width:900px;
+}
