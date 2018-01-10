@@ -221,48 +221,6 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2); }
   
-.square {
-	float: left;
-	position: relative;
-	width: 30%;
-	padding-bottom: 30%; /* = width for 1:1 aspect ratio */
-	margin: 1.66%;
-	background-position: center center;
-	background-repeat:no-repeat;
-	background-size:cover; /* do cover for a clean crop (contain for all) */
-}
-
-.contentSq {
-	position:absolute;
-	height:80%; /* = 100% - 2*10% padding */
-	width: 90%; /* = 100% 2*5% padding */
-	padding: 10% 5%;
-	color: black;
-}
-
-.tableSq{
-	display:table;
-	height:100%;
-	width:100%;
-}
-
-.table-cell{
-	display:table-cell;
-	vertical-align:middle;
-	height:100%;
-	width:100%;
-}
-
-
-.img_1-1{
-	background-image:url('../img/woodlawn_e.png');
-}
-.img_1-2{
-	background-image:url('../img/gr_bus.png');
-}
-.img_1-3{
-	background-image:url('../img/mesopotamia.jpg');
-}
 
 
 					
@@ -307,11 +265,25 @@ body {
 	height: 300px;
 	display: flex;
 	justify-content: space-between;
-	align-items: stretch;
+	align-items: center;
 }
 
-.social,
-.logo,
-.subscribe {
-	border: 1px solid #5995DA;
+.photo-grid-container {
+	display: flex;
+	justify-content: center;
+}
+
+.photo-grid{
+	width: 900px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+}
+
+.photo-grid-item {
+	border: 1px solid #fff;
+	width: 300px;
+	height: 300px;
 }
