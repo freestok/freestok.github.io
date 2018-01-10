@@ -252,6 +252,13 @@ body {
 	height:100%;
 	width:100%;
 }
+
+.contentSq .rs{
+	width:auto;
+	height:auto;
+	max-height:90%;
+	max-width:100%;
+}
 .img_1-1{
 	background-image:url('../img/woodlawn_e.png');
 }
