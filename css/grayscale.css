@@ -238,10 +238,6 @@ body {
 	width: 90%; /* = 100% 2*5% padding */
 	padding: 10% 5%;
 	color: black;
-	/* text-align:center; */
-	/* justify-content:center; */
-	/* align-items:center; */
-	/* flex-flow:column nowrap; */
 }
 
 .tableSq{
