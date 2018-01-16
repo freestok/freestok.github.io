@@ -37,6 +37,9 @@ p {
       line-height: 1.6;
       margin: 0 0 35px; } }
 
+.portf-text {
+	text-align: left;
+}
 a {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -247,7 +250,7 @@ body {
 
 .text {
   color: white;
-  font-size: 14px;
+  font-size: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
