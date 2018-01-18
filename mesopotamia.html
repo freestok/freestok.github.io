@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Kray's Portfolio</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/grayscale.css" rel="stylesheet">
+	
+	
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html">Home</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Mesopotamian Marshes</h2>
+				<p class="portf-text">For millennia, the marshes in Mesopotamia — located by Iraq and Iran — boasted a rich culture of Marsh Arabs and a diverse ecosystem. 
+				Enter Saddam Hussein: after the building of dams and the targeting of marshes for political reasons, the ecosystem went under a drastic change. 
+				This project helps visualize the changes from 1988 to 2015 using Landsat 7 images and the remote sensing software ERDAS Imagine.</p>
+				<p class="portf-text">Images were acquired via USGS’s <a href="https://glovis.usgs.gov/">Global Visualization Viewer</a> (GloVis). 
+				These images mostly derived from NASA’s Landsat 7 satellite, though for the earlier year of 1988, the Landsat 5 satellite was used. 
+				My partner in this project, Kristen Childs, and I aimed to analyze images from the area’s wet season (February to March) in order to minimize potential errors in analysis.
+				The seven bands in each of the raw images were then stacked together so the images could undergo supervised classification.</p>
+				<h3>*image*</h3>
+				<p class="portf-text">To understand what type of land changed into another, we took five Areas of Interest (AOIs): Marsh, Agriculture/Light Vegetation, Water, Dead Marsh,
+				and Barren Land. Each of these AOIs were captured using 30 samples from the original images for a total of 150 samples. 
+				From there we performed a supervised classification in which ERDAS color-codes the image based on our five classes of AOIs. 
+				The end result is a clearer picture of the area’s land use.</p>
+				<p class="portf-text" style="margin: 0 0 0 0">The AOIs had the following color-codes:</p>
+					<p class="portf-text" style="text-indent: 6%; margin: 0">
+						• Marsh: Maroon</p>
+					<p class="portf-text" style="text-indent: 6%; margin: 0">
+						• Dead Marsh: Tan</p>
+					<p class="portf-text" style="text-indent: 6%; margin: 0">
+						• Barren Land: Light Yellow</p>
+					<p class="portf-text" style="text-indent: 6%; margin: 0">
+						• Water: Blue</p>
+					<p class="portf-text" style="text-indent: 6%; top-margin: 0">
+						• Green: Agriculture/Light Vegetation</p>
+				<h3>*image*</h3>
+				<p class="portf-text">In order to get statistics on what percentage of land types changed to other land types, we used the software <a href="https://clarklabs.org/terrset/">
+				TerrSet</a>.</p>
+				<h3>*image*</h3>
+				<p class="portf-text">As one can see, the impacts of humans were already apparent in 1988, albeit small. 
+				The year 2000 shows the ugly reality of Saddam Hussein’s infrastructure projects. 
+				Though marshes have reclaimed more ground as of 2015, it is not close to what it once was.</p>
+				<p class="portf-text">The full poster can be found <a href="https://krayfreestone.files.wordpress.com/2017/03/childs_freestone_marshes.pdf">here</a>. </p>
+				<!-- change hyperlink for poster -->
+		  </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <div class="container text-center">
+        <p>Copyright &copy; Kray Freestone 2018
+		<br> Website built using HTML, CSS, Bootstrap, and Google's Code Prettify</p>
+      </div>
+    </footer>
+	
+	<!-- code-prettify by Google -->
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    
+	<!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/grayscale.js"></script>
+
+  </body>
+
+</html>
