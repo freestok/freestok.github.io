@@ -49,7 +49,7 @@
 				I have written off using Google's API because using their data would force me to use a Google basemap. Moreover, Google will only  geocode 2,500 addresses per day,
 				which would slow down the processing of over 10,000 addresses. </p>
 				<p class="portf-text">While there are other geocoding APIs out there, some free and some not, I decided to turn to an organization that specializes in data gathering for
-				residences: the U.S. Census Bureau. First format CSV for geocoding via pandas:</p>
+				residences: the <a href="https://geocoding.geo.census.gov/"> U.S. Census Bureau</a>. First format the CSV for geocoding via pandas:</p>
 				
 				<ul><pre class="prettyprint portf-text">
  # format CSV for census geocoder
@@ -69,8 +69,7 @@
  df2.to_csv('censusInput2.csv', index=False, header=False)
 				</pre></ul>
 				
-				<p class="portf-text">Now that we have files the census geocoder can handle, we then plug it into a function.
-				https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.pdf</p>
+				<p class="portf-text">Now that we have files the census geocoder can handle, we then plug it into a function.</p>
 				<ul><pre class="prettyprint portf-text">
  # geocode each spreadsheet 
  def censusGeocode(file, output):
@@ -90,8 +89,77 @@
 				<p class="portf-text">Each function call, which geocodes around 5,000 addresses, takes around an hour and a half for a total of three hours.</p>  
 				<h2>Formatting / Results</h2>
 				<p class="portf-text">There was only one glaring error produced by the API that had to be fixed by hand. If an address had an apartment or suite number, it would put
-				that suite number in an extra cell, thereby ruining the uniformity of the CSV. This was easily fixable by hand.<p>
+				that suite number in an extra cell, thereby ruining the uniformity of the CSV. This was easily fixable by hand.</p>
 				<img src='img/geocode_table1.png'/>
+				<p class="portf-text">The bottom row is the desired format, the other five are skewed.  Note, I also had to find these types of cases for the match type of <strong>No_Match</strong>
+				and <strong>Tie</strong>.</p>
+				<p class="portf-text">Since I have to check and fix the results by hand, I put the rest of the code into a second script.
+				To reformat all of this data, I concatenate the two CSVs back together:</p>
+				
+				<ul><pre class="prettyprint portf-text">
+ # concatenate the two CSVs
+ df1 = pd.read_csv('censusOutput1.csv', sep=',', header=None, engine='python')
+ df2 = pd.read_csv('censusOutput2.csv', sep=',', header=None, engine='python')
+ frames = [df1,df2]
+ result = pd.concat(frames)
+ result.to_csv('censusConcat.csv', index=False)
+				</pre></ul>
+
+				<p class="portf-text" style="margin: 0 0 0 0">Out of the 11,016 rows of data…</p>
+					<p class="portf-text" style="text-indent: 6%; margin: 0">
+						• 9,374 were Matches (85.1%)</p>
+					<p class="portf-text" style="text-indent: 6%; margin: 0">
+						• 935 were Ties (8.5%)</p>
+					<p class="portf-text" style="text-indent: 6%; top-margin: 0">
+						• 703 were No Matches (6.4%)</p>
+						
+				<p class="portf-text">Out of those matches, 80.4% were exact, and 19.6% were non-exact. It is to be noted that some of the Ties and No Matches are due to some donors 
+				not providing data as to where they live. Moreover, this can explain how there are a total of 11,012 results (amongst match, tie, and no-match) from 11,016 rows of data.</p>
+				<p class="portf-text">The geocoding output produces 14 additional columns to my CSV, four of which I need: longitude, latitude, match type, and match accuracy.
+				First will we drop superfluous columns, keep the unique ID, and then concatenate the two outputs. The API's documentation isn't fantastic, so the meaning of the match type,
+				Tie is not entirely clear. However, it is clear enough that both, Tie, and No_Match do not produce coordinates.</p>
+				
+				<img src='img/geocode_table2.png'/>
+				
+				<p class="portf-text">Next we want to strip our CSV of any superfluous data before merging it with the original document. Since the original document is only lacking coordinates and match types,
+				we can everything but those four fields (latitude, longitude, match type, and match accuracy). In the next step, I'll need to merge this output with our original spreadsheet,
+				so I also order values based on its index so our records will match up.</p>
+				
+				<ul><pre class="prettyprint portf-text">
+ # keep unique ID, addresses, match type/accuracy, and lat/long
+ df = pd.read_csv('censusConcat.csv', sep=',', engine='python')
+ cols = ['1','2','3','4','7','8','9','10','13','14','15','16','17','18']
+ df.drop(cols, axis=1, inplace=True)
+ df.sort_values(by=['0'], inplace=True)
+ df.to_csv('censusConcatStrip.csv', index=False)
+				</pre></ul>
+				
+				<p class="portf-text">Now it is ready to merge with our original spreadsheet:</p>
+				<ul><pre class="prettyprint portf-text">
+ # join the census output with the original CSV
+ dfA = pd.read_csv('geocodeFinal.csv', sep=',')
+ dfB = pd.read_csv('censusConcatStrip.csv', sep=',')
+ dfMerge = dfA.merge(dfB, right_index=True, left_index=True)
+ dfMerge.to_csv('geocodeFinalRough.csv', index=False)
+				</pre></ul>
+				<p class="portf-text">With all data acquired, we just need to clean it up and rename some columns.</p>
+				<ul><pre class="prettyprint portf-text">
+ # clean up the file and rename columns
+ df = pd.read_csv('geocodeFinalRough.csv', sep=',')
+ df.drop(['ID','0'], axis=1, inplace=True)
+ df.rename(index=str,columns={'Unnamed: 0':'serial_id',
+                              '5':'match_type',
+                              '6':'match_accuracy',
+                              '11':'lng',
+                              '12':'lat'}, inplace=True)
+ df.to_csv('donors.csv', index=False)
+				</pre></ul>
+				<p class="portf-text">And with this, we can now upload our final product to CARTO. The latitude and longitude do not need to be converted to a shapefile;
+				CARTO simply recognizes those columns and converts it to something mappable. </p>
+				<img src='img/geocode_usa.png' style="height:8%;width:100%"/>
+				<p><em>Donors throughout the continental United States</em></p>
+				<img src='img/geocode_mich.png' style="height:8%;width:100%"/>
+				<p><em>Exact (grey) and non-exact (blue) matches in the Michigan area.</em></p>
 		  </div>
         </div>
       </div>
