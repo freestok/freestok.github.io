@@ -103,7 +103,7 @@ a {
   padding: 200px 0;
   text-align: center;
   color: white;
-  background: url("../img/intro-bg.jpg") no-repeat bottom center scroll;
+  background: url("../img/carto_bg.png") no-repeat bottom center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -149,8 +149,8 @@ a {
 
 .download-section {
   color: white;
-  background: url("../img/downloads-bg.jpg") no-repeat center center scroll;
-  background-color: black;
+  /* background: url("../img/carto_bg.png") no-repeat center center scroll; */
+  background-color: #181818;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -250,7 +250,7 @@ body {
 
 .text {
   color: white;
-  font-size: 20px;
+  font-size: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
