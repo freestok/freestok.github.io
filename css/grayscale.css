@@ -250,7 +250,7 @@ body {
 
 .text {
   color: white;
-  font-size: 100%;
+  font-size: 1.5em;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -258,7 +258,7 @@ body {
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
-					
+
 
 .square-grid img{
 	opacity: 1;
@@ -293,6 +293,53 @@ body {
   padding-bottom: 100%;
 }
 
+input[type=email],
+input[type=text] {
+	border: 0em solid black;
+	border-radius: 0.25em;
+	width: 50%;
+	padding: 0.5em 0 0.688em 0.5em;
+	box-sizing: border-box;
+}
+
+input[type=description] {
+	border: 0em solid black;
+	border-radius: 0.25em;
+	width: 50%;
+	padding: 0.5em 0 0.688em 0.5em;
+	box-sizing: border-box;
+	height: 18em;
+}
+::selection {
+  background: #ACCEF7; 
+}
+textarea {
+	border: 0em solid black;
+	border-radius: 0.25em;
+	height: 10em;
+	width: 50%;
+	padding: 0.5em 0 0.688em 0.5em;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	border: 2px solid #1d9b6c;
+	border-radius: 0.25em;
+	width: 33%
+}
+
+input[type=submit]:hover {
+    background-color: #1d9b6c;
+}
+
+.button:hover{
+	color: black;
+}
+.button {
+	color: #1d9b6c;
+	background-color: black;
+	font-size: 1.15em;
+}
 				
 
 // Sizes – Number of cells per row
