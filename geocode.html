@@ -43,15 +43,12 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h2>Geocoding with Python <i class="fa fa-terminal"></i></h2>
-				<p class="portf-text">I was tasked with mapping out the donors to a nonprofit in West Michigan. The CSV of donors numbered over 10,000.
-				Originally, I thought about using the <strong>geopy</strong> Python library for geocoding. It makes the process of geocoding through your preferred API quite simple.
-				For example, you can use the Open Street Map API: <a href="https://wiki.openstreetmap.org/wiki/Nominatim">Nominatum</a>.</p>
-				<p class="portf-text">However, after cross-checking some results, I found their accuracy to be inadequate. For now, since I want to map the results on <a href="https://carto.com">CARTO</a>,
-				I have written off using Google's API because using their data would force me to use a Google basemap. Moreover, Google will only  geocode 2,500 addresses per day,
-				which would slow down the processing of over 10,000 addresses. </p>
-				<p class="portf-text">While there are other geocoding APIs out there, some free and some not, I decided to turn to an organization that specializes in data gathering for
-				residences: the <a href="https://geocoding.geo.census.gov/"> U.S. Census Bureau</a>.</p>
-				<p class="portf-text">First, I formatted the CSV for geocoding via the <a href="https://pandas.pydata.org/">pandas library</a>:</p>
+				<p class="portf-text">The goal of this project was to map out the donors of a nonprofit in West Michigan. 
+				The CSV of donors numbered over 10,000 records. While there are many geocoding options out there, I decided
+				to turn to an organization that specializes in data gathering for residences: 
+				the <a href="https://geocoding.geo.census.gov/"> U.S. Census Bureau</a>. 
+	
+				<p class="portf-text">First, I formatted the CSV for geocoding via Python's <a href="https://pandas.pydata.org/">pandas library</a>:</p>
 				<ul><pre class="prettyprint portf-text">
  # format CSV for census geocoder
  df = pd.read_csv('geocodeOutput.csv', sep=',')
@@ -60,8 +57,9 @@
  df.to_csv('geocodeOutput.csv', header=False)
 				</pre></ul>
 				
-				<p class="portf-text">The maximum amount the U.S. Census Bureau can geocode per file is 10,000. Since I am working with a CSV that slightly exceeds that, I need to split the CSV in two. 
-				While there is probably a more elegant and flexible way to program this, the following should suffice:</p>
+				<p class="portf-text">The maximum amount the U.S. Census Bureau can geocode per file is 10,000. Since I was
+				working with a CSV that slightly exceeded that, I needed to split the CSV in two. While there is probably a 
+				more elegant and flexible way to program this, the following should suffice:</p>
 				
 				<ul><pre class="prettyprint portf-text">
  #split CSV so there aren't more than 10,000 addresses per sheet
@@ -71,8 +69,9 @@
  df2.to_csv('censusInput2.csv', index=False, header=False)
 				</pre></ul>
 				
-				<p class="portf-text">Now that I have files the census geocoder can handle, I can plug it into a function. This function will take the CSV as an input, and it will output a formatted CSV with 
-				additional information, such as latitude, longitude, match accuracy, and more.</p>
+				<p class="portf-text">Now that I have files the census geocoder can handle, I can plug it into a function. 
+				This function will take the CSV as an input, and it will output a formatted CSV with additional information,
+				such as latitude, longitude, match accuracy and more.</p>
 				<ul><pre class="prettyprint portf-text">
  # geocode each spreadsheet 
  def censusGeocode(file, output):
@@ -96,8 +95,8 @@
 				that suite number in an extra cell, thereby ruining the uniformity of the CSV. This was easily fixable by hand.</p>
 				<img src='img/geocode_table1.png'/>
 				<p><em>The bottom row is the desired format, the other five are skewed</em></p>
-				<p class="portf-text">Since I have to check and fix the results by hand, I put the rest of the code into a second script.
-				To reformat all of this data, I concatenate the two CSVs back together:</p>
+				<p class="portf-text">Since I had to check and fix the results by hand, I put the rest of the code into a second script.
+				To reformat all of this data, I concatenated the two CSVs back together:</p>
 				
 				<ul><pre class="prettyprint portf-text">
  # concatenate the two CSVs
@@ -120,7 +119,7 @@
 				seem to be adequate</a>, though there is always room for improvement. It should be noted that some of the <strong>Ties</strong> and <strong>No Matches</strong> are due to some donors
 				not providing data as to where they live.
 				 Moreover, this can explain how there are a total of 11,012 results (amongst match, tie, and no-match) from 11,016 rows of data.</p>
-				<p class="portf-text">The geocoding output produces 14 additional columns to my CSV, four of which I need: <strong>longitude, latitude, match type,</strong> and <strong>match accuracy</strong>.
+				<p class="portf-text">The geocoding output produces 14 additional columns to my CSV, four of which I needed: <strong>longitude, latitude, match type,</strong> and <strong>match accuracy</strong>.
 				First I dropped superfluous columns, kept the unique ID, and then concatenated the two outputs. The <a href="https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.pdf">
 				API's documentation</a> isn't fantastic, so the meaning of the match type,
 				<strong>Tie</strong>, is not entirely clear. However, it is clear enough that both <strong>Tie</strong> and <strong>No_Match</strong> do not produce coordinates.</p>
@@ -160,7 +159,7 @@
                               '12':'lat'}, inplace=True)
  df.to_csv('donors.csv', index=False)
 				</pre></ul>
-				<p class="portf-text">And with this, the final product can be uploaded to CARTO. The latitude and longitude do not need to be converted to a shapefile;
+				<p class="portf-text">And with this, the final product can be uploaded to <a href="https://carto.com">CARTO</a>. The latitude and longitude do not need to be converted to a shapefile;
 				CARTO simply recognizes those columns and converts it to something mappable. </p>
 				<img src='img/geocode_usa.png' style="width:100%"/>
 				<p><em>Donors throughout the continental United States</em></p>
