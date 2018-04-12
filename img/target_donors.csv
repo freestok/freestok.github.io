@@ -1,0 +1,467 @@
+,Organization,First Name,Last Name,Address,City,State,Zip,Phone,Email,match_type,match_accuracy,geometry,index_right
+51,,AJ,Falero,618 Pleasant Ave,Holland,MI,49423-6812,(616) 252-9687,ajfalero@yahoo.com,Match,Exact,POINT (-86.15839 42.773994),0
+52,,Amber,Nevenzel,6483 Castle Ave,Holland,MI,49423-8989,(616) 566-6064,ak.nevenzel@gmail.com,Match,Exact,POINT (-86.18254 42.75607700000001),1
+165,,Barbara,Hulsman,490 W 22nd St,Holland,MI,49423-4018,(865) 898-8466,barbara.hulsman@indwes.edu,Match,Non_Exact,POINT (-86.12979 42.777454),2
+9042,,Gerald,Schutzenhofer,490 W 22nd St,Holland,MI,49423-4018,(616) 566-9381,no@email.com,Match,Non_Exact,POINT (-86.12979 42.777454),2
+195,,Beth,Hungerink,4682 Beech St,Holland,MI,49423-8924,(616) 335-8757,behungerink@gmail.com,Match,Exact,POINT (-86.18378 42.759876),3
+208,,Betsy,Smith,4783 Huntington Dr,Holland,MI,49423-7361,(616) 405-2872,betsy8505@hotmail.com,Match,Exact,POINT (-86.18401999999998 42.76659799999999),4
+216,,William,Garlinghouse,1630 S Shore Dr,Holland,MI,49423-4416,,bghouse@charter.net,Match,Non_Exact,POINT (-86.17576 42.77439),70
+1499,,Mary,Yocum,1630 S Shore Dr,Holland,MI,49423-4416,(616) 283-8913,maryjyocum@gmail.com,Match,Non_Exact,POINT (-86.17576 42.77439),70
+248,,Mary,Blowers,672 Graafschap Rd,Holland,MI,49423-4550,(616) 610-9761,blowers.mary@gmail.com,Match,Exact,POINT (-86.13715000000001 42.771988),6
+252,,,B & B Handyman Service,430 W 21st St,Holland,MI,49423-4049,,BnBHandymanService@gmail.com,Match,Non_Exact,POINT (-86.12729 42.778374),7
+275,,Bradley,Laninga,6487 147th Ave,Holland,MI,49423-8928,(616) 335-9071,bradl@providencechurch.net,Match,Exact,POINT (-86.18512 42.76147),8
+303,,Charles,Bullard,839 Bertsch Dr,Holland,MI,49423,(616) 990-0622,btbullard@hotmail.com,Match,Exact,POINT (-86.14373000000001 42.776196),9
+304,,Becky,Hook,1060 Pinegrove Dr Apt 103,Holland,MI,49423-7385,,builkins84@yahoo.com,Match,Exact,POINT (-86.15253 42.76659),10
+327,,Cal,Beltman,1655 S Shore Dr,Holland,MI,49423-4435,(616) 335-8835,calbeltman@aol.com,Match,Non_Exact,POINT (-86.17726999999999 42.774372),11
+370,,Christine,Westbrook,840 Brook Village Ct,Holland,MI,49423-4697,(616) 446-8458,cbwk318@gmail.com,Match,Exact,POINT (-86.133354 42.766968),12
+373,,Claudia,Scharlow,4644 Pine Dr,Holland,MI,49423-8922,(616) 836-3208,ccscharlow@yahoo.com,Match,Exact,POINT (-86.18031999999999 42.760033),13
+378,,Claire,Bos,595 S Shore Dr,Holland,MI,49423-4510,(616) 283-0437,cebt3@excite.com,Match,Non_Exact,POINT (-86.13409399999998 42.78143),14
+387,,Cal,Folkert,704 Marylane Dr,Holland,MI,49423-4582,(616) 335-5025,cfolkert@comcast.net,Match,Exact,POINT (-86.13946 42.77056),15
+388,,Cecilia,Garcia,270 W 22nd St,Holland,MI,49423-4707,,cgarcia429@gmail.com,Match,Non_Exact,POINT (-86.11951999999999 42.777527),16
+425,,Jeff,Bosman,642 South Shore Dr,Holland,MI,49423-4509,(616)394-0516,cindyjbosman@yahoo.com,Match,Exact,POINT (-86.13602400000001 42.780586),17
+451,,Cody,Ash,760 Ottawa Ave,Holland,MI,49423-6918,(616) 795-8941,codyash92@gmail.com,Match,Exact,POINT (-86.12671 42.768753),18
+500,,Anna,Hendricks,6475 Castle Ave,Holland,MI,49423-8989,(616) 403-8939,daabette@hotmail.com,Match,Exact,POINT (-86.182365 42.75608),19
+508,,Darius,Brown,437 Graafschap Rd,Holland,MI,49423-4559,,dana@danabrown.com,Match,Exact,POINT (-86.137314 42.780365),20
+524,,Andrea,Dattadeen,194 W 18th St,Holland,MI,49423,(616) 570-8291,dattadeen@gmail.com,Match,Exact,POINT (-86.116035 42.78117),21
+592,,,Triangle Excavators,581 Ottawa Ave Ste 1A,Holland,MI,49423,,dianne@triangleexcavators.com,Match,Exact,POINT (-86.12680999999998 42.775215),22
+601,,Joyce,Kuipers,906 Lugers Rd,Holland,MI,49423-7394,(616) 335-3410,djkuips@gmail.com,Match,Exact,POINT (-86.14690999999998 42.764694),23
+611,,David,Bekker,119 W 23rd St,Holland,MI,49423,(616) 510-1135,dmbrox5@att.net,Match,Exact,POINT (-86.112595 42.776676),24
+625,,Don,Wilson,231 W 23rd St,Holland,MI,49423-4710,(616) 393-9176,donaldfleet@gmail.com,Match,Non_Exact,POINT (-86.11827 42.776608),25
+626,,Donald,Bruggink,880 S Shore Dr,Holland,MI,49423-4538,(616) 335-3607,donb@westernsem.edu,Match,Non_Exact,POINT (-86.14572 42.77627),26
+678,,Matt,Ebrom,384 Wildwood Dr,Holland,MI,49423-6921,(616) 566-5033,ebrommat@gmail.com,Match,Exact,POINT (-86.12458000000002 42.77024),27
+704,,Emily,Bushell,172 1/2 W 21st St,Holland,MI,49423-4738,(507) 327-1775,emily.bushell@gmail.com,Match,Exact,POINT (-86.1161 42.77843499999999),28
+749,,George,Zaineo,2250 Maksaba Trl Unit 206,Macatawa,MI,49434-9802,,gailzaineo@excite.com,Match,Exact,POINT (-86.20244599999999 42.76687),29
+756,,Gary,Nieuwsma,2025 S Shore Dr,Holland,MI,49423-4310,,gary.nieuwsma@gmail.com,Match,Non_Exact,POINT (-86.19304 42.76971),30
+772,,Scott,Sidener,577 S Shore Dr,Holland,MI,49423-4510,(616) 566-7509,ggarite@hotmail.com,Match,Non_Exact,POINT (-86.13330000000001 42.781765),31
+778,,Mike,Gibbons,6395 Reserve Way,Holland,MI,49423,(616) 335-3221,gibbons6917@bellsouth.net,Match,Exact,POINT (-86.17627 42.759373),32
+786,,Gloria,Anklam,817 Apple Blossom Ln,Holland,MI,49423,(616) 298-7155,gloa2@cox.net,Match,Exact,POINT (-86.1448 42.76732),33
+806,,William,Miller,1034 S Shore Dr,Holland,MI,49423-4427,(517) 896-7472,gretel@msu.edu,Match,Non_Exact,POINT (-86.15214499999998 42.77439),34
+813,,Terry,Tait,1972 S Shore Dr Apt 3,Holland,MI,49423-4356,,gtme94@gmail.com,Match,Non_Exact,POINT (-86.19139 42.770355),35
+3722,,Elizabeth,Clark,1972 S Shore Dr,Holland,MI,49423-4356,(616) 298-8107,no@email.com,Match,Non_Exact,POINT (-86.19139 42.770355),35
+850,,Joe,Hoerle,1221 W 32nd Street,Holland,MI,49423,(616) 335-3365,hoerlekindra@yahoo.com,Match,Exact,POINT (-86.15923000000002 42.768257),36
+858,,Marc,Houck,622 Cedar Square St,Holland,MI,49423-8847,(616)396-1843,houck4@sbcglobal.net,Match,Exact,POINT (-86.13533000000002 42.75963),37
+4173,,Mike,DeVries,622 Cedar Square St,Holland,MI,49423,(616) 394-5674,no@email.com,Match,Exact,POINT (-86.13533000000002 42.75963),37
+901,,James,Claybrooks,1121 W 32nd St,Holland,MI,49423-6867,(616) 485-0153,jaemz1@live.com,Match,Non_Exact,POINT (-86.15535 42.768288),38
+909,,James,Hahn,4704 Heritage Meadow Dr,Holland,MI,49423-8738,(616) 499-7456,jameshahn35@yahoo.com,Match,Exact,POINT (-86.14005999999998 42.761723),39
+922,,Chuck,Zwiers,1214 Janice St,Holland,MI,49423-6854,(616) 335-2173,janezwiers@hotmail.com,Match,Exact,POINT (-86.15897 42.770523),40
+946,,Jordan,Campbell,6476 Wildcreek Dr,Holland,MI,49423,(616) 335-8482,jcampbell309@yahoo.com,Match,Exact,POINT (-86.18425999999999 42.76369),41
+977,,Jen,Viel,594 Blackstone St,Holland,MI,49423-8856,,jenjoyviel@gmail.com,Match,Exact,POINT (-86.13364399999998 42.758312),42
+982,,Rob,TerHorst,1241 Heather Dr,Holland,MI,49423-6816,(616) 835-1258,jenna.terhorst@gmail.com,Match,Exact,POINT (-86.16091999999998 42.771397),43
+1006,,John,Dziedzic,6377 Blue Jay Ln,Holland,MI,49423-8917,(616) 335-8089,jhdzez@gmail.com,Match,Exact,POINT (-86.17390400000002 42.763382),44
+1022,,,Branch Capital Managament,455 Washington Ave,Holland,MI,49423-4107,,jjoliat@branchcap.com,Match,Exact,POINT (-86.117 42.78046),45
+1029,,James,Johnson,6402 Hidden Hollow Ln,Holland,MI,49423,(616)335-5608,jkjohnson100@yahoo.com,Match,Exact,POINT (-86.177216 42.75879699999999),46
+1047,,Jeff,Mouw,1400 W 32nd St,Holland,MI,49423-6744,(616) 836-3544,jmouw55@gmail.com,Match,Non_Exact,POINT (-86.16540000000001 42.768158),47
+1105,,Jennifer,Rozeboom,234 W 21st St,Holland,MI,49423-4747,(616) 405-0542,jrozeboom@ymail.com,Match,Non_Exact,POINT (-86.11792 42.778427),48
+1106,,Judy,Rozendal,888 Clarewood Ct,Holland,MI,49423-7615,,jrozendal@comcast.net,Match,Exact,POINT (-86.14617 42.76686),49
+1109,,Joy,Zomer,1106 Ardmore St,Holland,MI,49423-7362,(616) 396-7329,jrzomer@gmail.com,Match,Exact,POINT (-86.15519 42.767246),50
+1115,,Stein,Slette,672 Lugers Rd,Holland,MI,49423-6804,(616) 836-5029,jslette4@gmail.com,Match,Exact,POINT (-86.14695999999998 42.77211),51
+1120,,Judi,Sloan,612 Spring Ln Apt 14,Holland,MI,49423-4627,(616) 392-6192,judisloan@att.net,Match,Exact,POINT (-86.13497 42.765682),52
+1159,,Karen,Kane,650 Blackbass Ave,Holland,MI,49423-4411,(616)335-8035,karen.kane@hotmail.com,Match,Exact,POINT (-86.16176 42.772724),53
+1160,,Karen,Legg,670 Steketee Ave,Holland,MI,49423-6716,(616) 335-5576,karenlegg@chartermi.net,Match,Exact,POINT (-86.180176 42.77178),54
+1162,,Karin,Gabrielse,4613 Forest Ln,Holland,MI,49423-8991,(269) 869-2368,karin.gabrielse@gmail.com,Match,Exact,POINT (-86.182076 42.755657),55
+1172,,Kathy,Nyhoff,251 W 23rd St,Holland,MI,49423-4710,(616) 212-9845,kathynyhoff@yahoo.com,Match,Non_Exact,POINT (-86.11891 42.776615),56
+1178,,Katie,Kostal,635 1/2 Michigan Ave,Holland,MI,49423-4957,(616) 238-1168,katiekostal@gmail.com,Match,Exact,POINT (-86.11353000000004 42.77350999999999),57
+1185,,Kate,Brink,6234 Woodcliff St,Holland,MI,49423,,kbrinkangels3@charter.net,Match,Exact,POINT (-86.16231999999999 42.76622800000001),58
+1196,,Keith,Doornbos,581 Jasmine Dr,Holland,MI,49423-4673,(616) 393-9729,keithdoornbos@hotmail.com,Match,Exact,POINT (-86.13423 42.76461),59
+1211,,Kevin,Lehman,1185 Beach Dr,Holland,MI,49423-4492,(616) 218-8673,kevin@pertmoto.com,Match,Exact,POINT (-86.15818 42.77724),60
+1297,,Lisa,Lutz,443 W 21st St,Holland,MI,49423-4048,,la.lutz3@gmail.com,Match,Non_Exact,POINT (-86.127815 42.778385),61
+1301,,Lacy,Thompson,255 Evergreen Ct,Holland,MI,49423-5275,(616) 795-1275,lacyt57@gmail.com,Match,Exact,POINT (-86.11816400000002 42.758286),62
+1321,,Laurel,Falvo,384 W 33rd St,Holland,MI,49423-4670,(616) 706-6958,laurel@socialincites.com,Match,Non_Exact,POINT (-86.12387 42.767532),63
+1402,,Dave,Lopez,783 Southgate St,Holland,MI,49423-4521,6165666672,lopez4728@comcast.net,Match,Exact,POINT (-86.141655 42.772415),64
+1414,,Lindsey,Peterson,673 Myrtle Ave,Holland,MI,49423-6838,(724) 674-4284,lpeterson008@gmail.com,Match,Exact,POINT (-86.15676999999999 42.77168),65
+1430,,Luis,Torres,609 S Shore Dr,Holland,MI,49423-4536,(616) 834-6327,luis.j.torr@gmail.com,Match,Non_Exact,POINT (-86.134865 42.78109),66
+1441,,Michael,Keyes,315 W 21st St,Holland,MI,49423-4001,(616) 394-4678,m.keyes.family@sbcglobal.net,Match,Non_Exact,POINT (-86.12170999999999 42.77843499999999),67
+1484,,Marta,Muessig,954 Pioneer Ave,Holland,MI,49423-4620,(989) 708-7665,martamuessig@yahoo.com,Match,Exact,POINT (-86.12345000000001 42.763542),68
+1492,,Bob,Cooley,573 Jasmine Dr,Holland,MI,49423-4673,(616) 836-2607,mary.cooley@priorityhealth.com,Match,Exact,POINT (-86.13406999999999 42.764614),69
+1515,,Matthew,Gibson,520 Graafschap Rd,Holland,MI,49423-4548,(616) 340-1237,mcgibson20@gmail.com,Match,Exact,POINT (-86.13727 42.77764000000001),71
+1525,,Chris,Caropepe,6247 Woodcliff St,Holland,MI,49423-7334,,melissa@caropepe.com,Match,Exact,POINT (-86.16249999999999 42.76624),72
+1526,,Melissa,Bielik,105 W 19th St,Holland,MI,49423,(616) 994-8555,melissabielik@yahoo.com,Match,Exact,POINT (-86.11239 42.7803),73
+1530,,Merrill,Tutton,PO Box 2456 Griswold Avenue General Delivery,Macatawa,MI,49434-9999,(616)335-3300,merrilltut@mc.com,Match,Exact,POINT (-86.20808000000002 42.766495),74
+1584,,Michelle,Roberts,1034 W 32nd St,Holland,MI,49423-7387,(616) 291-2914,mlynn189att.net,Match,Non_Exact,POINT (-86.15205 42.768288),75
+1586,,Melissa,Anderson,259 W 33rd Street,Holland,MI,49423-4605,(616)405-8015,moanderson5@hotmail.com,Match,Non_Exact,POINT (-86.11893000000001 42.76755),76
+1589,,Linda,VanderHulst,553 W 19th,Holland,MI,49423-3911,(616)796-9672,molly1799@gmail.com,Match,Non_Exact,POINT (-86.13234 42.780186),77
+1630,,Ellen,VanderZwaag,1215 W 32nd St,Holland,MI,49423,(616) 335-9537,nanazall@cpkchurch.org,Match,Exact,POINT (-86.15906 42.768257),78
+1715,,Penelope,Rose,258 W 22nd St,Holland,MI,49423,(616) 796-9962,penelope8783@gmail.com,Match,Exact,POINT (-86.11914 42.77753),79
+1724,,Emily,Phelps,780 Brook Village Ct,Holland,MI,49423-5641,(616) 403-0890,phelpsee1983@gmail.com,Match,Exact,POINT (-86.13405 42.76726),80
+1754,,,Pressing Matters Quilt Shoppe,399 E 32nd St,Holland,MI,49423,,pressingmattersquiltshop@charter.net,Match,Non_Exact,POINT (-86.125175 42.76842),81
+1764,,Peter,Webster,635 Michigan Ave,Holland,MI,49423-4957,(616) 836-6132,pweb4@att.net,Match,Exact,POINT (-86.11350999999998 42.773544),82
+1786,,Randy,Bigelow,897 Ottawa Ave,Holland,MI,49423-4619,(616) 395-4138,randybigelow@att.net,Match,Exact,POINT (-86.12654999999999 42.76381),83
+1793,,Ray,Morris,843 Graafschap Rd,Holland,MI,49423-8949,(636) 294-3117,rayandsuemorris@gmail.com,Match,Exact,POINT (-86.13699 42.766174),84
+5036,,Marsha,Gibson,843 Graafschap Rd,Holland,MI,49423-8949,(616) 405-3209,no@email.com,Match,Exact,POINT (-86.13699 42.766174),84
+1797,,Bev,Plagenhoef,852 Creekridge Dr,Holland,MI,49423-7603,,rbplagen@live.com,Match,Exact,POINT (-86.14938000000002 42.765663),85
+1809,,Barbara,Muir,791 Brook Village Ct,Holland,MI,49423-4676,,renae.muir@att.net,Match,Exact,POINT (-86.13401999999998 42.76715),86
+1818,,Sarah,Gladstone,351 W 31st St,Holland,MI,49423-6910,,rev.sarahgladstone@gmail.com,Match,Non_Exact,POINT (-86.12338000000004 42.769367),87
+1821,,Allen,Timmerman,823 Knollcrest Ave,Holland,MI,49423-7325,(616) 335-2609,revjacki55@gmail.com,Match,Exact,POINT (-86.14086 42.766304),88
+1829,,Derek,Wolff,200 W 21st St,Holland,MI,49423-4738,6164056562,rhiannanwolff@yahoo.com,Match,Non_Exact,POINT (-86.11654 42.77843),89
+1833,,Rich,Mersman,940 Songbird Ln,Holland,MI,49423-4698,(616) 396-4430,rich.mersman@gmail.com,Match,Exact,POINT (-86.12217 42.762558),90
+1860,,Rebecca,Marshall,1993 W 32nd St,Holland,MI,49423-4364,(616) 886-6373,rmarshall69@yahoo.com,Match,Non_Exact,POINT (-86.19093000000002 42.767876),91
+1890,,Roxanne,DeNeff,6330 147th Ave,Holland,MI,49423-8824,(616) 403-8173,roxu13@charter.net,Match,Exact,POINT (-86.16925000000001 42.76145),92
+1904,,Ruth,Slenk,4690 Pine Dr,Holland,MI,49423-8922,,ruthann1955@charter.net,Match,Exact,POINT (-86.180336 42.76105),93
+1919,,Stephanie,Atwood,370 W 34th St,Holland,MI,49423-4607,,samiller87@yahoo.com,Match,Non_Exact,POINT (-86.124 42.7666),94
+1920,,Samantha,VanRaalte,6476 Maple Ln,Holland,MI,49423,(616) 335-9711,samkvr@chartermi.net,Match,Exact,POINT (-86.185776 42.758633),95
+1930,,Sandra,Bromley,543 Graafschap Rd,Holland,MI,49423-4540,(616) 889-0457,sandylbromley@gmail.com,Match,Exact,POINT (-86.13724000000001 42.776886),96
+1954,,Scott,Huizinga,377 W 35th St,Holland,MI,49423-4609,(616) 206-8577,scott_huizinga@yahoo.com,Match,Non_Exact,POINT (-86.12447 42.76559),97
+1971,,Katie,Auwema,648 W 21st St,Holland,MI,49423-4010,(616) 928-8254,seaweed66@hotmail.com,Match,Non_Exact,POINT (-86.135605 42.778313),98
+2018,,Daniel,VanTil,244 W 22nd St,Holland,MI,49423-4707,6162834275,skvantil@gmail.com,Match,Non_Exact,POINT (-86.1187 42.77753),99
+2026,,Sean,Schaap,6374 Reserve Way,Holland,MI,49423-7911,6163352936,slschaey@chartermi.net,Match,Exact,POINT (-86.175735 42.759357),100
+2035,,Nancy,Ooms,833 W 25th St,Holland,MI,49423-4574,(616) 212-8618,smoo5908@gmail.com,Match,Non_Exact,POINT (-86.14371 42.77468),101
+2059,,Andrew,Blocher,725 W 32nd St,Holland,MI,49423-6874,,sswscheduler@yahoo.com,Match,Non_Exact,POINT (-86.13814499999999 42.76834),102
+2069,,Starla,Wise,525 W 22nd St,Holland,MI,49423-4017,(231) 571-0581,starlawise@yahoo.com,Match,Non_Exact,POINT (-86.1311 42.777466),103
+2073,,Ryan,TeVelde,575 Crescent Dr,Holland,MI,49423-3425,(616) 396-1052,steph@tevelde.net,Match,Exact,POINT (-86.13377 42.78250999999999),104
+2075,,Stephanie,Kirt,623 Jasmine Dr,Holland,MI,49423-5601,(616) 510-1289,stephaniekirt@yahoo.com,Match,Exact,POINT (-86.13507 42.7646),105
+2090,,Tammy,Lohman,4669 62nd St,Holland,MI,49423-8947,(616) 212-6961,stlohman@gmail.com,Match,Exact,POINT (-86.15678 42.759163),106
+2094,,Rodger,Stroop,943 Bluebell Dr,Holland,MI,49423-6821,(616) 566-2699,stroop.cathy@gmail.com,Match,Exact,POINT (-86.14815 42.771122),107
+2118,,Svang,Khoung,661 Washington Ave,Holland,MI,49423-4961,(616) 312-3238,svangkhoung12@gmail.com,Match,Exact,POINT (-86.1169 42.772762),108
+2122,,Steve,Weeks,6479 Castle Ave,Holland,MI,49423-8989,(616) 566-0986,swmfst16@gmail.com,Match,Exact,POINT (-86.18245999999998 42.75607700000001),109
+2130,,Tad,Westveer,6356 Reserve Way,Holland,MI,49423-7911,(616)335-3631,tadw@genzink.net,Match,Exact,POINT (-86.17525999999999 42.759377),110
+2140,,Tara,Reibel,6252 Woodcliff St,Holland,MI,49423,(616) 405-5478,tarareibel@gmail.com,Match,Exact,POINT (-86.16285000000001 42.76623),111
+2154,,Donna,Nuggent,2034 Lakeway Dr,Holland,MI,49423-4324,(616) 335-2787,tedon@chartermi.net,Match,Exact,POINT (-86.19283 42.771095),112
+2157,,Carl,Stanek,1871 S Shore Dr,Holland,MI,49423-4386,(616) 788-7678,teresa.a.stanek@jci.com,Match,Non_Exact,POINT (-86.18661999999998 42.77173),113
+2162,,Terry,VanderLee,565 Brookstone St,Holland,MI,49423-8852,(616) 283-7839,terryavanderlee@sbcglobal.net,Match,Exact,POINT (-86.13367 42.760113),114
+2176,,Chad,Schultz,6466 Huntington Dr,Holland,MI,49423-7354,(231) 571-5302,themschultzs@yahoo.com,Match,Exact,POINT (-86.18352 42.766582),115
+2189,,Tiffanie,Will,774 Newcastle Dr,Holland,MI,49423-4556,,tiffaniewill@gmail.com,Match,Exact,POINT (-86.141075 42.770443),116
+2192,,Tim,Clark,6388 Blue Jay Ln,Holland,MI,49423-8917,(616)335-8755,timc@skylinechurches.com,Match,Exact,POINT (-86.17505 42.76298),117
+2197,,Todd,Bush,717 Harrington Ave,Holland,MI,49423-6750,(616)335-9935,tinab1003@yahoo.com,Match,Exact,POINT (-86.178894 42.769634),118
+2208,,Kathy,Austin,6579 Partridge Ln,Holland,MI,49423-8965,(616)994-6096,tkaustin@t2comm.net,Match,Non_Exact,POINT (-86.19556999999998 42.7657),119
+2245,,Trevor,Mitchell,556 E 24th St,Holland,MI,49423-4821,,trevormitchell76@gmail.com,Match,Non_Exact,POINT (-86.1327 42.775738),120
+2267,,Tessa,Wiley,715 Saunders Ave,Holland,MI,49423-4332,(616) 298-9245,twiley03@bauer.edu,Match,Exact,POINT (-86.18584 42.769783),121
+2311,,Wayne,Bakker,642 Jasmine Dr,Holland,MI,49423-5601,(616) 886-0011,wabakker@hotmail.com,Match,Exact,POINT (-86.13547 42.764584),122
+2323,,Bonnie,Weikert,1008 Bluebell Dr,Holland,MI,49423-6861,,weikert611@yahoo.com,Match,Exact,POINT (-86.150215 42.77164000000001),123
+2354,,William,Raymond,873 Creekridge Dr,Holland,MI,49423-7606,(616) 796-8161,wraymond@mentech.net,Match,Exact,POINT (-86.149345 42.76556400000001),124
+2371,,Hillary,Talsma,551 W 21st St,Holland,MI,49423-4050,,zwiephillary@yahoo.com,Match,Non_Exact,POINT (-86.1323 42.77835),403
+2385,,Lee,Abramson,315 W 24th,Holland,MI,49423-4036,,no@email.com,Match,Non_Exact,POINT (-86.12224000000001 42.77572),126
+2456,,Tracy,Algra,615 Harrington,Holland,MI,49423,,no@email.com,Match,Non_Exact,POINT (-86.179016 42.773613),127
+2460,,Heidi,Allen,370 W 20th St,Holland,MI,49423,(616)392-4775,no@email.com,Match,Exact,POINT (-86.12424 42.77931599999999),128
+2462,,Ray,Allen,600 Lugers Rd,Holland,MI,49423-6827,,no@email.com,Match,Exact,POINT (-86.14704999999999 42.774727),129
+2471,,James,Allen,4623 66th St,Holland,MI,49423-8933,(269) 275-3549,no@email.com,Match,Exact,POINT (-86.19611999999999 42.757065),130
+2484,,Vanessa,Alvarez,469 W 21st St,Holland,MI,49423,6163922605,no@email.com,Match,Exact,POINT (-86.1288 42.778385),131
+6589,,Sue,Kuczynski,469 W 21st St,Holland,MI,49423-4048,(616) 298-2825,no@email.com,Match,Non_Exact,POINT (-86.1288 42.778385),131
+2491,,Ed,Amaya,4717 Wildwood Rd,Holland,MI,49423-7368,(616)335-2652,no@email.com,Match,Exact,POINT (-86.18504 42.76423),132
+2500,,Londa,Anderson,6467 147th Ave,Holland,MI,49423-8923,(616)335-3902,no@email.com,Match,Exact,POINT (-86.18339 42.76146),133
+2507,,Art,Anderson,561  Bay Ave,Holland,MI,49423-4480,(616)273-9204,no@email.com,Match,Exact,POINT (-86.16038 42.77571500000001),134
+2562,,Leticia,Arizola,526 W 20th St,Holland,MI,49423-3922,,no@email.com,Match,Non_Exact,POINT (-86.13109 42.779274),135
+2632,,Robin,Bailey,2100 S Shore Dr Apt 2,Holland,MI,49423-4388,(616)335-2594,no@email.com,Match,Non_Exact,POINT (-86.19521999999998 42.769657),136
+2644,,Phil,Baillat,6467 Huntington Dr,Holland,MI,49423-7353,(616)335-3167,no@email.com,Match,Exact,POINT (-86.18352 42.766594),137
+2671,,Robert,Bakker,629 Spring Ln,Holland,MI,49423-4672,(616)394-5687,no@email.com,Match,Exact,POINT (-86.13526 42.765892),138
+2685,,Gail,Ballard,940 S Shore Dr,Holland,MI,49423-4539,(616) 994-8383,no@email.com,Match,Non_Exact,POINT (-86.1481 42.77512700000001),139
+2710,,Marge,Barkel,1639 S Shore Dr,Holland,MI,49423-4435,(616) 335-3227,no@email.com,Match,Non_Exact,POINT (-86.176186 42.7744),140
+2759,,Carrie,Baskers,6031 Heritage Meadow Ct,Holland,MI,49423-8748,,no@email.com,Match,Exact,POINT (-86.13925999999999 42.761646),141
+2800,,,Beautiful Things Thrift,1028 Washington Ave,Holland,MI,49423-5204,,no@email.com,Match,Exact,POINT (-86.11655 42.76051),142
+2806,,Richard,Becker,2382 Valley,Macatawa,MI,49434,(616) 335-2145,no@email.com,Match,Non_Exact,POINT (-86.20693 42.765293),143
+2815,,Alan,Beckman,772 Clarewood Ct,Holland,MI,49423,(616) 396-8289,no@email.com,Match,Exact,POINT (-86.14333000000001 42.766834),144
+2864,,Mary,Benedict,290 Danby Ct,Holland,MI,49423-4687,,no@email.com,Match,Exact,POINT (-86.12075 42.76622800000001),145
+2869,,Miluska,Benko,776 Meadowbrook Ave,Holland,MI,49423-7326,,no@email.com,Match,Exact,POINT (-86.13961 42.76769),146
+2872,,Peggy,Bennett,805 Apple Blossom Ln Unit 6,Holland,MI,49423-7347,(616) 335-9553,no@email.com,Match,Exact,POINT (-86.14494999999999 42.76735),147
+2932,,Hillary,Bickel,604 W 23rd St,Holland,MI,49423-4026,(231) 730-0238,no@email.com,Match,Non_Exact,POINT (-86.13428 42.776524),148
+2953,,Pia,Bineau,332 W 31st St,Holland,MI,49423,,no@email.com,Match,Exact,POINT (-86.12244399999999 42.769367),149
+2956,,Char,Biolette,1492 S Shore Dr,Holland,MI,49423-4433,(616) 335-2507,no@email.com,Match,Non_Exact,POINT (-86.16986999999996 42.77443),150
+2974,,,Black Sheep Baa & Grill,1642 S Shore Dr,Holland,MI,49423-4416,,no@email.com,Match,Non_Exact,POINT (-86.17617 42.77439),151
+2998,,Alicia,Blauwkamp,4686 Cottonwood Dr,Holland,MI,49423-8926,,no@email.com,Match,Exact,POINT (-86.18646 42.760685),152
+2999,,Laverne,Blauwkamp,943 Grandridge Ct,Holland,MI,49423-6823,,no@email.com,Match,Exact,POINT (-86.14753 42.77229000000001),153
+3004,,,Blimpie,434 Washington Ave,Holland,MI,49423-4103,,no@email.com,Match,Exact,POINT (-86.11703 42.78114),154
+3065,,Bill,Boetcher,1347 Heather Dr,Holland,MI,49423-4499,(616) 510-1186,no@email.com,Match,Exact,POINT (-86.16450999999998 42.771084),155
+3122,,William,Bos,685 Lugers Rd,Holland,MI,49423-6846,,no@email.com,Match,Exact,POINT (-86.14690999999998 42.77164000000001),156
+3149,,Ruth,Bouman,963 Laketown Dr,Holland,MI,49423-7323,(616)335-3808,no@email.com,Match,Exact,POINT (-86.14915000000001 42.766964),157
+3175,,,Boy Scout Troup 33,4655 61st St,Holland,MI,49423-9793,,no@email.com,Match,Exact,POINT (-86.14672 42.75813),158
+3213,,Erica,Braun,1599 Jerome St,Holland,MI,49423-6703,(616) 405-4224,no@email.com,Match,Exact,POINT (-86.17461 42.771137),159
+3220,,Bill,Bremer,556 W 29th St,Holland,MI,49423-7203,(616)392-4606,no@email.com,Match,Non_Exact,POINT (-86.13292 42.771103),160
+3236,,Donna,Breuker,471 W 30th St,Holland,MI,49423-7208,,no@email.com,Match,Non_Exact,POINT (-86.12841999999998 42.77025),161
+3324,,Judy,Brown,293 Chatham Ave,Holland,MI,49423-4685,,no@email.com,Match,Non_Exact,POINT (-86.12043 42.766968),162
+3351,,Steven,Bruinsma,6357 Reserve Way,Holland,MI,49423,(616) 335-2263,no@email.com,Match,Exact,POINT (-86.17527 42.759384),163
+3353,,Mary,Brummitt,486 Plasman Ave,Holland,MI,49423-3968,,no@email.com,Match,Exact,POINT (-86.133934 42.778988),164
+3371,,Barb,Bryant,844 W 25th St,Holland,MI,49423,(616)335-2474,no@email.com,Match,Exact,POINT (-86.144104 42.77467),165
+3402,,Jennifer,Buist,6591 147th,Holland,MI,49423-8931,(616) 796-8326,no@email.com,Match,Non_Exact,POINT (-86.195145 42.761497),166
+3446,,David,Burns,4620 Forest Ln,Holland,MI,49423-8991,(269) 908-1000,no@email.com,Match,Exact,POINT (-86.182106 42.75621),167
+3523,,Sharon,Calligaro,825 Apple Blossom Ln,Holland,MI,49423-7347,(616) 422-3683,no@email.com,Match,Exact,POINT (-86.14471 42.767292),168
+3661,,Kelly,Charles,751 Plasman Ave,Holland,MI,49423-7223,(616) 546-1091,no@email.com,Match,Exact,POINT (-86.13344000000002 42.769135),169
+8631,,Sara,Ritsema,751 Plasman Ave,Holland,MI,49423-7223,,no@email.com,Match,Exact,POINT (-86.13344000000002 42.769135),169
+3688,,Theareak,Chourb,549 W 23rd St,Holland,MI,49423-4055,,no@email.com,Match,Non_Exact,POINT (-86.13221 42.77656),170
+3706,,Mun,Chum,101 W 21st St,Holland,MI,49423,,no@email.com,Match,Exact,POINT (-86.11179 42.77848),171
+3721,,Kevin,Clark,1354 Heather Dr,Holland,MI,49423-4498,(616) 335-3222,no@email.com,Match,Exact,POINT (-86.16476 42.771065),172
+3732,,,Classic Fitness,746 Michigan Ave,Holland,MI,49423-6943,,no@email.com,Match,Exact,POINT (-86.11636 42.769306),174
+3825,,Dave,Cook,888 Lugers Rd,Holland,MI,49423-7394,,no@email.com,Match,Exact,POINT (-86.14691999999999 42.76492),175
+3874,,Scott,Courey,718 Eastgate Dr,Holland,MI,49423,(616) 394-4287,no@email.com,Match,Exact,POINT (-86.13908000000001 42.76947),176
+3890,,Frankie,Crago,344 W 17th St,Holland,MI,49423,(616) 820-9322,no@email.com,Match,Exact,POINT (-86.12321 42.782032),177
+3892,,,Craig Smith DDS,551 W 18th St,Holland,MI,49423,,no@email.com,Match,Exact,POINT (-86.13269 42.78107),178
+3952,,Marianne,Cunningham,759 W 26th St,Holland,MI,49423-4572,,no@email.com,Match,Non_Exact,POINT (-86.14076 42.77378),179
+3975,,Kerry,Daab,6468 Wildcreek Dr,Holland,MI,49423,(616) 335-5100,no@email.com,Match,Exact,POINT (-86.1841 42.763783),180
+4001,,Tami,Danze,1088 Cobblestone Rd,Holland,MI,49423,(616)393-0988,no@email.com,Match,Exact,POINT (-86.13345 42.75903),181
+4009,,Thomas,Daubenspeck,308 W 23rd St,Holland,MI,49423,,no@email.com,Match,Exact,POINT (-86.12066999999998 42.776615),182
+4020,,Jannell,Davis,655 Old Orchard Rd,Holland,MI,49423-4443,(616) 335-9141,no@email.com,Match,Non_Exact,POINT (-86.166725 42.77272),183
+4044,,Scott,Dean,1798 S Shore Dr,Holland,MI,49423-4343,(616) 644-9669,no@email.com,Match,Non_Exact,POINT (-86.18308 42.772427),184
+4081,,June,DeHaan,160 W 22nd,Holland,MI,49423-4705,(616) 394-5935,no@email.com,Match,Non_Exact,POINT (-86.11360999999999 42.77756),185
+4150,,Dan,DePree,704 Brookfield,Holland,MI,49423,(616) 335-9412,no@email.com,Match,Non_Exact,POINT (-86.139275 42.76745),186
+4152,,Chelsea,DePree,291 Chatham Ave,Holland,MI,49423-4685,,no@email.com,Match,Non_Exact,POINT (-86.12042 42.766968),187
+4157,,Robert M.,Dernberger,1530 Jerome St,Holland,MI,49423-6714,(616)335-8203,no@email.com,Match,Exact,POINT (-86.17101 42.77115),188
+4189,,Joanne,Dewitt,1516 S Shore Dr Apt 11,Holland,MI,49423-4400,(616) 298-8142,no@email.com,Match,Non_Exact,POINT (-86.17121 42.77442),190
+4234,,Harold,Diepenhorst,1107 Graafschap Rd,Holland,MI,49423-9782,(616)392-4352,no@email.com,Match,Exact,POINT (-86.13679999999999 42.758305),191
+4236,,Pat,Dietrich,4707 Forest Ridge Dr,Holland,MI,49423-8992,,no@email.com,Match,Exact,POINT (-86.20299999999996 42.761406),192
+4243,,David,Dilley,265 W 21st St,Holland,MI,49423-4746,,no@email.com,Match,Non_Exact,POINT (-86.11927 42.77844),193
+4250,,Art,Dirkse,2084 S Shore Dr,Holland,MI,49423-4323,(616) 499-7126,no@email.com,Match,Non_Exact,POINT (-86.19479 42.769665),194
+4252,,Kristi,Dirkse,624 S 160th Ave,Holland,MI,49423-6706,(616) 218-5907,no@email.com,Match,Non_Exact,POINT (-86.17650999999999 42.772724),195
+4267,,Neal,Dobbin,582 Crescent Dr,Holland,MI,49423-3426,(616) 772-4437,no@email.com,Match,Exact,POINT (-86.13383 42.78248),196
+4293,,Ronald,Door,6396 Blue Jay Ln,Holland,MI,49423-8917,(616) 335-9248,no@email.com,Match,Exact,POINT (-86.17603000000004 42.762432),197
+4336,,Jessica,Drake,409 E 40th St,Holland,MI,49423-5344,(616)298-2647,no@email.com,Match,Non_Exact,POINT (-86.12439999999999 42.761524),198
+4338,,Ron,Draper,736 Ruth Ave,Holland,MI,49423-6833,(616) 834-2486,no@email.com,Match,Exact,POINT (-86.1484 42.76927),199
+4427,,Stephanie,Dykhuis,385 Wildwood,Holland,MI,49423-6922,(616)566-6399,no@email.com,Match,Non_Exact,POINT (-86.12458000000002 42.770252),200
+4500,,Kelly,Elders,646 Myrtle,Holland,MI,49423-6830,(616)335-2743,no@email.com,Match,Non_Exact,POINT (-86.15683 42.77285999999999),201
+4504,,Andrew,Eldridge,704 Van Raalte Ave,Holland,MI,49423-6952,,no@email.com,Match,Exact,POINT (-86.12019000000002 42.770973),202
+4507,,Judy,Elenbaas,1853 S Shore Dr,Holland,MI,49423-4339,(616) 566-0700,no@email.com,Match,Non_Exact,POINT (-86.1854 42.77199),203
+4518,,Lauren,Ellens,1284 S Shore Dr,Holland,MI,49423-4419,(205) 821-9528,no@email.com,Match,Non_Exact,POINT (-86.162346 42.77541),204
+4534,,Erik,Elsess,860 W 25th St,Holland,MI,49423-4516,(616)298-8466,no@email.com,Match,Non_Exact,POINT (-86.14482 42.774666),205
+4616,,Jon,Fakler,706 Myrtle Ave,Holland,MI,49423-6830,,no@email.com,Match,Exact,POINT (-86.156746 42.770767),207
+4619,,Peggy Sue,Falker,706 Myrtle Ave,Holland,MI,49423-6830,(616) 335-2505,no@email.com,Match,Exact,POINT (-86.156746 42.770767),207
+4642,,Dennis,Feaster,1053 Graystone Rd,Holland,MI,49423-8863,(616) 298-2061,no@email.com,Match,Exact,POINT (-86.13193000000004 42.75963),208
+4664,,Patty,Ferguson,836 Allen Dr,Holland,MI,49423,(616) 994-8211,no@email.com,Match,Exact,POINT (-86.14451 42.778194),209
+4706,,Angela,Finney,1103 Cumberland Ave,Holland,MI,49423-5261,(616) 294-2678,no@email.com,Match,Non_Exact,POINT (-86.121155 42.75876599999999),210
+4860,,Bruce,Fries,275 W 23rd St,Holland,MI,49423-4710,,no@email.com,Match,Non_Exact,POINT (-86.11969000000001 42.776623),211
+4921,,Paul & Bren,Gamby,4676 Pine Dr,Holland,MI,49423,(616) 335-9962,no@email.com,Match,Exact,POINT (-86.180336 42.760742),212
+4937,,Jose Ramon,Garcia,382 Washington Blvd,Holland,MI,49423-3346,,no@email.com,Match,Exact,POINT (-86.11784 42.783363),213
+4984,,Stacy,Gaynor,682 Saunders Ave,Holland,MI,49423,(616) 494-0540,no@email.com,Match,Exact,POINT (-86.18586999999999 42.77037),214
+4991,,Michael,Geib,528 Graafschap Rd,Holland,MI,49423-4548,,no@email.com,Match,Exact,POINT (-86.137276 42.777325),215
+5084,,Tami,Glover,576 Graafschap Rd,Holland,MI,49423-4548,(616) 928-2430,no@email.com,Match,Exact,POINT (-86.13723 42.775757),217
+5092,,James,Gohlke,247 W 21st St,Holland,MI,49423-4746,(616) 335-8183,no@email.com,Match,Non_Exact,POINT (-86.118515 42.77844),218
+5093,,Dawnette,Golay,311 W 21st St,Holland,MI,49423-4001,(616) 566-3895,no@email.com,Match,Non_Exact,POINT (-86.121544 42.77843499999999),219
+5099,,Esther,Gomez,324 W 21st St,Holland,MI,49423-4002,(616) 396-4818,no@email.com,Match,Non_Exact,POINT (-86.122055 42.77842),220
+5101,,Francisco,Gomez,1300 W 32nd St,Holland,MI,49423-7357,(616) 335-2614,no@email.com,Match,Non_Exact,POINT (-86.16183000000002 42.76821500000001),221
+5120,,Richard,Goodrich,316 W 21st St,Holland,MI,49423,(616) 392-6791,no@email.com,Match,Exact,POINT (-86.12170999999999 42.778423),222
+5161,,Amy,Gras,630 Midway Ave,Holland,MI,49423-4423,(616) 886-1318,no@email.com,Match,Exact,POINT (-86.16305 42.7734),223
+5167,,Michelle,Graves,6383 Blue Jay Ln,Holland,MI,49423-8917,(616) 298-7393,no@email.com,Match,Exact,POINT (-86.17480999999999 42.763332),224
+5174,,,Great Clips,1153 Washington Ave,Holland,MI,49423-5380,,no@email.com,Match,Exact,POINT (-86.1165 42.759724),225
+5296,,Edilverto,Gutierrez,657 W 22nd St,Holland,MI,49423-4053,,no@email.com,Match,Non_Exact,POINT (-86.13582 42.777428),226
+5309,,Ileana,Habsburg,1625 Harding St,Holland,MI,49423-6702,,no@email.com,Match,Exact,POINT (-86.17495 42.769333),227
+5312,,Tyrone,Hackney,310 Wildwood Dr,Holland,MI,49423-6921,(616) 392-1410,no@email.com,Match,Exact,POINT (-86.12235 42.771114),228
+5384,,Wendy,Hanko,537 Spring Lane Dr,Holland,MI,49423-4651,,no@email.com,Match,Non_Exact,POINT (-86.133385 42.76615),229
+5402,,,Harbor Health & Massage,444 Washington Ave,Holland,MI,49423-4103,,no@email.com,Match,Exact,POINT (-86.11702 42.78075),230
+5434,,Christine,Harris,2031 W 32nd St,Holland,MI,49423-4363,(616) 499-7786,no@email.com,Match,Non_Exact,POINT (-86.19255 42.767853),231
+5457,,AHartsuiker,Harts,1104 Fountain View Cir Unit 2,Holland,MI,49423-5634,(616) 298-2846,no@email.com,Match,Exact,POINT (-86.12338000000004 42.758476),416
+10021,,David,Vanden Berg,1104 Fountain View Cir Unit 1,Holland,MI,49423-5634,,no@email.com,Match,Exact,POINT (-86.12338000000004 42.758476),416
+5466,,James,Haspas,828 Allen Dr,Holland,MI,49423-4523,,no@email.com,Match,Exact,POINT (-86.14423000000002 42.77817),233
+5496,,Diane,Haworth,623 Lugers Rd,Holland,MI,49423-6803,,no@email.com,Match,Exact,POINT (-86.14700000000001 42.77376),234
+5510,,Janice,Hays,689 Van Raalte Ave,Holland,MI,49423-6949,(616) 394-5268,no@email.com,Match,Exact,POINT (-86.120186 42.77142),235
+5549,,Peg,Helmink,4740 Charleston Ct,Holland,MI,49423-8727,(616) 546-0161,no@email.com,Match,Exact,POINT (-86.14049 42.76372),236
+5569,,Dan,Hengst,786 Knollcrest Ave,Holland,MI,49423-7324,,no@email.com,Match,Exact,POINT (-86.14086 42.766605),237
+5579,,Paul,Herdegen,858 Knollcrest Ave,Holland,MI,49423-7324,,no@email.com,Match,Exact,POINT (-86.14089 42.76600300000001),238
+5596,,Cristina,Herrick,315 W 17th St,Holland,MI,49423-3422,(616) 738-1447,no@email.com,Match,Non_Exact,POINT (-86.121765 42.782055),239
+5603,,Jack,Hertz,4738 Charleston Ct,Holland,MI,49423-8727,(616) 494-1066,no@email.com,Match,Exact,POINT (-86.14046999999999 42.763706),240
+5609,,Karen,Hettinger,600 Bay Ave,Holland,MI,49423-6806,,no@email.com,Match,Exact,POINT (-86.16034999999999 42.774582),241
+5656,,Robert,Hinojosw,874 W 25th St,Holland,MI,49423,(616)335-6210,no@email.com,Match,Exact,POINT (-86.14503000000001 42.77467),242
+5668,,Tiffany,Hirdes,6161 147th Ave,Holland,MI,49423-8986,(616) 834-2866,no@email.com,Match,Exact,POINT (-86.15303 42.761505),243
+5678,,Kathryn,Hobbs,281 Winsted Ave,Holland,MI,49423-4692,,no@email.com,Match,Non_Exact,POINT (-86.12044 42.765507),244
+5733,,,Holland Lock & Safe,503 W 17th St,Holland,MI,49423-3442,,no@email.com,Match,Non_Exact,POINT (-86.13035600000001 42.781998),245
+5757,,Kimberly,Holmes,4786 Pine Hollow Rd,Holland,MI,49423-7350,(616) 335-1863,no@email.com,Match,Exact,POINT (-86.17886999999996 42.767517),246
+5774,,Steven,Honderd,659 Midway Ave,Holland,MI,49423-4423,,no@email.com,Match,Exact,POINT (-86.163 42.772785),247
+5793,,Mike,Horn,764 New Castle Dr,Holland,MI,49423,(616)335-8056,no@email.com,Match,Non_Exact,POINT (-86.14089 42.77046),248
+5805,,James,Hosta,786 W 26th St,Holland,MI,49423-4518,(616) 335-9426,no@email.com,Match,Non_Exact,POINT (-86.141685 42.77376599999999),249
+5827,,Rose,Hovinga,624 Lugers Rd,Holland,MI,49423,(616) 335-2907,no@email.com,Match,Exact,POINT (-86.14702 42.77376),250
+5834,,Karen,Howard,4764 Pine Hollow Rd,Holland,MI,49423-7350,,no@email.com,Match,Exact,POINT (-86.17891999999998 42.767006),251
+5836,,Tod,Howard,292 Chatham Ave,Holland,MI,49423-4686,(616) 510-7579,no@email.com,Match,Non_Exact,POINT (-86.12043 42.766956),252
+5923,,Mark,Hutchinson,958 South Shore Dr,Holland,MI,49423,(616)335-9050,no@email.com,Match,Exact,POINT (-86.148926 42.774723),253
+5943,,Tiro,Illa,383 W 17th St,Holland,MI,49423-3438,,no@email.com,Match,Non_Exact,POINT (-86.12479399999999 42.782036),254
+5957,,Patrick,Irish,439 Brecado Ct,Holland,MI,49423-4528,,no@email.com,Match,Exact,POINT (-86.139206 42.780266),255
+5997,,Phillip,Jager,695 Crestview St,Holland,MI,49423-7317,(616) 335-3426,no@email.com,Match,Exact,POINT (-86.13797 42.765446),256
+6077,,Scott,Johnson,624 Central Bay Ave,Holland,MI,49423-4414,(616) 848-1071,no@email.com,Match,Exact,POINT (-86.164055 42.77356),257
+6090,,Nicole,Johnson,785 W 26th St,Holland,MI,49423-4572,,no@email.com,Match,Non_Exact,POINT (-86.141655 42.773777),258
+6176,,Nathan,Kade,635 W 23rd St,Holland,MI,49423-4025,,no@email.com,Match,Non_Exact,POINT (-86.13515500000004 42.776527),259
+6185,,Mary,Kalkman,6182 147th Ave,Holland,MI,49423-8986,(616) 335-6145,no@email.com,Match,Exact,POINT (-86.1551 42.76150999999999),260
+6195,,Craig,Kammeraad,4777 64th St,Holland,MI,49423-8980,,no@email.com,Match,Exact,POINT (-86.17678000000002 42.76633),261
+9412,,Sherri,Southwell,4777 64th St,Holland,MI,49423-8980,,no@email.com,Match,Exact,POINT (-86.17678000000002 42.76633),261
+6203,,Paul,Kamps,937 Village Ct,Holland,MI,49423-7600,,no@email.com,Match,Exact,POINT (-86.14815 42.765965),262
+6251,,Don,Keller,6683 Summit View,Holland,MI,49423,(616) 335-3138,no@email.com,Match,Non_Exact,POINT (-86.20604 42.756813),263
+6318,,Greg,Kiekintveld,1728 Virgiana Pl,Holland,MI,49423,(616)335-5313,no@email.com,Match,Non_Exact,POINT (-86.180176 42.7707),264
+6362,,Edward,Kita,1232 Beach Dr,Holland,MI,49423,(616) 335-8745,no@email.com,Match,Exact,POINT (-86.159035 42.777203),265
+6391,,Amanda,Klinger,6548 147th Ave,Holland,MI,49423,(616) 298-8434,no@email.com,Match,Exact,POINT (-86.191475 42.761486),266
+6474,,Carol,Kooiker,1692 S Shore Dr,Holland,MI,49423-4415,,no@email.com,Match,Non_Exact,POINT (-86.17860400000001 42.774334),267
+6476,,David,Kool,748 Old Orchard Rd,Holland,MI,49423-4452,(616) 355-9557,no@email.com,Match,Non_Exact,POINT (-86.16660999999998 42.76933),268
+6525,,Deb,Krager,416 W 28th St,Holland,MI,49423-6974,,no@email.com,Match,Non_Exact,POINT (-86.12569999999999 42.772057),269
+6536,,Sam,Kramer,547 Grove Ave,Holland,MI,49423-4472,,no@email.com,Match,Exact,POINT (-86.15953 42.77662),270
+6540,,Margaret,Krause,4722 Heritage Meadow Dr,Holland,MI,49423-8729,(616) 392-1027,no@email.com,Match,Exact,POINT (-86.14008000000004 42.762558),271
+6567,,Nancy,Krueger,857 Deerview Ln,Holland,MI,49423,(616) 335-3396,no@email.com,Match,Exact,POINT (-86.14603000000002 42.764896),272
+6576,,Robert,Kruithof,6446 Spruce Ln,Holland,MI,49423,(616) 335-8678,no@email.com,Match,Exact,POINT (-86.1824 42.75915999999999),273
+6612,,Tim,LaBreche,690 Larkwood DR,Holland,MI,49423-6834,,no@email.com,Match,Exact,POINT (-86.14264 42.77135),275
+6644,,Ryan,Lamb,558 Blackstone,Holland,MI,49423-8856,(616)405-2355,no@email.com,Match,Non_Exact,POINT (-86.13291 42.75830999999999),276
+6651,,Janet,Lambright,701 Lakeside Dr,Macatawa,MI,49434-9705,,no@email.com,Match,Non_Exact,POINT (-86.20886 42.767124),277
+6681,,Greg,Laninga,6478 Spruce Ln,Holland,MI,49423-8921,(616) 335-2058,no@email.com,Match,Exact,POINT (-86.1824 42.759296),278
+6690,,Karen,Lareau,1019 Pinegrove Dr Apt 205,Holland,MI,49423-7399,(616) 298-9942,no@email.com,Match,Exact,POINT (-86.15170000000001 42.765976),443
+10505,,Carolyn,Watson,1019 Pinegrove Dr Apt 102,Holland,MI,49423-7399,,no@email.com,Match,Exact,POINT (-86.15170000000001 42.765976),443
+6710,,Chad,Lawson,640 W 22nd St,Holland,MI,49423-4054,,no@email.com,Match,Non_Exact,POINT (-86.13537600000002 42.77742),280
+6753,,Bill,Leismer,4667 Cherry St,Holland,MI,49423-8927,(616) 335-8244,no@email.com,Match,Exact,POINT (-86.18226 42.76114000000001),281
+6764,,Ron,Lenters,6266 Oakhurst St,Holland,MI,49423,(616) 335-3618,no@email.com,Match,Exact,POINT (-86.16325999999999 42.767204),282
+6810,,Richard,Lichti,1742 W 32nd St,Holland,MI,49423-7311,,no@email.com,Match,Non_Exact,POINT (-86.180595 42.76799000000001),283
+6816,,Doris,Lievense,557 W 31st St,Holland,MI,49423-7218,(616) 396-4317,no@email.com,Match,Exact,POINT (-86.13282 42.76931),284
+6819,,Sarah,Lilly,560 Old Macatawa Ct,Holland,MI,49423-6700,(517)980-3595,no@email.com,Match,Non_Exact,POINT (-86.16866999999998 42.77415),285
+6832,,Cassandra,Lindow,706 Larkwood Dr,Holland,MI,49423-6850,,no@email.com,Match,Exact,POINT (-86.141914 42.770763),286
+6853,,Diane,Livengood,397 W 33rd St,Holland,MI,49423,(616) 546-2618,no@email.com,Match,Exact,POINT (-86.124016 42.767548),287
+6883,,Kelly,Looman,325 W 21st St,Holland,MI,49423-4001,(616) 283-0788,no@email.com,Match,Non_Exact,POINT (-86.12214 42.77843),288
+6890,,Kelly,Lopez,1634 W 32nd St,Holland,MI,49423-7601,(616) 335-0395,no@email.com,Match,Non_Exact,POINT (-86.17525500000001 42.76804),289
+6906,,Robyn,Lovely,4758 Wildwood Rd,Holland,MI,49423-7355,(616) 335-4764,no@email.com,Match,Exact,POINT (-86.18494 42.765438),290
+6939,,Lori,Lutke,674 Larkwood Dr,Holland,MI,49423-6834,(616)335-3559,no@email.com,Match,Exact,POINT (-86.14287 42.771484),291
+6999,,Gwyn,Madden,71 W 21 St,Holland,MI,49423,(616) 466-3354,no@email.com,Match,Exact,POINT (-86.11135999999998 42.77848400000001),292
+7046,,John,Marcellino,842 Claremont Ct,Holland,MI,49423-7617,(616) 335-3851,no@email.com,Match,Exact,POINT (-86.14246 42.76708),293
+7054,,Ricardo,Mares,665 W 22nd St,Holland,MI,49423,(616) 393-4925,no@email.com,Match,Exact,POINT (-86.13605 42.777424),294
+7059,,Jose,Marin-Garcia,500 W 30th St,Holland,MI,49423-7200,(616) 638-3984,no@email.com,Match,Non_Exact,POINT (-86.130104 42.770226),295
+7114,,Chris,Martinez,1227 Janice St,Holland,MI,49423,(616) 335-4618,no@email.com,Match,Exact,POINT (-86.15954599999998 42.770527),296
+7123,,Rose,Martinez,1237 Marlene St,Holland,MI,49423-6844,(512) 897-7720,no@email.com,Match,Exact,POINT (-86.16051 42.769604),297
+7153,,Ellen,Mast,841 Brook Village Ct,Holland,MI,49423-5639,,no@email.com,Match,Exact,POINT (-86.133354 42.76698),298
+7302,,Chris,McNaughton,1334 Heather Dr,Holland,MI,49423-4498,,no@email.com,Match,Exact,POINT (-86.16408 42.771072),299
+7358,,Jennifer,Mendes,1849 W 32nd St,Holland,MI,49423-4366,(616)886-8418,no@email.com,Match,Non_Exact,POINT (-86.185005 42.767952),300
+7363,,Pamela,Mendoza,608 W 20th St,Holland,MI,49423-3960,(616) 396-5182,no@email.com,Match,Non_Exact,POINT (-86.13441999999998 42.779236),301
+7402,,Kim,Meyer,4627 Pine Dr,Holland,MI,49423-8922,(616)796-9037,no@email.com,Match,Exact,POINT (-86.180305 42.759632),302
+7422,,Cicely,Michalak,2425 Interlake Walk,Macatawa,MI,49434-9808,(847) 441-5104,no@email.com,Match,Exact,POINT (-86.20751 42.769314),303
+7462,,Terri,Miller,2037 Lakeway Dr.,Holland,MI,49423,(616)335-3492,no@email.com,Match,Exact,POINT (-86.19309 42.77111),304
+7486,,Gwen,Miller,2060 W 32nd St,Holland,MI,49423-7313,,no@email.com,Match,Non_Exact,POINT (-86.19396 42.767826),305
+7510,,Tim,Mills,1327 Heather Dr,Holland,MI,49423-4499,,no@email.com,Match,Exact,POINT (-86.16385 42.77108),306
+7518,,Jessica,Miranda - Bevier,650 Beechwood St,Holland,MI,49423,(616)335-9738,no@email.com,Match,Exact,POINT (-86.17345400000001 42.772163),307
+7520,,Jilanne,Misiewicz,594 Old Orchard Rd,Holland,MI,49423-4462,(616)335-2075,no@email.com,Match,Non_Exact,POINT (-86.16675600000001 42.77336),308
+7540,,Karen,Moes,617 S Shore Dr,Holland,MI,49423-4536,,no@email.com,Match,Non_Exact,POINT (-86.13515500000004 42.78097),309
+7563,,Sarah,Moneybrake,1056 S Shore Dr,Holland,MI,49423-4427,(616) 886-6716,no@email.com,Match,Non_Exact,POINT (-86.15294 42.7746),310
+7569,,Brenda,Monroe,505 W 30th St Apt B4,Holland,MI,49423-7211,,no@email.com,Match,Non_Exact,POINT (-86.129715 42.770237),411
+9929,,Madison,Tustin,505 W 30th St Apt. E11,Holland,MI,49423,(269) 910-0503,no@email.com,Match,Non_Exact,POINT (-86.129715 42.770237),411
+7605,,Pamela,Morell,6451 Hunters St,Holland,MI,49423-7360,,no@email.com,Match,Exact,POINT (-86.18364 42.765594),312
+7626,,April,Morris,1994 W 32nd St,Holland,MI,49423-7312,,no@email.com,Match,Non_Exact,POINT (-86.19048000000002 42.767868),313
+7640,,Julie,Morton,958 Songbird Ln,Holland,MI,49423-4698,(616)335-2640,no@email.com,Match,Exact,POINT (-86.12215999999999 42.762283),314
+7650,,Gerald J.,Mount,2070 S Shore Dr,Holland,MI,49423-4323,(616)335-9734,no@email.com,Match,Non_Exact,POINT (-86.19440999999998 42.76967),315
+7671,,Chad,Mulder,961 Pioneer Ave,Holland,MI,49423-4621,(616) 836-4791,no@email.com,Match,Exact,POINT (-86.12343 42.763493),316
+7682,,Chris,Mumford,1789 S Shore Dr,Holland,MI,49423-4338,,no@email.com,Match,Non_Exact,POINT (-86.18256 42.77255),317
+7692,,Brad & Joanna,Munster,4621 Pine Dr,Holland,MI,49423,(616)499-7630,no@email.com,Match,Exact,POINT (-86.1803 42.7595),318
+7693,,Casey,Munulla,782 Southgate St,Holland,MI,49423-4557,,no@email.com,Match,Exact,POINT (-86.141655 42.772408),319
+7826,,Erin,Nieves,630 Harrington Ave,Holland,MI,49423-6712,(616) 312-5830,no@email.com,Match,Exact,POINT (-86.179016 42.77298),320
+7854,,Mark,Northuis,321 Wildwood Dr,Holland,MI,49423-6920,(616) 394-9048,no@email.com,Match,Exact,POINT (-86.12251999999999 42.77109),321
+7889,,Cindy,Nyhoff,499 Van Raalte Ave,Holland,MI,49423-3943,(616) 395-0987,no@email.com,Match,Exact,POINT (-86.12029 42.778503),322
+7893,,David,Nyland,640 Midway Ave,Holland,MI,49423,(616)212-3958,no@email.com,Match,Exact,POINT (-86.16304000000002 42.773186),323
+7898,,Betty,Nyland,6033 Heritage Meadow Ct,Holland,MI,49423-8748,(616) 396-1311,no@email.com,Match,Exact,POINT (-86.13928 42.761646),324
+7913,,Amy,O'Keefe,1223 Marlene St,Holland,MI,49423-6844,,no@email.com,Match,Exact,POINT (-86.16031 42.76960800000001),325
+7949,,Julie,Olsen,6510 Maple Ln,Holland,MI,49423-8925,(616) 335-3296,no@email.com,Match,Exact,POINT (-86.186554 42.75877),326
+7950,,Barb,Olsen,1275 S Shore Dr,Holland,MI,49423-4434,,no@email.com,Match,Non_Exact,POINT (-86.16199 42.775433),327
+7978,,Julie Lynn,Oring,1862 S Shore Dr,Holland,MI,49423-4342,(616) 335-3334,no@email.com,Match,Non_Exact,POINT (-86.18568 42.77193),328
+8030,,Sally,Overway,689 S Shore Dr,Holland,MI,49423-4507,,no@email.com,Match,Non_Exact,POINT (-86.13814499999999 42.779667),329
+8053,,Wendi,Pairitz,408 W 20th St,Holland,MI,49423-3918,(719) 246-1929,no@email.com,Match,Non_Exact,POINT (-86.126114 42.779305),330
+8066,,Kami,Palmer,1143 Myrtle Ct,Holland,MI,49423-7636,,no@email.com,Match,Exact,POINT (-86.15644 42.77354),331
+8096,,Bryan,Parsons,612 Midway Ave,Holland,MI,49423-4424,,no@email.com,Match,Exact,POINT (-86.16306999999998 42.773964),332
+8103,,Michele,Paterson Brown,605 Crestview St,Holland,MI,49423-4671,(616)405-5703,no@email.com,Match,Exact,POINT (-86.13429000000002 42.76514),333
+8140,,Vanessa,Pena,494 W 23rd St,Holland,MI,49423-4024,(616)396-2678,no@email.com,Match,Non_Exact,POINT (-86.12988 42.77655),334
+8168,,Janet,Persinger,1232 Janice St,Holland,MI,49423,(616) 335-2972,no@email.com,Match,Exact,POINT (-86.15949000000001 42.770515),335
+8170,,Jason,Perton,550 Washington Ave,Holland,MI,49423,,no@email.com,Match,Exact,POINT (-86.11699 42.776752),336
+8177,,Karen,Peters,39 W 19th,Holland,MI,49423,(616)494-9878,no@email.com,Match,Non_Exact,POINT (-86.109314 42.78031),337
+8200,,Richard,Pett,1971 W 32nd St,Holland,MI,49423-4364,,no@email.com,Match,Non_Exact,POINT (-86.19012499999999 42.76788300000001),338
+8217,,Eric,Phillips,1734 Wolverine St,Holland,MI,49423-6740,(616)335-2830,no@email.com,Match,Exact,POINT (-86.17935 42.769817),339
+8236,,Michael,Pikaart,384 Fairhill Ct,Holland,MI,49423-6915,(616) 394-4353,no@email.com,Match,Exact,POINT (-86.12514499999996 42.771137),340
+8316,,Jeffrey,Potts,4670 Beech St,Holland,MI,49423,(616) 335-5703,no@email.com,Match,Exact,POINT (-86.18380000000001 42.761192),341
+8337,,Steven,Premo,4609 Forest Ln,Holland,MI,49423-8991,,no@email.com,Match,Exact,POINT (-86.18228000000001 42.755173),342
+8358,,James,Prince,6364 Blue Jay Ln,Holland,MI,49423-8917,(616)335-3395,no@email.com,Match,Exact,POINT (-86.17325600000002 42.76338),343
+8365,,Jay,Prins,4731 64th St,Holland,MI,49423,(616) 335-5488,no@email.com,Match,Exact,POINT (-86.17673499999999 42.763695),344
+8375,,James,Prucnal,6454 Hunters St,Holland,MI,49423-7359,,no@email.com,Match,Exact,POINT (-86.182365 42.765587),345
+8387,,John,Punch,336 Wildwood Dr,Holland,MI,49423-6921,,no@email.com,Match,Exact,POINT (-86.12278000000001 42.771004),346
+8448,,Steven,Randolph,1043 Pinegrove Dr Apt 108,Holland,MI,49423-7381,,no@email.com,Match,Exact,POINT (-86.15219999999999 42.76627),347
+8459,,Spencer,Rasmussen,558 Jasmine Dr,Holland,MI,49423,(616) 392-2755,no@email.com,Match,Exact,POINT (-86.13379999999999 42.764606),348
+8489,,John,Reck,401 W 33rd St,Holland,MI,49423-4606,(616) 392-9013,no@email.com,Match,Non_Exact,POINT (-86.12406 42.767548),349
+8516,,Molly,Reidsma,431 Diekema Ave Apt 240,Holland,MI,49423-3947,(616) 738-6052,no@email.com,Match,Exact,POINT (-86.13183599999998 42.780663),350
+8603,,Randy,Rifkin,784 S Shore Dr,Holland,MI,49423-4537,,no@email.com,Match,Non_Exact,POINT (-86.14165 42.778107),351
+8638,,Jeanne,Rittmueller,830 South Shore Dr,Holland,MI,49423,(616) 335-3810,no@email.com,Match,Exact,POINT (-86.14368 42.77727),353
+8661,,Beverlea,Robertson,6162 147th Ave,Holland,MI,49423-8986,,no@email.com,Match,Exact,POINT (-86.152885 42.76149),354
+8688,,Ruben,Rodriguez,291 W 21st,Holland,MI,49423-4001,6163923994,no@email.com,Match,Non_Exact,POINT (-86.12068000000002 42.77844),355
+8693,,Rudy,Rodriguez,354 W 17th St,Holland,MI,49423-3439,,no@email.com,Match,Non_Exact,POINT (-86.12361999999996 42.782032),356
+8694,,Linda,Rodriguez,740 2nd Ave,Holland,MI,49423,(616) 335-3015,no@email.com,Match,Exact,POINT (-86.19248 42.768925),357
+8708,,Rhonda,Rodriquez,393 W 22nd St,Holland,MI,49423-4013,(616) 335-4481,no@email.com,Match,Non_Exact,POINT (-86.12519 42.777504),358
+8724,,Sylvia,Rokosh,1055 Pinegrove Dr Apt 102,Holland,MI,49423-7382,(616) 215-8990,no@email.com,Match,Exact,POINT (-86.152405 42.76649000000001),359
+8734,,Arda,Rooks,761 Old Orchard Rd,Holland,MI,49423-4442,(616) 335-5965,no@email.com,Match,Non_Exact,POINT (-86.166595 42.769325),360
+8742,,MaryLou,Rosales,376 W 17th St,Holland,MI,49423-3439,,no@email.com,Match,Non_Exact,POINT (-86.12453000000002 42.78203),361
+8761,,Diane,Rottschaefer,565 Spring Lane Dr,Holland,MI,49423-4630,(616) 355-6097,no@email.com,Match,Non_Exact,POINT (-86.13395 42.765903),362
+8765,,Mike,Rouwhorst,333 W 17th St,Holland,MI,49423-3422,(616)566-3225,no@email.com,Match,Non_Exact,POINT (-86.12247499999999 42.782047),363
+8768,,Dawn,Rowan,774 Southgate St,Holland,MI,49423-4557,(616) 510-0146,no@email.com,Match,Exact,POINT (-86.141525 42.772408),364
+8796,,Kersh,Ruhl,1281 Heather Dr,Holland,MI,49423-4499,,no@email.com,Match,Exact,POINT (-86.16230999999998 42.771114),365
+8869,,Marco,Salazar,4790 Wildwood Rd,Holland,MI,49423-7355,(616) 212-4859,no@email.com,Match,Exact,POINT (-86.184845 42.767387),366
+8870,,Kurt A.,Sale,6483 147th Ave,Holland,MI,49423-8928,(616)335-3815,no@email.com,Match,Exact,POINT (-86.18473 42.76147),367
+8931,,Kyle,Schaap,6413 Hidden Holw,Holland,MI,49423-7901,(616) 335-8305,no@email.com,Match,Non_Exact,POINT (-86.17764 42.758835),368
+8937,,James,Schaedig,695 Marylane Dr,Holland,MI,49423-4529,(616) 335-5870,no@email.com,Match,Exact,POINT (-86.13941 42.77063),369
+8980,,William,Schmidt,6633 Kelly Creek Dr,Holland,MI,49423-8886,,no@email.com,Match,Exact,POINT (-86.19948000000002 42.75643),370
+9013,,Dan,Schrotenboer,395 Wildwood Dr,Holland,MI,49423-6922,(616)396-0522,no@email.com,Match,Exact,POINT (-86.124985 42.770252),371
+9034,,Ron,Schuster,63 W 20th St,Holland,MI,49423,(616) 494-0294,no@email.com,Match,Exact,POINT (-86.1103 42.7794),372
+9039,,Nicole,Schutte,6012 Heritage Meadow Dr,Holland,MI,49423-9397,,no@email.com,Match,Exact,POINT (-86.13825 42.76389),373
+9051,,,Scrubs N Things,740 Michigan Ave,Holland,MI,49423-6943,,no@email.com,Match,Exact,POINT (-86.11617 42.769596),375
+9094,,Sally,Serbin,454 W 20th St,Holland,MI,49423-3920,(616) 298-2281,no@email.com,Match,Non_Exact,POINT (-86.128235 42.77928499999999),376
+9127,,Lance,Sharp,669 S 160th,Holland,MI,49423-6777,,no@email.com,Match,Non_Exact,POINT (-86.17647599999999 42.771484),377
+9149,,Michelle,Sheridan,692 Goldenrod Ave,Holland,MI,49423-6857,,no@email.com,Match,Exact,POINT (-86.15141 42.771137),378
+9196,,Chris,Sierz,848 S Shore Dr,Holland,MI,49423-4538,,no@email.com,Match,Non_Exact,POINT (-86.14434 42.77694),379
+9246,,Katarina,Skinner,746 Saunders Ave,Holland,MI,49423-4335,(269) 455-0373,no@email.com,Match,Exact,POINT (-86.18584 42.7689),380
+9250,,Thomas,Slager,805 Meadowbrook Ave,Holland,MI,49423-7328,(616) 218-2355,no@email.com,Match,Exact,POINT (-86.1396 42.767315),381
+9254,,Joshua,Slagh,1647 S Shore Dr Unit 1,Holland,MI,49423-4586,,no@email.com,Match,Non_Exact,POINT (-86.17697 42.77438),382
+9269,,Tramec,Sloan,4637 60th St,Holland,MI,49423-8744,,no@email.com,Match,Exact,POINT (-86.13672 42.75632),383
+9310,,Lowell,Smith,4716 Heritage Meadow Dr.,Holland,MI,49423-8738,(616)796-8217,no@email.com,Match,Exact,POINT (-86.14007600000002 42.762497),384
+9333,,Beth,Smith,824 Clarewood Ct,Holland,MI,49423-7615,,no@email.com,Match,Exact,POINT (-86.14353 42.7664),385
+9351,,Denise,Smith,605 Spring Lane Dr,Holland,MI,49423-4630,(616) 610-9576,no@email.com,Match,Exact,POINT (-86.13479 42.765614),386
+9403,,Michael,Soukup,1681 Wolverine St,Holland,MI,49423-6741,(616) 510-4209,no@email.com,Match,Exact,POINT (-86.17832 42.76984),387
+9431,,Karla,Spence,450 Plasman Ave,Holland,MI,49423-3930,(616) 566-8150,no@email.com,Match,Exact,POINT (-86.133934 42.78033),389
+9473,,Johanna,Staat,743 Ruth Ave,Holland,MI,49423-6836,,no@email.com,Match,Exact,POINT (-86.14838399999999 42.76920300000001),390
+9483,,Donald,Stageman,4667 Cottonwood Dr,Holland,MI,49423-8926,(616) 335-9037,no@email.com,Match,Exact,POINT (-86.18644999999999 42.76028),391
+9503,,Cam,Statfield,4697 Forest Ridge Dr,Holland,MI,49423-8828,,no@email.com,Match,Exact,POINT (-86.20271 42.76146),392
+9511,,Eric,Steele,2376 Crescent Walk,Macatawa,MI,49434,(616)335-5048,no@email.com,Match,Exact,POINT (-86.206024 42.768436),393
+9543,,John,Stevenson,498 Graafschap Rd,Holland,MI,49423-4547,(616) 396-6856,no@email.com,Match,Exact,POINT (-86.137276 42.778366),394
+9544,,Rose Marie,Stevenson,813 Millbridge Ave,Holland,MI,49423-4689,,no@email.com,Match,Exact,POINT (-86.11984 42.767006),395
+9561,,Ruth,Stillwell,1340 W 32nd St,Holland,MI,49423-7358,(616)335-9360,no@email.com,Match,Non_Exact,POINT (-86.16379000000001 42.768185),396
+9582,,Braden,Stradley,6265 Oakhurst St,Holland,MI,49423-7332,(616) 566-5690,no@email.com,Match,Exact,POINT (-86.16301 42.76722),397
+9591,,Tom,Strengholt,1517 Jerome St,Holland,MI,49423-6748,(616)335-2909,no@email.com,Match,Exact,POINT (-86.16861999999998 42.769962),398
+9615,,Ann,Stuursma,1977 S Shore Dr,Holland,MI,49423-4340,,no@email.com,Match,Non_Exact,POINT (-86.19016999999999 42.770798),399
+9634,,Kayla,Sutherland,725 Joyce Ave,Holland,MI,49423,(616) 566-3481,no@email.com,Match,Non_Exact,POINT (-86.158264 42.770226),400
+9644,,Marilyn,Swanson,6429 Hidden Holw,Holland,MI,49423-7901,,no@email.com,Match,Non_Exact,POINT (-86.178314 42.75879699999999),401
+9662,,Jean,Sybesma,827 Creekridge Dr,Holland,MI,49423-7391,,no@email.com,Match,Exact,POINT (-86.14928 42.76646),402
+9691,,Shannon,Tanner,496 W 30th St,Holland,MI,49423-7207,,no@email.com,Match,Non_Exact,POINT (-86.12996 42.770226),404
+9694,,Lynnette,Tarr,648 Spring Ln,Holland,MI,49423-4627,(616)392-9717,no@email.com,Match,Exact,POINT (-86.13551 42.766212),405
+9785,,Carol,Thomley,863 Millbridge Ave,Holland,MI,49423-4689,,no@email.com,Match,Exact,POINT (-86.11983000000002 42.766132),406
+9825,,Kelly,Timmer,733 Aster Ave,Holland,MI,49423-6866,(616) 890-5234,no@email.com,Match,Exact,POINT (-86.14994 42.76948),407
+9858,,Brooke,Toppen,680 Larkwood Dr,Holland,MI,49423-6834,,no@email.com,Match,Exact,POINT (-86.14278399999998 42.771435),408
+9862,,Oscar,Torres,375 W 17th St,Holland,MI,49423-3438,(616) 212-9813,no@email.com,Match,Non_Exact,POINT (-86.12448000000001 42.782036),409
+9917,,James,Tuinenga,688 S Shore Dr,Holland,MI,49423-4508,,no@email.com,Match,Non_Exact,POINT (-86.13795 42.779747),410
+9969,,Kate,Valentine,741 Park Ave,Holland,MI,49423-4372,(616) 405-3696,no@email.com,Match,Exact,POINT (-86.19614399999998 42.769104),412
+9973,,Laurie,Vall,742 Myrtle Ave,Holland,MI,49423-6831,,no@email.com,Match,Exact,POINT (-86.15671500000001 42.76933),413
+9996,,Nancy,VanArk,6464 147th Ave,Holland,MI,49423-8923,,no@email.com,Match,Exact,POINT (-86.18342 42.761448),414
+10014,,James,Vande Poel,6031 Woodcrest Ct,Holland,MI,49423-8739,(616) 392-3375,no@email.com,Match,Exact,POINT (-86.13930999999999 42.762653),415
+10049,,Jim,VandePoel,6036 Woodcrest Ct,Holland,MI,49423-8740,(616) 392-3375,no@email.com,Match,Exact,POINT (-86.13936600000002 42.762627),417
+10053,,Harriet,Vander Kooi,280 W 40th Ave,Holland,MI,49423-4664,,no@email.com,Match,Non_Exact,POINT (-86.1203 42.761562),418
+10066,,Carol,VanderGriff,257 W 23rd St,Holland,MI,49423-4710,,no@email.com,Match,Non_Exact,POINT (-86.11910999999998 42.776615),419
+10106,,Edna,VanderSluis,836 Apple Blossom Ln,Holland,MI,49423-7346,,no@email.com,Match,Exact,POINT (-86.14466 42.76692),420
+10107,,Donna,VanderVeen,297 Danby Ct,Holland,MI,49423-4687,(616) 396-2305,no@email.com,Match,Exact,POINT (-86.120766 42.76624),421
+10128,,Gayle,VandeVusse,4764 65th St,Holland,MI,49423-8929,(616) 335-3897,no@email.com,Match,Exact,POINT (-86.18659 42.76506),422
+10135,,Tom,VanDokkumburg,1374 Heather Dr,Holland,MI,49423-4498,,no@email.com,Match,Exact,POINT (-86.165436 42.77104),423
+10141,,Sara,VanDoornik,1604 W 32nd St,Holland,MI,49423,(616) 335-5529,no@email.com,Match,Exact,POINT (-86.17364000000001 42.76806),424
+10147,,David,VanDyke,4708 Cardinal Dr,Holland,MI,49423,(616) 335-2945,no@email.com,Match,Exact,POINT (-86.17422500000001 42.761757),425
+10151,,Bob,VanEyck,544 Graafschap Rd,Holland,MI,49423-4548,(616) 396-1863,no@email.com,Match,Exact,POINT (-86.13724999999999 42.77682),426
+10158,,Richard,VanHaver,837 Claremount Ct,Holland,MI,49423-7618,(616) 335-3832,no@email.com,Match,Non_Exact,POINT (-86.14245 42.767086),427
+10180,,Diane,Vankovering,620 Blackbass Ave,Holland,MI,49423-4412,(616)335-2792,no@email.com,Match,Exact,POINT (-86.16176999999998 42.773212),428
+10205,,,VanRaalte Tech School,417 VanRaalte Ave,Holland,MI,49423-3936,,no@email.com,Match,Non_Exact,POINT (-86.12035 42.78149000000001),429
+10233,,Heidi,VanWieren,717 Lugers Rd,Holland,MI,49423-6845,,no@email.com,Match,Exact,POINT (-86.14688000000002 42.77038),430
+10252,,Vanessa,Vazquez,974 Bluebell Dr,Holland,MI,49423-6862,(616) 928-8715,no@email.com,Match,Exact,POINT (-86.149185 42.77135),431
+10268,,Paul,Veldheer,592 Pleasant Ave,Holland,MI,49423-6812,,no@email.com,Match,Exact,POINT (-86.1584 42.774296),432
+10276,,Abigail,Veltman,1024 W 32nd St,Holland,MI,49423-7387,(616) 510-3445,no@email.com,Match,Non_Exact,POINT (-86.151726 42.768288),433
+10291,,Gretchen,Verekee,436 Washington Ave,Holland,MI,49423-4103,(616) 396-8609,no@email.com,Match,Exact,POINT (-86.11703 42.781063),434
+10325,,Ruthy,Villanueva,639 Central Bay Ave,Holland,MI,49423-4413,(616) 796-0394,no@email.com,Match,Exact,POINT (-86.16404 42.77332),435
+10368,,Ken,Vos,320 W 30th St,Holland,MI,49423-6971,,no@email.com,Match,Non_Exact,POINT (-86.12099000000001 42.770283),436
+10371,,Shawn,Voss,1272 Marlene St,Holland,MI,49423,(616) 886-7324,no@email.com,Match,Exact,POINT (-86.16101 42.76959),437
+10437,,Louis,Wallin,696 Whitman Ave,Holland,MI,49423-6724,6162125554,no@email.com,Match,Exact,POINT (-86.18116999999999 42.77177),438
+10445,,Bill,Walsh,710 Saunders Ave,Holland,MI,49423-4335,,no@email.com,Match,Exact,POINT (-86.18585 42.769913),439
+10452,,Suzanne,Walters,6494 Wildwood Rd,Holland,MI,49423-7609,(616) 312-9444,no@email.com,Match,Exact,POINT (-86.18484000000002 42.76784),440
+10493,,Patsy,Wassenaar,857 Allen Dr,Holland,MI,49423-4501,(616)813-0816,no@email.com,Match,Exact,POINT (-86.14496 42.777782),441
+10498,,Mary Jo,Waters,820 York Ave,Holland,MI,49423-4693,(616)396-3690,no@email.com,Match,Exact,POINT (-86.12109 42.766796),442
+10515,,Debbie,Wayner,4604 Forest Ln,Holland,MI,49423-8991,(616) 335-3809,no@email.com,Match,Exact,POINT (-86.18274 42.75478),444
+10524,,Debbie,Weaver,753 Holland Ave,Holland,MI,49423-4351,(616) 422-2349,no@email.com,Match,Exact,POINT (-86.18123 42.768414),445
+10528,,Patricia,Webb,581 Azalea Ave,Holland,MI,49423-4567,(616) 335-9391,no@email.com,Match,Exact,POINT (-86.14218000000002 42.77551),446
+10546,,Barbara,Weerstra,639 S Shore Dr,Holland,MI,49423-4536,(616)396-2037,no@email.com,Match,Non_Exact,POINT (-86.13593 42.780636),447
+10639,,David,White,6376 Blue Jay Ln,Holland,MI,49423-8917,,no@email.com,Match,Exact,POINT (-86.17344 42.763374),448
+10676,,Abby,Wierenga,809 W. 26th St.,Holland,MI,49423,(616)335-2377,no@email.com,Match,Exact,POINT (-86.14279000000001 42.773777),449
+10679,,Joanne,Wiersema,588 Azalea Ave,Holland,MI,49423-4563,(616)836-3797,no@email.com,Match,Exact,POINT (-86.1422 42.77522),450
+10732,,Melissa,Williams,4792 Wildwood Rd,Holland,MI,49423-7355,,no@email.com,Match,Exact,POINT (-86.184845 42.7675),451
+10772,,Steven,Windemuller,1108 Keystone Rd,Holland,MI,49423-8849,(616)546-3455,no@email.com,Match,Exact,POINT (-86.13473 42.75821),452
+10794,,Joshua,Wise,1213 S Shore Dr,Holland,MI,49423-4405,,no@email.com,Match,Non_Exact,POINT (-86.158936 42.77551),453
+10803,,John,Witkowski,629 Concord Dr,Holland,MI,49423-4561,(616) 335-9148,no@email.com,Match,Exact,POINT (-86.14021 42.7731),454
+10829,,Molly,Wolski,747 Larkwood Dr,Holland,MI,49423-6835,(616) 499-9091,no@email.com,Match,Exact,POINT (-86.14131999999999 42.76952),455
+10860,,Pennie,Woodwyk,660 Anderson Ave,Holland,MI,49423-4308,(616) 644-2168,no@email.com,Match,Exact,POINT (-86.18494 42.770634),456
+10877,,Cynthia,Wright,392 W 35th St,Holland,MI,49423-4665,(616) 392-7419,no@email.com,Match,Non_Exact,POINT (-86.12477 42.76558),457
+10886,,Greg,Wyma,634 Cedar Square St,Holland,MI,49423-8847,(616) 392-5101,no@email.com,Match,Exact,POINT (-86.135544 42.759624),458
+10896,,Franc,Yarde,6676 Forest Beach Dr,Holland,MI,49423-8993,,no@email.com,Match,Exact,POINT (-86.20165 42.76382),459
+10940,,Patrick,Yurk,499 Graafschap Rd,Holland,MI,49423-4553,(269) 903-5968,no@email.com,Match,Exact,POINT (-86.13726 42.778366),460
+10943,,Jerry & Helen,Zachary,1748 W 32nd St,Holland,MI,49423,(616)335-5649,no@email.com,Match,Exact,POINT (-86.180786 42.767986),461
+10962,,Randall,Zeedyk,620 S 160th Ave,Holland,MI,49423,(616) 335-3706,no@email.com,Match,Exact,POINT (-86.17650999999999 42.772865),462
+10966,,Ed,Zeilstra,1319 Bayview Dr,Holland,MI,49423-4408,,no@email.com,Match,Exact,POINT (-86.16378 42.77663),463
+10967,,Gary,Zell,444 Brecado Ct,Holland,MI,49423-4528,(616)335-3309,no@email.com,Match,Exact,POINT (-86.13916999999999 42.78019000000001),464
+10986,,Gene,Zoet,869 Deerview Ln,Holland,MI,49423-7623,(616)335-5424,no@email.com,Match,Exact,POINT (-86.14623 42.764885),465
+10990,,Larry & Jane,Zolman,548 Old Macatawa Ct,Holland,MI,49423,(616)457-0261,no@email.com,Match,Exact,POINT (-86.16865 42.774235),466
