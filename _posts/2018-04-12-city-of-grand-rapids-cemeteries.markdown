@@ -1,15 +1,9 @@
-City of Grand Rapids Cemeteries
-===============================
-
-[![Kray Freestone](https://miro.medium.com/fit/c/96/96/1*_mp3QGvY6J5nrLmMiesdeg.jpeg)](https://freestonekray.medium.com/?source=post_page-----4f06ac398c47--------------------------------)[Kray Freestone](https://freestonekray.medium.com/?source=post_page-----4f06ac398c47--------------------------------)Follow[Jun 16, 2020](https://medium.com/kray-freestone/city-of-grand-rapids-cemeteries-4f06ac398c47?source=post_page-----4f06ac398c47--------------------------------) · 4 min read
-
-[_Article originally written_](https://github.com/freestok/freestok.github.io/blob/master/cemeteries.html) _on Apr. 12th, 2018._
-
 The purpose of [this project](http://grandrapids.maps.arcgis.com/apps/webappviewer/index.html?id=53514aa28a584dbd8f07e7a3ced8af17) was to allow any citizen to view cemeteries online so that they can search for occupants in any of Grand Rapids’ six cemeteries. This project was based on four phases: implementing surveying maps, reconciling polygon data with cemetery records, automating much of the workflow in Python, and visualizing it all in ArcGIS Online.
 
-<img alt="" class="t u v ic aj" src="https://miro.medium.com/max/2166/0\*pC3DHQtX01Vf4cpp.png" width="1083" height="561" srcSet="https://miro.medium.com/max/552/0\*pC3DHQtX01Vf4cpp.png 276w, https://miro.medium.com/max/1104/0\*pC3DHQtX01Vf4cpp.png 552w, https://miro.medium.com/max/1280/0\*pC3DHQtX01Vf4cpp.png 640w, https://miro.medium.com/max/1400/0\*pC3DHQtX01Vf4cpp.png 700w" sizes="700px" role="presentation"/>
-
-_Survey Map of Woodlawn West_
+<figure>
+  <img src="/assets/img/cemetery/survey-map.png" alt="Surveying map of woodlawn west cemetery"/>
+  <figcaption>Survey Map of Woodlawn West</figcaption>
+</figure>
 
 The first phase of the project dealt largely with georeferencing the surveying maps, converting the image to editable features, and cleaning up said features. Though there are six cemeteries, there were eight different maps, each of which being georeferenced to their respective cemetery. After georeferencing, the survey maps were converted into editable features via the **Raster to Polygon** tool. From there, over 20,000 polygons from eight maps were cleaned up and labeled (e.g. deleting the numbers that were turned into polygons, inserting “blocks” and “lots” metadata into each polygon).
 
@@ -17,13 +11,16 @@ The second phase consisted of reconciling the polygons, which contained the bare
 
 It should be noted that there are some inherent flaws when working with surveying maps from the mid to late 1900s. Some data that existed in the up-to-date cemetery database was not reflected in the surveying maps, therefore, some lots — and subsequently occupants — do not appear in the final project. Moreover, if certain lots appeared in the surveying maps but did not appear in the spreadsheet, the query table operation then deleted empty polygons. Interestingly, even though the map appears to have fewer polygons, there are actually more: in a many-to-one query table join, polygons are stacked on top of each other when sharing the same space.
 
-<img alt="" class="t u v ic aj" src="https://miro.medium.com/max/1258/0\*RAZEppL8weAA82uC.png" width="629" height="354" srcSet="https://miro.medium.com/max/552/0\*RAZEppL8weAA82uC.png 276w, https://miro.medium.com/max/1104/0\*RAZEppL8weAA82uC.png 552w, https://miro.medium.com/max/1258/0\*RAZEppL8weAA82uC.png 629w" sizes="629px" role="presentation"/>
 
-_Before Query Table Join_
+<figure>
+  <img src="/assets/img/cemetery/pre-query.png" alt="map of cemetery blocks"/>
+  <figcaption>Before Query Table Join</figcaption>
+</figure>
 
-<img alt="" class="t u v ic aj" src="https://miro.medium.com/max/1264/0\*erhc1mWKW7g5V710.png" width="632" height="356" srcSet="https://miro.medium.com/max/552/0\*erhc1mWKW7g5V710.png 276w, https://miro.medium.com/max/1104/0\*erhc1mWKW7g5V710.png 552w, https://miro.medium.com/max/1264/0\*erhc1mWKW7g5V710.png 632w" sizes="632px" role="presentation"/>
-
-_After Query Table Join_
+<figure>
+  <img src="/assets/img/cemetery/post-query.png" alt="map of cemetery blocks"/>
+  <figcaption>After Query Table Join</figcaption>
+</figure>
 
 For the third phase, I automated most of the workflow with Python. At a high level, the program:
 
@@ -36,15 +33,25 @@ For the third phase, I automated most of the workflow with Python. At a high lev
 
 First, I create the query table from the shapefile and the spreadsheet and export the query table as its own shapefile name **queryTable**.
 
+<script src="https://gist.github.com/freestok/1ec23833dcc8182e54d6dcd15e3f1380.js"></script>
+
 Next, the query table needs to be split into eight different parts (the end result of this project is eight different web applications for their respective cemeteries).
+
+<script src="https://gist.github.com/freestok/c48bcff6133343796657d9ba509c6e0b.js"></script>
 
 The **ArcPy** library — used above — that comes with ArcGIS for Desktop is built on Python 2.7. The [ArcGIS API for Python](https://developers.arcgis.com/python/) (which allows me to easily manipulate files in ArcGIS Online) is built on Python 3.5 (and above). So, I started a new script for this different library. The end function should overwrite shapefiles and create new tiles layers in ArcGIS Online.
 
 The following function searches for shapefiles, feature services, and map services (tile layers) that match the cemetery’s name. If there is a match, they will be deleted.
 
+<script src="https://gist.github.com/freestok/68bb70c4a5a260ec2d112f891e417976.js"></script>
+
 After the files are deleted, the program uploads new shapefiles and creates tile layers from them.
 
+<script src="https://gist.github.com/freestok/914c366c3b4b114c6bd8a66a3b708dfc.js"></script>
+
 Finally, the function is called and passed a list of shapefiles.
+
+<script src="https://gist.github.com/freestok/3bce3e108045dd8c883bf4738e373144.js"></script>
 
 The fourth phase consists of making web maps and configuring web applications from the data that was uploaded.
 
