@@ -1,16 +1,8 @@
-Mapping Code Violations in Grand Rapids
-=======================================
-
-[![Kray Freestone](https://miro.medium.com/fit/c/96/96/1*_mp3QGvY6J5nrLmMiesdeg.jpeg)](https://freestonekray.medium.com/?source=post_page-----dfb080d5de25--------------------------------)[Kray Freestone](https://freestonekray.medium.com/?source=post_page-----dfb080d5de25--------------------------------)Follow[Sep 4, 2020](https://medium.com/kray-freestone/mapping-code-violations-in-grand-rapids-dfb080d5de25?source=post_page-----dfb080d5de25--------------------------------) · 5 min read
-
-_with Python, Mapbox GL JS, and Flask_
-
 The City of Grand Rapids, with data available since 2004, has handled code compliance and building cases originating internally and from the public. At the time of this writing, the number of cases started is fast approaching 300,000 cases.
 
 Interestingly enough, there is no means to view this data spatially. That is why I built a mapping interface. I aim to update this data at least once a week.
 
-If you would like to learn about the implementation of this web app, please read on. If not, then you can find the [Code Compliance map here](https://freestok.herokuapp.com/compliance). Please be patient as the data loads.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**If you would like to learn about the implementation of this web app, please read on. If not, then you can find the [Code Compliance map here](https://freestok.herokuapp.com/compliance). Please be patient as the data loads.**
 
 _Note: this does not work on Android and probably does not work on iOS. Please use your computer. It is likely too much data for your phone to handle, so your mobile browser will crash._
 
@@ -19,13 +11,20 @@ Data Preparation
 
 First, I needed parcel data for the City of Grand Rapids so I could later join the case data with parcels by a shared attribute: their parcel number. Data was acquired from [Kent County’s excellent data library](https://www.accesskent.com/GISLibrary/#Parcels&Streets).
 
-<img alt="" class="t u v kn aj" src="https://miro.medium.com/max/5394/1\*3H7w5Rk0ErcXdBBv9sIqhw.png" width="2697" height="1997" srcSet="https://miro.medium.com/max/552/1\*3H7w5Rk0ErcXdBBv9sIqhw.png 276w, https://miro.medium.com/max/908/1\*3H7w5Rk0ErcXdBBv9sIqhw.png 454w" sizes="454px" role="presentation"/>
+<div class="row full-width">
+  <div class="column">
+    <img src="/assets/img/compliance/before-clip.png" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="/assets/img/compliance/after-clip.png" alt="Forest" style="width:100%">
+  </div>
+</div>
+<figcaption>Grand Rapids before and after clipping</figcaption><br> 
 
-<img alt="" class="t u v kn aj" src="https://miro.medium.com/max/5706/1\*VLTYnEoodEIN37R9CHLbAw.png" width="2853" height="1756" srcSet="https://miro.medium.com/max/552/1\*VLTYnEoodEIN37R9CHLbAw.png 276w, https://miro.medium.com/max/1094/1\*VLTYnEoodEIN37R9CHLbAw.png 547w" sizes="547px" role="presentation"/>
-
-Grand Rapids before and after clipping
 
 The parcels, as shown in the left image above, needed to be clipped to the City’s actually boundary. This was accomplished via Python’s geopandas library. Moreover, the script below exports the _centroid_ of each parcel since I will want to represent each case in the middle of a parcel.
+
+<script src="https://gist.github.com/freestok/950a9336b182250c6fcc426854c5f7fe.js"></script>
 
 Data Scraping and Upload
 ========================
@@ -47,11 +46,16 @@ The mapping interface was built primarily with [Flask](https://flask.palletsproj
 
 Flask is used for serving up web pages and returning data from user POST requests (e.g. updating status filters if the case type changes, querying PostgreSQL to see if a report is done, making a request for a report).
 
-<img alt="" class="t u v kn aj" src="https://miro.medium.com/max/1916/1\*MZwIxFGw2qrCZrLyH8nR5A.png" width="958" height="621" srcSet="https://miro.medium.com/max/552/1\*MZwIxFGw2qrCZrLyH8nR5A.png 276w, https://miro.medium.com/max/1104/1\*MZwIxFGw2qrCZrLyH8nR5A.png 552w, https://miro.medium.com/max/1280/1\*MZwIxFGw2qrCZrLyH8nR5A.png 640w, https://miro.medium.com/max/1400/1\*MZwIxFGw2qrCZrLyH8nR5A.png 700w" sizes="700px" role="presentation"/>
+<figure>
+  <img src="/assets/img/compliance/preview.png" alt="map of cemetery blocks"/>
+  <figcaption>Before Query Table Join</figcaption>
+</figure>
 
 Mapbox GL JS does the work of visualizing the data. Moreover, it is responsible for the case counts, filtering, and pop-ups.
 
 I won’t go into detail on all of the code ([you can view this project on GitHub](https://github.com/freestok/heroku)), but the popups are populated by querying rendered features, determining which points are inside the polygon with [turf.js](https://turfjs.org/), and then inserting that array of cases into the pop-up.
+
+<script src="https://gist.github.com/freestok/ca1b3e040065150f987c0e5b4d44a5c9.js"></script>
 
 Hosting the Web Application
 ===========================
@@ -73,6 +77,8 @@ I thought it would be nice to let the user have the ability to create a report b
 There were more obvious avenues I could have taken for the reporting, but their convenience was outweighed by their potential failure (or cost). For example, I could have used something like [Celery](https://docs.celeryproject.org/en/stable/index.html) or [Redis](https://redis.io/) for managing task queues, but I think the costs would have been prohibitive (for a project that I am mostly trying to keep free). I could have also just processed the report within the Flask application, but if I did not return any result within 30 seconds, the application would crash.
 
 My favorite part of the reporting logic is its use of CARTO and PostgreSQL/PostGIS. Seeing as how I could not load all of the json data from AWS in memory (I kept getting memory errors), I had to pull in the data from CARTO via their SQL API. Here is a bit of an example of what the query construction actually looks like:
+
+<script src="https://gist.github.com/freestok/841932a34162eadee027f5217ff3d61f.js"></script>
 
 CARTO’s SQL API was quite helpful because it allowed me to pull in just summaries of the data, not all of it, thus avoiding any memory issues. It also takes advantage of PostGIS functions (like ST\_WITHIN) to query cases inside of the user’s view.
 

@@ -1,19 +1,12 @@
-Generating Running Loops with Graph Theory
-==========================================
-
-using Java, Leaflet, and turf.js
---------------------------------
-
-[![Kray Freestone](https://miro.medium.com/fit/c/96/96/1*_mp3QGvY6J5nrLmMiesdeg.jpeg)](https://freestonekray.medium.com/?source=post_page-----87ca4a80add6--------------------------------)[Kray Freestone](https://freestonekray.medium.com/?source=post_page-----87ca4a80add6--------------------------------)Follow[Dec 10, 2020](https://medium.com/kray-freestone/generating-running-loops-with-graph-theory-87ca4a80add6?source=post_page-----87ca4a80add6--------------------------------) · 3 min read
-
 LoopMyRun
 =========
 
 If you want to skip reading, you can navigate straight to [**LoopMyRun**](https://loopmyrun.herokuapp.com). The purpose of this web app is to create a running (or walking) loop in any road network, given a preferred distance and location.
 
-<img alt="" class="t u v iz aj" src="https://miro.medium.com/max/3032/1\*yZPcRqZsPvltTXmDgk-BhQ.png" width="1516" height="762" srcSet="https://miro.medium.com/max/552/1\*yZPcRqZsPvltTXmDgk-BhQ.png 276w, https://miro.medium.com/max/1104/1\*yZPcRqZsPvltTXmDgk-BhQ.png 552w, https://miro.medium.com/max/1280/1\*yZPcRqZsPvltTXmDgk-BhQ.png 640w, https://miro.medium.com/max/1400/1\*yZPcRqZsPvltTXmDgk-BhQ.png 700w" sizes="700px" role="presentation"/>
-
-Looking for a 5k in Madison, WI
+<figure>
+  <img src="/assets/img/run-loop/preview.png" alt="madison, wi"/>
+  <figcaption>Looking for a 5k in Madison, WI</figcaption>
+</figure>
 
 Though I wish I knew that Strava had [already created this solution](https://blog.strava.com/routes/) before I embarked on this project, creating this app did have worthwhile benefits anyhow:
 
@@ -28,17 +21,17 @@ Graph Theory
 
 I am not going to sit here and pretend I know much about mathematics, but Graph Theory, and the graphing library [JGraphtT](https://jgrapht.org/) for Java, was pivotal for making this application work.
 
-<img alt="" class="t u v iz aj" src="https://miro.medium.com/max/896/0\*ucy5F9Rinqi8pbZF.png" width="448" height="279" srcSet="https://miro.medium.com/max/552/0\*ucy5F9Rinqi8pbZF.png 276w, https://miro.medium.com/max/896/0\*ucy5F9Rinqi8pbZF.png 448w" sizes="448px" role="presentation"/>
-
-Sample Graph
-
-Simply put, a graph consists of vertices (or nodes) and edges (which are between the nodes). They are useful for finding shortest routes between any two points, and for finding cycles in any directed or undirected graph. Moreover, you can assign the edges certain weights for defining paths of least resistance.
-
-<img alt="" class="t u v iz aj" src="https://miro.medium.com/max/7984/0\*Orb2oOejAkB72Zl5" width="3992" height="2992" srcSet="https://miro.medium.com/max/552/0\*Orb2oOejAkB72Zl5 276w, https://miro.medium.com/max/1000/0\*Orb2oOejAkB72Zl5 500w" sizes="500px" role="presentation"/>
-
-Photo by [Hanson Lu](https://unsplash.com/@hansonluu?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)
+<figure>
+  <img src="/assets/img/run-loop/nodes.png" alt="nodes in graph theory"/>
+  <figcaption>Sample Graph</figcaption>
+</figure>
 
 Really, a road network is a lot like an undirected graph (though I suppose it could be _directed_ if you are a car on a one-way). All intersections and roads can be plotted as nodes and edges respectively.
+
+<figure>
+  <img align="left" src="/assets/img/run-loop/street-grid.jfif" alt="nodes in graph theory"/>
+  <figcaption>Photo by <a href="https://unsplash.com/@hansonluu?utm_source=medium&utm_medium=referral">Hanson Lu</a> on <a href="https://unsplash.com?utm_source=medium&utm_medium=referral">Unsplash</a></figcaption>
+</figure>
 
 Moreover, each one of those roads can be _weighted_ based on what type of road they are. This app set the lowest weight to residential roads and the highest weights to primary roads.
 

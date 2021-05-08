@@ -2,8 +2,41 @@
 
 figcaption {
     text-align: center;
+    font-style: italic;
+    color: grey;
 }
 
 figure img {
     margin: 0 auto;
+}
+
+.column {
+    float: left;
+    width: 49%;
+    padding: 1px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }
+  }
+
+  .full-width {
+    padding-top: 10px;
+	left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	max-width: 100vw;
+	position: relative;
+	right: 50%;
+	width: 100vw;
 }
