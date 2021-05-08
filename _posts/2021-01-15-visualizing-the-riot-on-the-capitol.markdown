@@ -1,13 +1,3 @@
-Visualizing The Riot on the Capitol
-===================================
-
-Data processed using R
-----------------------
-
-[![Kray Freestone](https://miro.medium.com/fit/c/96/96/1*_mp3QGvY6J5nrLmMiesdeg.jpeg)](https://freestonekray.medium.com/?source=post_page-----bd7b74bb239e--------------------------------)[Kray Freestone](https://freestonekray.medium.com/?source=post_page-----bd7b74bb239e--------------------------------)Follow[Jan 15](https://medium.com/kray-freestone/visualizing-the-riot-on-the-capitol-bd7b74bb239e?source=post_page-----bd7b74bb239e--------------------------------) · 2 min read
-
-![](https://miro.medium.com/max/1984/1*JRN0JPxAq02CbLtIUxy7GA.png)
-
 The Hack
 ========
 
@@ -20,6 +10,8 @@ After the website breach, [Kyle McDonald made the data available](https://gist.g
 
 While this project is not interested in finding out _who_ was at the riot, or in viewing any of the videos, you can check out other projects, such as [@patr10tic’s map](https://thepatr10t.github.io/yall-Qaeda/) which visualize videos the day of the riot.
 
+<iframe src="/assets/img/riot/parler.mp4" frameborder="0"> </iframe>
+
 My Process
 ==========
 
@@ -27,10 +19,18 @@ This was my first foray into R. I probably could have saved myself some time and
 
 First, I read in the CSV (which I had already converted from GMT timestamps to EST), filter it for the date I want, convert it into a simple features object ([via the sf library](https://r-spatial.github.io/sf/)), and then only select the points within the Capitol area of D.C.
 
+<script src="https://gist.github.com/freestok/3a6876979c074939142b90640a1505b8.js"></script>
+
 From there, I loop over the all the timestamps, select the pertinent data, create a map from said data, and repeat. More is explained in the code comments.
+
+<script src="https://gist.github.com/freestok/d94477566fe066163459e2790490be3b.js"></script>
 
 The following is the createMap() function which is what utilizes Leaflet for R in making the maps.
 
+<script src="https://gist.github.com/freestok/b9a3a2833fcb69a2e8df4f3d5dd19987.js"></script>
+
 After all of that, I get a list of the PNG file outputs and combine them into a GIF.
+
+<script src="https://gist.github.com/freestok/7b0aabbdc2986e89a1f16bc2200282fa.js"></script>
 
 That’s all, folks.

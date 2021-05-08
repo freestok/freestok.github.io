@@ -11,7 +11,7 @@ Data Preparation
 
 First, I needed parcel data for the City of Grand Rapids so I could later join the case data with parcels by a shared attribute: their parcel number. Data was acquired from [Kent County’s excellent data library](https://www.accesskent.com/GISLibrary/#Parcels&Streets).
 
-<div class="row full-width">
+<div class="row full-width-2">
   <div class="column">
     <img src="/assets/img/compliance/before-clip.png" alt="Snow" style="width:100%">
   </div>
