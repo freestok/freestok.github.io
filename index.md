@@ -7,9 +7,9 @@ layout: home
 <div id="image-slider" class="splide">
 	<div class="splide__track">
 		<ul id="gallery" class="splide__list">
-            <li class="splide__slide">
+            <!-- <li class="splide__slide">
                 <img src="/assets/img/header.png">
-            </li>
+            </li> -->
 		</ul>
 	</div>
 </div>
