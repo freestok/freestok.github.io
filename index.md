@@ -6,16 +6,10 @@ layout: home
 ---
 <div id="image-slider" class="splide">
 	<div class="splide__track">
-		<ul class="splide__list">
-			<li class="splide__slide">
-				<img src="/assets/img/header.png">
-			</li>
-			<li class="splide__slide">
-				<img src="/assets/img/header2.png">
-			</li>
-			<li class="splide__slide">
-				<img src="/assets/img/headshot.jpg">
-			</li>
+		<ul id="gallery" class="splide__list">
+            <li class="splide__slide">
+                <img src="/assets/img/header.png">
+            </li>
 		</ul>
 	</div>
 </div>
