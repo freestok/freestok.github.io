@@ -1,20 +1,30 @@
-document.addEventListener( 'DOMContentLoaded', () => {
-    let images = getImages();
-    let shuffledImages = shuffleArray(images);
+document.addEventListener('readystatechange', event => {
+    if (event.target.readyState === 'complete') {
+        $('#image-slider').show();
+    }
+  });
 
+document.addEventListener( 'DOMContentLoaded', () => {
+
+    $('#image-slider').hide();
 	const splide = new Splide( '#image-slider', {
         'cover': true,
-        'heightRatio': 0.25
-    } ).mount();
-
+        'heightRatio': 0.25,
+        'autoplay': true
+    });
+    splide.mount();
+    let images = getImages();
+    let shuffledImages = shuffleArray(images);
     for (let img of shuffledImages) {
-        console.log(`/assets/img/${img}`);
-        splide.add(`
-            <li class="splide__slide">
-                <img src="/assets/img/${img}">
-            </li>
-        `)
+        imgSrc = `<img src="/assets/img/${img}"></img>`;
+        splide.add('<li class="splide__slide">' + imgSrc + '</li>');
     }
+
+    
+    // console.log(document.readyState);
+
+    // console.log('show!')
+    // $('#image-slider').show();
 } );
 
 function shuffleArray(array) {
@@ -34,7 +44,6 @@ function getImages() {
         'demographics/heatmap.png',
         'geocoding-py/donors-accuracy.png',
         'iberia/physical.png',
-        'mesopotamia/false-color.png',
         'mordor/mordor.png',
         'riot/preview.png',
         'run-loop/preview.png',

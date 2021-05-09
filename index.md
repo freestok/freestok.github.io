@@ -16,8 +16,8 @@ layout: home
 
 <p class="home-header">Kray Freestone</p>
 <div class="column">
-    <a href="/about/">About</a>
+    <a class="home-link" href="/about/">About</a>
 </div>
 <div class="column">
-    <a href="/portfolio/">Portfolio</a>
+    <a class="home-link" href="/portfolio/">Portfolio</a>
 </div>

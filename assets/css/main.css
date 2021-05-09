@@ -62,6 +62,9 @@ iframe{
   }
 
   .home-header {
-      font-size: 6em;
+      font-size: 7em;
+  }
 
+  .home-link {
+      font-size: 2em;
   }
