@@ -1,5 +1,6 @@
 ---
 permalink: /posts/:title
+thumbnail: /assets/img/mordor/thumbnail.png
 ---
 
 <img class="full-width" src="/assets/img/mordor/mordor.png" alt="middle earth">

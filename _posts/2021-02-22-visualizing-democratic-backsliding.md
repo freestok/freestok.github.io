@@ -1,5 +1,6 @@
 ---
 permalink: /posts/:title
+thumbnail: /assets/img/backsliding/thumbnail.png
 ---
 
 <figure>

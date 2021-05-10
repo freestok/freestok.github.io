@@ -1,5 +1,6 @@
 ---
 permalink: /posts/:title
+thumbnail: /assets/img/compliance/preview.png
 ---
 
 The City of Grand Rapids, with data available since 2004, has handled code compliance and building cases originating internally and from the public. At the time of this writing, the number of cases started is fast approaching 300,000 cases.

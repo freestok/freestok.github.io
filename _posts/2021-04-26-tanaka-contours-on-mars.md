@@ -1,5 +1,6 @@
 ---
 permalink: /posts/:title
+thumbnail: /assets/img/tanaka/imhof.png
 ---
 
 <img class="full-width" src="/assets/img/tanaka/oxia.png" alt="mars">

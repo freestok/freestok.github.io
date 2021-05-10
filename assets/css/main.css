@@ -82,7 +82,16 @@ img:hover {
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-  }
+}
+
+.portfolio-cropper {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
   
 .fa {
     color: #018786;
@@ -102,12 +111,12 @@ img:hover {
 .portfolio-grid div {
     width: 100%;
     height: 0%;
-    padding-bottom: 25%;
+    padding-bottom: 15%;
     background: white;
 }
 
 .portfolio-grid div:last-child:nth-child(3n - 1) {
-    grid-column: span 2;
+    grid-column: span 1;
     height: auto;
     padding-bottom: 0;
 }
@@ -119,6 +128,7 @@ img:hover {
     }
     .portfolio-grid {
         grid-template-columns: 1fr;
+
     }
 }
 

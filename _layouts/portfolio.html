@@ -14,19 +14,22 @@ layout: default
     <div class="portfolio-grid">
       {%- for post in site.posts -%}
       <div>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        {%- if post.thumbnail -%}
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          <img class="portfolio-cropper" src="{{ post.thumbnail }}" alt="thumbnail"/>
+        </a>
+        {%- endif -%}
+
+        <div>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+        </div>
+
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
         </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-        {%- if post.thumbnail -%}
-            <img class="image-cropper" src="{{ post.thumbnail }}" alt="person"/>
-        {%- endif -%}
       </div>
       {%- endfor -%}
     </div>

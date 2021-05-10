@@ -1,5 +1,6 @@
 ---
 permalink: /posts/:title
+thumbnail: /assets/img/run-loop/thumbnail.png
 ---
 
 LoopMyRun

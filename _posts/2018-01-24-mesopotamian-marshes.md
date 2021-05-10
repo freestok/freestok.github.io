@@ -1,5 +1,6 @@
 ---
 permalink: /posts/:title
+thumbnail: /assets/img/mesopotamia/false-color.png
 ---
 
 For millennia, the marshes in Mesopotamia — located by Iraq and Iran — boasted a rich culture of Marsh Arabs and a diverse ecosystem. Enter Saddam Hussein: after the building of dams and the targeting of marshes for political reasons, the ecosystem went under a drastic change. This project helps visualize the changes from 1988 to 2015 using Landsat 7 images and the remote sensing software ERDAS Imagine.

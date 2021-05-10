@@ -1,5 +1,6 @@
 ---
 permalink: /posts/:title
+thumbnail: /assets/img/geocoding-py/thumbnail.png
 ---
 
 The goal of this project was to map out the donors of a nonprofit in West Michigan. The CSV of donors numbered over 10,000 records. While there are many geocoding options out there, I decided to turn to an organization that specializes in data gathering for residences: the [U.S. Census Bureau](https://geocoding.geo.census.gov/).

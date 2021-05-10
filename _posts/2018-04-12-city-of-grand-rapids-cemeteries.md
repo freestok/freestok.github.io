@@ -1,5 +1,6 @@
 ---
 permalink: /posts/:title
+thumbnail: /assets/img/cemetery/thumbnail.png
 ---
 
 The purpose of [this project](http://grandrapids.maps.arcgis.com/apps/webappviewer/index.html?id=53514aa28a584dbd8f07e7a3ced8af17) was to allow any citizen to view cemeteries online so that they can search for occupants in any of Grand Rapids’ six cemeteries. This project was based on four phases: implementing surveying maps, reconciling polygon data with cemetery records, automating much of the workflow in Python, and visualizing it all in ArcGIS Online.

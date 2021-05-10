@@ -1,5 +1,6 @@
 ---
 permalink: /posts/:title
+thumbnail: /assets/img/riot/preview.png
 ---
 
 The Hack
