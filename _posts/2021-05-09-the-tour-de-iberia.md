@@ -1,5 +1,7 @@
 ---
 permalink: /posts/:title
+title: The Tour de Iberia
+thumbnail: /assets/img/iberia/physical.png
 ---
 <figure>
   <img src="/assets/img/iberia/route.png" alt=""/>
