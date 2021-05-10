@@ -1,3 +1,7 @@
+---
+permalink: /posts/:title
+---
+
 For millennia, the marshes in Mesopotamia — located by Iraq and Iran — boasted a rich culture of Marsh Arabs and a diverse ecosystem. Enter Saddam Hussein: after the building of dams and the targeting of marshes for political reasons, the ecosystem went under a drastic change. This project helps visualize the changes from 1988 to 2015 using Landsat 7 images and the remote sensing software ERDAS Imagine.
 
 Images were acquired via USGS’s [Global Visualization Viewer](https://glovis.usgs.gov/) (GloVis). These images mostly derived from NASA’s Landsat 7 satellite, though for the earlier year of 1988, the Landsat 5 satellite was used. My partner in this project, Kristen Childs, and I aimed to analyze images from the area’s wet season (February to March) in order to minimize potential errors in analysis. The seven bands in each of the raw images were then stacked together so the images could undergo supervised classification.

@@ -1,3 +1,7 @@
+---
+permalink: /posts/:title
+---
+
 <figure>
   <img src="/assets/img/backsliding/infographic.png" alt="infographic"/>
 </figure>

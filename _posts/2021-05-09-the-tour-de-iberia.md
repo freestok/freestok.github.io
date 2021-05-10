@@ -1,3 +1,6 @@
+---
+permalink: /posts/:title
+---
 <figure>
   <img src="/assets/img/iberia/route.png" alt=""/>
   <figcaption>The Fictional Tour de Iberia</figcaption>

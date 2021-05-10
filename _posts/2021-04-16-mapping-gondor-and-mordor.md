@@ -1,3 +1,7 @@
+---
+permalink: /posts/:title
+---
+
 <img class="full-width" src="/assets/img/mordor/mordor.png" alt="middle earth">
 
 [Robert Rose of William & Mary](https://www.wm.edu/offices/career/about/faculty-admin-committee/roserob.php) posted a [very interesting analysis](https://www.esri.com/arcgis-blog/products/story-maps/mapping/mapping-a-better-route-from-the-shire-to-mount-doom/) of an optimal route from the Shire to Mt. Doom. Thankfully, [he also posted the data](https://scholarworks.wm.edu/asoer/3/) behind the analysis, which included some great 50m DEMs and feature classes.

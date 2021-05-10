@@ -1,3 +1,7 @@
+---
+permalink: /posts/:title
+---
+
 The Hack
 ========
 

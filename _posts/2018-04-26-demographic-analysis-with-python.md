@@ -1,3 +1,7 @@
+---
+permalink: /posts/:title
+---
+
 <figure>
   <img src="/assets/img/demographics/heatmap.png" alt="map of cemetery blocks"/>
   <figcaption>Before Query Table Join</figcaption>

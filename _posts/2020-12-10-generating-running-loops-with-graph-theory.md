@@ -1,3 +1,7 @@
+---
+permalink: /posts/:title
+---
+
 LoopMyRun
 =========
 

@@ -1,3 +1,7 @@
+---
+permalink: /posts/:title
+---
+
 <img class="full-width" src="/assets/img/tanaka/oxia.png" alt="mars">
 
 Background
