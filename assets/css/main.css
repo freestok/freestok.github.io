@@ -58,13 +58,13 @@ iframe{
   }
 
 .home-header {
-    font-size: 10vw;
+    font-size: 6vw;
     color: rgb(89, 88, 88);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .home-link {
-    font-size: 4vw;
+    font-size: 3vw;
 }
 
 #image-slider,
