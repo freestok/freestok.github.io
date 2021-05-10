@@ -1,7 +1,7 @@
 ---
-permalink: /posts/:title
+permalink: /portfolio/:title
 title: The Tour de Iberia
-thumbnail: /assets/img/iberia/physical.png
+thumbnail: /assets/img/iberia/thumbnail.png
 ---
 <figure>
   <img src="/assets/img/iberia/route.png" alt=""/>

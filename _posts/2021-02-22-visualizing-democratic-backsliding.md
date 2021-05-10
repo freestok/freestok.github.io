@@ -1,5 +1,5 @@
 ---
-permalink: /posts/:title
+permalink: /portfolio/:title
 thumbnail: /assets/img/backsliding/thumbnail.png
 ---
 
