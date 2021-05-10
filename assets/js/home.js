@@ -1,31 +1,39 @@
+// global variables
+let splide;
+let images = getImages();
+let imgLength = images.length;
+
+
 document.addEventListener('readystatechange', event => {
     if (event.target.readyState === 'complete') {
         $('#image-slider').show();
+        setInterval(clickThrough, 4000)
     }
   });
 
 document.addEventListener( 'DOMContentLoaded', () => {
-
     $('#image-slider').hide();
-	const splide = new Splide( '#image-slider', {
+	splide = new Splide( '#image-slider', {
         'cover': true,
-        'heightRatio': 0.25,
-        'autoplay': true
+        'heightRatio': 0.3,
+        'autoplay': true,
+        'arrows': false
     });
     splide.mount();
-    let images = getImages();
     let shuffledImages = shuffleArray(images);
     for (let img of shuffledImages) {
         imgSrc = `<img src="/assets/img/${img}"></img>`;
         splide.add('<li class="splide__slide">' + imgSrc + '</li>');
     }
-
-    
-    // console.log(document.readyState);
-
-    // console.log('show!')
-    // $('#image-slider').show();
 } );
+
+function clickThrough() {
+    if (splide.index === imgLength - 1) {
+        splide.go('-' + imgLength-1);
+    } else {
+        splide.go('+1');
+    }
+};
 
 function shuffleArray(array) {
     // credit to https://stackoverflow.com/a/12646864
@@ -53,4 +61,8 @@ function getImages() {
         'tanaka/oxia.png',
         'header.png'
     ];
+}
+
+function showimage() {
+    $("body").css("background-image", "url('/assets/img/header.png')"); // Onclick of button the background image of body will be test here. Give the image path in url
 }

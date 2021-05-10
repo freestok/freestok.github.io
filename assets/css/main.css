@@ -1,4 +1,5 @@
 figcaption {
+    padding-top: 10px;
     text-align: center;
     font-style: italic;
     color: grey;
@@ -61,10 +62,23 @@ iframe{
     transform: translateY(50%);
   }
 
-  .home-header {
-      font-size: 7em;
-  }
+.home-header {
+    font-size: 10vw;
+    color: rgb(89, 88, 88);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
-  .home-link {
-      font-size: 2em;
-  }
+.home-link {
+    font-size: 4vw;
+}
+
+#image-slider,
+img {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+img:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+  
