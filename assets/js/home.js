@@ -51,14 +51,14 @@ function getImages() {
         'compliance/preview.png',
         'demographics/heatmap.png',
         'geocoding-py/donors-accuracy.png',
-        'iberia/physical.png',
-        'mordor/mordor.png',
+        'iberia/header.png',
+        'mordor/header.png',
         'riot/preview.png',
         'run-loop/preview.png',
         'tanaka/kasei-earth.png',
         'tanaka/kasei-bw.png',
         'tanaka/imhof.png',
-        'tanaka/oxia.png',
+        'tanaka/header.png',
         'header.png'
     ];
 }
