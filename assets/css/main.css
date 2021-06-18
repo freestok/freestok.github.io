@@ -1,3 +1,84 @@
+/* home CSS */
+/* Container holding the image and the text */
+.home-container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+  
+  /* Top left text */
+  .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  
+  /* Top right text */
+  .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+  
+  /* Bottom right text */
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+  
+  /* Centered text */
+  .centered {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #1f626a;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 6vw;
+    text-shadow:1px 1px 10px #a3d1e3, 1px 1px 10px #ccc;
+  }
+
+  .home-header {
+    font-size: 6vw;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.home-link-left {
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: '#1f626a';
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3vw;
+    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    /* background: rgba(106, 106, 106, 0.303); */
+}
+
+.home-link-right {
+  position: absolute;
+  top: 75%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  color: '#1f626a';
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3vw;
+  /* background: rgba(106, 106, 106, 0.303); */
+  text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+}
+  /* --------------- home CSS end  ------------------ */
+
 figcaption {
     padding-top: 10px;
     text-align: center;
@@ -12,7 +93,7 @@ figure img {
 .column {
     float: left;
     width: 49%;
-    padding: 1px;
+    /* padding: 1px; */
   }
   
   /* Clearfix (clear floats) */
@@ -57,22 +138,12 @@ iframe{
     transform: translateY(50%);
   }
 
-.home-header {
-    font-size: 6vw;
-    color: rgb(89, 88, 88);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.home-link {
-    font-size: 3vw;
-}
-
 #image-slider,
-img {
+.portfolio-cropper {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-img:hover {
+.portfolio-cropper:hover {
     box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
