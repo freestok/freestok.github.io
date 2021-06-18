@@ -1,3 +1,6 @@
+// global variables
+let stat = 'rp2013';
+
 // set-up map and basemap
 let map = L.map('map').setView([39.47, -97.02], 4);
 let assets = '/assets/projects/geog575-lab1'
@@ -21,13 +24,24 @@ function style(feature) {
 //  TODO figure out a better way to do porportions
 // make it specific to the kind (all, owner, renter)
 // have to examine the data in pandas probably
+// {'ap': {'min': 0.08, 'max': 0.25}, 'op': {'min': 0.16, 'max': 0.48}, 'rp': {'min': 0.41, 'max': 0.64}
 function getRadius(x) {
-    // console.log(x)
-    if (x < .45) return 5
-    else if (x < .50) return 10
-    else if (x < .55) return 15
-    else if (x < .60) return 20
-    else return 25
+    if (stat.includes('a')) {
+        if (x <= .1) return 5
+        else if (x <= .15) return 10
+        else if (x <= .2) return 15
+        else return 20
+    } else if (stat.includes('o')) {
+        if (x <= .2) return 5
+        else if (x <= .3) return 10
+        else if (x <= .4) return 15
+        else return 20
+    } else if (stat.includes('r')) {
+        if (x <= .45) return 5
+        else if (x <= .50) return 10
+        else if (x <= .55) return 15
+        else return 20
+    }
 }
 
 fetchJSON(`${assets}/urban_final.json`).then((data) => {
@@ -37,7 +51,7 @@ fetchJSON(`${assets}/urban_final.json`).then((data) => {
             return L.circleMarker(latlng, {
                 fillColor: '#708598',
                 color: '#537898',
-                radius: getRadius(feature.properties.ap2019),
+                radius: getRadius(feature.properties[stat]),
                 weight: 1,
                 fillOpacity: 0.6
             }) // TODO add pop-up?

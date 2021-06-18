@@ -4,3 +4,9 @@
     bottom: 0;
     width: 100%;
   }
+
+
+.btn-group {
+  position: absolute;
+  z-index: 500000
+}
