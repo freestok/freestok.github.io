@@ -34,7 +34,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
-collection:
+collections:
   projects:
     output: true
     permalink: /projects/:name
