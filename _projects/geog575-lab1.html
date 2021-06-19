@@ -27,18 +27,34 @@ layout: projects
   <!-- Example single danger button -->
   <div class="btn-group shadow-sm p-3 mb-5 bg-body rounded float-right">
     <button id="house-type" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-      All Housholds
+      Household Type
     </button>
     <ul class="dropdown-menu">
       <li class="dropdown-item active" id="all">All Housholds</li>
       <li class="dropdown-item" id="renters">Renters</li>
       <li class="dropdown-item" id="owners">Owners</li>
     </ul>
+    <button id="house-year" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Year
+    </button>
+    <ul class="dropdown-menu">
+      <li class="dropdown-item" id="2011">2011</li>
+      <li class="dropdown-item" id="2012">2012</li>
+      <li class="dropdown-item" id="2013">2013</li>
+      <li class="dropdown-item" id="2014">2014</li>
+      <li class="dropdown-item" id="2015">2015</li>
+      <li class="dropdown-item" id="2016">2016</li>
+      <li class="dropdown-item" id="2017">2017</li>
+      <li class="dropdown-item" id="2018">2018</li>
+      <li class="dropdown-item active" id="2019">2019</li>
+    </ul>
+    <label for="customRange3" class="form-label">Year </label>
+    <!-- TODO make this work and look good -->
+    <input type="range" class="form-range" min="2011" max="2019" step="1" id="customRange3">
   </div>
+
   <div id="map"></div>
-  <!-- Make sure you put this AFTER Leaflet's CSS -->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
+  
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
   <script src="/assets/projects/geog575-lab1/main.js"></script>
 </body>

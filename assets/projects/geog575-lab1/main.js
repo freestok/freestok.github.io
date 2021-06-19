@@ -35,10 +35,53 @@ $(document).ready(() => {
     //     L.geoJSON(data).addTo(map);
     // });
 
+    // ------------------- legend --------------------------
+    // TODO make this work like in the sample
+    // https://cartographicperspectives.org/index.php/journal/article/view/cp76-donohue-et-al/1307
+    var legend = L.control({position: 'bottomright'});
+
+    legend.onAdd = function (map) {
+
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+            labels = [];
+
+        // loop through our density intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < grades.length; i++) {
+            div.innerHTML +=
+                '<i style="background:blue;"></i> ' +
+                grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+        }
+
+        return div;
+    };
+
+    legend.addTo(map);
+
     // ------------------- listeners ------------------------
     $('.dropdown-item').on('click', (e) => {
-        $('#house-type').html(e.target.innerText);
-        stat = `${e.target.id[0]}p2019`;
+        const dropdowns = $('.dropdown-item.active');
+        let year, type;
+        if (Number(dropdowns[0].innerText)) {
+            [year, type] = dropdowns;
+        } else {
+            [type, year] = dropdowns;
+        }
+
+        // find out which one is changing and overwrite
+        if (Number(e.target.id)) {
+            $(year).removeClass('active');
+            year = e.target;
+            $(year).addClass('active');
+        } else {
+            $(type).removeClass('active');
+            type = e.target;
+            $(type).addClass('active');
+        }
+        $('#house-type').html(type.innerText);
+        $('#house-year').html(year.innerText);
+        console.log(year.id);
+        stat = `${type.id[0]}p${year.id}`;
         updateSymbology();
     });
 });
@@ -47,10 +90,18 @@ function updateSymbology() {
     console.log('updating');
     housing.eachLayer((layer) => {
         const props = layer.feature.properties;
+        let name = props.name.replace(' (2010)','');
+        let year = stat.substr(stat.length - 4);
+        let statName = stat
+            .replace('op','Owner Cost Burdened Households')
+            .replace('ap', 'All Cost Burdened Households')
+            .replace('rp', 'Renter Cost Burdened Households')
+            .replace(/\d{4}$/, '');
+        let householdType = statName.split(' ')[0];
+
         let popupContent = `
-            ${props.name}<br>
-            ${stat}<br>
-            ${Math.round(props[stat] * 100)}%
+            <h4>${statName}  - ${year}</h4>
+            ${Math.round(props[stat] * 100)}% of ${householdType} households in <b>${name}</b> are cost burdened.
         `
         layer.bindPopup(popupContent);
         layer.bindTooltip(popupContent);
@@ -64,12 +115,12 @@ async function fetchJSON(url) {
 }
 
 //  add the data
-// {'ap': {'min': 0.08, 'max': 0.25}, 'op': {'min': 0.16, 'max': 0.48}, 'rp': {'min': 0.41, 'max': 0.64}
+// {'ap': {'min': 0.23, 'max': 0.53}, 'op': {'min': 0.16, 'max': 0.48}, 'rp': {'min': 0.41, 'max': 0.64}
 function getRadius(x) {
     if (stat.includes('a')) {
-        if (x <= .1) return 5
-        else if (x <= .15) return 10
-        else if (x <= .2) return 15
+        if (x <= .25) return 5
+        else if (x <= .35) return 10
+        else if (x <= .45) return 15
         else return 20
     } else if (stat.includes('o')) {
         if (x <= .2) return 5
