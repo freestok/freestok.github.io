@@ -8,5 +8,7 @@
 
 .btn-group {
   position: absolute;
-  z-index: 500000
+  z-index: 500000;
+  right: 10em;
+  top: 1em;
 }
