@@ -13,6 +13,13 @@
   top: 1em;
 }
 
+#userForm {
+  position: absolute;
+  z-index: 500000;
+  right: 1em;
+  top: 1em;
+}
+
 .legend {
   line-height: 18px;
   color: #555;

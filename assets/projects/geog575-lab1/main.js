@@ -1,6 +1,6 @@
 // global variables
 let stat = 'rp2013';
-let housing;
+let housing, year;
 const assets = '/assets/projects/geog575-lab1';
 
 $(document).ready(() => {
@@ -38,50 +38,50 @@ $(document).ready(() => {
     // ------------------- legend --------------------------
     // TODO make this work like in the sample
     // https://cartographicperspectives.org/index.php/journal/article/view/cp76-donohue-et-al/1307
-    var legend = L.control({position: 'bottomright'});
+    // var legend = L.control({position: 'bottomright'});
 
-    legend.onAdd = function (map) {
+    // legend.onAdd = function (map) {
 
-        var div = L.DomUtil.create('div', 'info legend'),
-            grades = [0, 10, 20, 50, 100, 200, 500, 1000],
-            labels = [];
+    //     var div = L.DomUtil.create('div', 'info legend'),
+    //         grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+    //         labels = [];
 
-        // loop through our density intervals and generate a label with a colored square for each interval
-        for (var i = 0; i < grades.length; i++) {
-            div.innerHTML +=
-                '<i style="background:blue;"></i> ' +
-                grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-        }
+    //     // loop through our density intervals and generate a label with a colored square for each interval
+    //     for (var i = 0; i < grades.length; i++) {
+    //         div.innerHTML +=
+    //             '<i style="background:blue;"></i> ' +
+    //             grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    //     }
 
-        return div;
-    };
+    //     return div;
+    // };
 
-    legend.addTo(map);
+    // legend.addTo(map);
+
+    // ------------------- slider ----------------------------
+    let yearVal = $('#yearRange').val();
+    console.log(yearVal);
+    $('#yearLabel').text(String(yearVal));
 
     // ------------------- listeners ------------------------
+    $('input[type=range]').on('input', (e) => {
+        let yearVal = $(e.target).val();
+        year = yearVal;
+        $('#yearLabel').text(String(yearVal));
+        const dropdowns = $('.dropdown-item.active');
+        let type = dropdowns[0];
+        stat = `${type.id[0]}p${year}`;
+        updateSymbology();
+    });
+    
     $('.dropdown-item').on('click', (e) => {
         const dropdowns = $('.dropdown-item.active');
-        let year, type;
-        if (Number(dropdowns[0].innerText)) {
-            [year, type] = dropdowns;
-        } else {
-            [type, year] = dropdowns;
-        }
-
-        // find out which one is changing and overwrite
-        if (Number(e.target.id)) {
-            $(year).removeClass('active');
-            year = e.target;
-            $(year).addClass('active');
-        } else {
-            $(type).removeClass('active');
-            type = e.target;
-            $(type).addClass('active');
-        }
+        let type = dropdowns[0];
+        $(type).removeClass('active');
+        type = e.target;
+        $(type).addClass('active');
         $('#house-type').html(type.innerText);
-        $('#house-year').html(year.innerText);
-        console.log(year.id);
-        stat = `${type.id[0]}p${year.id}`;
+        stat = `${type.id[0]}p${year}`;
         updateSymbology();
     });
 });
