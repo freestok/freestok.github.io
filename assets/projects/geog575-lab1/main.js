@@ -1,3 +1,5 @@
+import { getToolUI } from './html.js';
+
 // global variables
 let stat = 'rp2013';
 let housing, year;
@@ -39,7 +41,10 @@ $(document).ready(() => {
     // ------------------- legend --------------------------
     // TODO make this work like in the sample
 
-
+    let tool = L.control({ position: 'bottomleft' });
+    let legendContainer = L.DomUtil.create("div", "poopy");
+    let toolHtml = getToolUI();
+    $(legendContainer).append(toolHtml);
 
     // ------------------- slider ----------------------------
     let yearVal = $('#yearRange').val();
@@ -139,7 +144,6 @@ function getRadiusLegend() {
 
 // legend functions ------------------------------
 function roundNumber(inNumber) {
-
     return (Math.round(inNumber / 10) * 10);
 }
 function createLegend(min, max, map) {
@@ -163,7 +167,7 @@ function createLegend(min, max, map) {
             L.DomEvent.stopPropagation(e);
         });
 
-        $(legendContainer).append("<h3 id='legendTitle'>% Housing Burdened</h3>");
+        $(legendContainer).append("<h4 id='legendTitle'>% Burdened</h4>");
 
         classes = [10, 18, 26, 34]
         for (let circle of classes) {

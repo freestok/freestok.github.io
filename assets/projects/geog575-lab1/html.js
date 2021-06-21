@@ -1,39 +1,6 @@
----
-layout: projects
----
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:image" content="https://freestok.github.io/assets/img/site-preview.png" />
-  <!-- <meta property="og:description" content="Collection of project" /> -->
-  <!-- <meta property="og:url"content="" /> -->
-  <meta property="og:title" content="Kray's Portfolio" />
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/assets/projects/geog575-lab1/style.css"> </link>
-
-  <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-</head>
-
-<body style="margin:0;">
-  
-  <!-- As a heading -->
-  <nav class="navbar navbar-light bg-light text-center">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">
-        <i class="bi bi-house-fill"></i> Housing Burden in United States Urbanized Areas
-      </span>
-    </div>
-  </nav>
-  <div id="userTool" class="container-fluid mt-4">
+export function getToolUI() {
+    return `
+    <div class="container-fluid mt-4">
     <div class="row justify-content-center">
       <div class="col-auto mb-3">
         <div class="card shadow" style="width: 18rem;">
@@ -80,12 +47,5 @@ layout: projects
       </div>
     </div>
   </div>
-<div class="container2">
-    <div id="map"></div>
-</div>
-  
-  
-  
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-  <script src="/assets/projects/geog575-lab1/main.js" type="module"></script>
-</body>
+    `
+}
