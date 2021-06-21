@@ -5,7 +5,7 @@ const assets = '/assets/projects/geog575-lab1';
 
 $(document).ready(() => {
     // set-up map and basemap
-    let map = L.map('map').setView([39.47, -97.02], 4);
+    const map = L.map('map').setView([39.47, -97.02], 4);
 
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
@@ -28,6 +28,7 @@ $(document).ready(() => {
         }).addTo(map);
 
         updateSymbology();
+        createLegend(5, 50, map);
     });
 
     // TODO style this
@@ -37,26 +38,8 @@ $(document).ready(() => {
 
     // ------------------- legend --------------------------
     // TODO make this work like in the sample
-    // https://cartographicperspectives.org/index.php/journal/article/view/cp76-donohue-et-al/1307
-    // var legend = L.control({position: 'bottomright'});
 
-    // legend.onAdd = function (map) {
 
-    //     var div = L.DomUtil.create('div', 'info legend'),
-    //         grades = [0, 10, 20, 50, 100, 200, 500, 1000],
-    //         labels = [];
-
-    //     // loop through our density intervals and generate a label with a colored square for each interval
-    //     for (var i = 0; i < grades.length; i++) {
-    //         div.innerHTML +=
-    //             '<i style="background:blue;"></i> ' +
-    //             grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-    //     }
-
-    //     return div;
-    // };
-
-    // legend.addTo(map);
 
     // ------------------- slider ----------------------------
     let yearVal = $('#yearRange').val();
@@ -134,3 +117,77 @@ function getRadius(x) {
         else return 20
     }
 }
+
+function getRadiusLegend() {
+    if (stat.includes('a')) {
+        if (x <= .25) return 5
+        else if (x <= .35) return 10
+        else if (x <= .45) return 15
+        else return 20
+    } else if (stat.includes('o')) {
+        if (x <= .2) return 5
+        else if (x <= .3) return 10
+        else if (x <= .4) return 15
+        else return 20
+    } else if (stat.includes('r')) {
+        if (x <= .45) return 5
+        else if (x <= .50) return 10
+        else if (x <= .55) return 15
+        else return 20
+    }
+}
+
+// legend functions ------------------------------
+function roundNumber(inNumber) {
+
+    return (Math.round(inNumber / 10) * 10);
+}
+function createLegend(min, max, map) {
+    if (min < 10) {
+        min = 10;
+    }
+
+    let legend = L.control({ position: 'bottomright' });
+
+    legend.onAdd = () => {
+
+        let legendContainer = L.DomUtil.create("div", "legend");
+        let symbolsContainer = L.DomUtil.create("div", "symbolsContainer");
+        let classes = [roundNumber(min), roundNumber((max - min) / 2), roundNumber(max)];
+        let legendCircle;
+        let lastRadius = 0;
+        let currentRadius;
+        let margin;
+
+        L.DomEvent.addListener(legendContainer, 'mousedown', (e) => {
+            L.DomEvent.stopPropagation(e);
+        });
+
+        $(legendContainer).append("<h3 id='legendTitle'>% Housing Burdened</h3>");
+
+        classes = [10, 18, 26, 34]
+        for (let circle of classes) {
+            legendCircle = L.DomUtil.create("div", "legendCircle");
+            currentRadius = circle;
+
+            margin = -currentRadius - lastRadius - 2;
+
+            $(legendCircle).attr("style", "width: " + currentRadius * 2 +
+                "px; height: " + currentRadius * 2 +
+                "px; margin-left: " + margin + "px");
+            $(legendCircle).append("<span class='legendValue'>" + circle + "</span>");
+
+            $(symbolsContainer).append(legendCircle);
+
+            lastRadius = currentRadius;
+
+        }
+
+        $(legendContainer).append(symbolsContainer);
+
+        return legendContainer;
+    };
+
+    legend.addTo(map);
+
+} // end createLegend();
