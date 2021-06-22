@@ -24,12 +24,12 @@ body > div.container2 {
 }
 
 
-#userTool {
+/* #userTool {
   position: absolute;
   z-index: 500000;
   right: 17.5em;
   bottom:.25em;
-}
+} */
 
 /* legend css */
 
@@ -37,7 +37,6 @@ body > div.container2 {
   padding: 6px 10px;
   font: 14px/16px Arial, Helvetica, sans-serif;
   background: white;
-  background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
@@ -63,4 +62,9 @@ body > div.container2 {
 .legendValue {
   position: absolute;
   right: 8px;
+}
+
+/* for the modal */
+#exampleModal {
+  z-index: 100000;
 }

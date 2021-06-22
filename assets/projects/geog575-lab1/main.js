@@ -40,11 +40,8 @@ $(document).ready(() => {
 
     // ------------------- legend --------------------------
     // TODO make this work like in the sample
-
-    let tool = L.control({ position: 'bottomleft' });
-    let legendContainer = L.DomUtil.create("div", "poopy");
     let toolHtml = getToolUI();
-    $(legendContainer).append(toolHtml);
+    creatTool(toolHtml, map);
 
     // ------------------- slider ----------------------------
     let yearVal = $('#yearRange').val();
@@ -150,11 +147,8 @@ function createLegend(min, max, map) {
     if (min < 10) {
         min = 10;
     }
-
     let legend = L.control({ position: 'bottomright' });
-
     legend.onAdd = () => {
-
         let legendContainer = L.DomUtil.create("div", "legend");
         let symbolsContainer = L.DomUtil.create("div", "symbolsContainer");
         let classes = [roundNumber(min), roundNumber((max - min) / 2), roundNumber(max)];
@@ -168,30 +162,42 @@ function createLegend(min, max, map) {
         });
 
         $(legendContainer).append("<h4 id='legendTitle'>% Burdened</h4>");
-
         classes = [10, 18, 26, 34]
         for (let circle of classes) {
             legendCircle = L.DomUtil.create("div", "legendCircle");
             currentRadius = circle;
-
             margin = -currentRadius - lastRadius - 2;
-
             $(legendCircle).attr("style", "width: " + currentRadius * 2 +
                 "px; height: " + currentRadius * 2 +
                 "px; margin-left: " + margin + "px");
             $(legendCircle).append("<span class='legendValue'>" + circle + "</span>");
-
             $(symbolsContainer).append(legendCircle);
-
             lastRadius = currentRadius;
-
         }
-
         $(legendContainer).append(symbolsContainer);
-
         return legendContainer;
     };
 
     legend.addTo(map);
-
 } // end createLegend();
+
+
+function creatTool(html, map) {
+    let control = L.control({ position: 'topright' });
+    control.onAdd = () => {
+        let divContainer = L.DomUtil.create("div", "legend");
+        L.DomEvent.addListener(divContainer, 'mousedown', (e) => {
+            console.log('mousedown');
+            L.DomEvent.stopPropagation(e);
+        });
+
+        L.DomEvent.addListener(divContainer, 'drag', (e) => {
+            console.log('mousedown');
+            L.DomEvent.stopPropagation(e);
+        });
+        $(divContainer).append(html);
+        return divContainer;
+    };
+
+    control.addTo(map);
+} // end creatTool();
