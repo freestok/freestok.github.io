@@ -2,7 +2,8 @@ import { getToolUI } from './html.js';
 
 // global variables
 let stat = 'rp2013';
-let housing, year;
+let housing;
+let year = 2019;
 const assets = '/assets/projects/geog575-lab1';
 
 $(document).ready(() => {
@@ -66,8 +67,12 @@ $(document).ready(() => {
         type = e.target;
         $(type).addClass('active');
         $('#house-type').html(type.innerText);
+        console.log('type',type);
+        console.log('e',e);
         stat = `${type.id[0]}p${year}`;
+        console.log(stat);
         updateSymbology();
+        console.log(stat);
     });
 });
 
@@ -84,12 +89,31 @@ function updateSymbology() {
             .replace(/\d{4}$/, '');
         let householdType = statName.split(' ')[0];
 
+        // X in 10
+        let in10 = Math.round(props[stat] * 10);
+        let remainder = 10 - in10;
+        let in10Msg = ''
+        
+        for (let i=0; i < in10; i++) {
+            in10Msg += '<i class="bi bi-person-fill"></i>'
+        }
+        for (let i=0; i < remainder; i++) {
+            in10Msg += '<i class="bi bi-person"></i>'
+        }
+
         let popupContent = `
-            <h4>${statName}  - ${year}</h4>
-            ${Math.round(props[stat] * 100)}% of ${householdType} households in <b>${name}</b> are cost burdened.
+            <div id="tooltip">
+                <h5>${statName}  - ${year}</h5>
+                ${Math.round(props[stat] * 100)}% of ${householdType} households in <b>${name}</b> are cost burdened.<br><br>
+                That is about ${in10} out 10 people who are cost burdened.<br>
+                ${in10Msg}
+            </div>
         `
         layer.bindPopup(popupContent);
-        layer.bindTooltip(popupContent);
+        // if not mobile, then tooltip
+        if (!/Mobi|Android/i.test(navigator.userAgent)) {
+            layer.bindTooltip(popupContent);
+        }
         layer.setRadius(getRadius(props[stat]));
     });
 }
@@ -157,10 +181,6 @@ function createLegend(min, max, map) {
         let currentRadius;
         let margin;
 
-        L.DomEvent.addListener(legendContainer, 'mousedown', (e) => {
-            L.DomEvent.stopPropagation(e);
-        });
-
         $(legendContainer).append("<h4 id='legendTitle'>% Burdened</h4>");
         classes = [10, 18, 26, 34]
         for (let circle of classes) {
@@ -179,6 +199,16 @@ function createLegend(min, max, map) {
     };
 
     legend.addTo(map);
+
+    // disable dragging when cursor enters the container
+    legend.getContainer().addEventListener('mouseover', function () {
+        map.dragging.disable();
+    });
+
+    // Re-enable dragging when user's cursor leaves the element
+    legend.getContainer().addEventListener('mouseout', function () {
+        map.dragging.enable();
+    });
 } // end createLegend();
 
 
@@ -186,18 +216,20 @@ function creatTool(html, map) {
     let control = L.control({ position: 'topright' });
     control.onAdd = () => {
         let divContainer = L.DomUtil.create("div", "legend");
-        L.DomEvent.addListener(divContainer, 'mousedown', (e) => {
-            console.log('mousedown');
-            L.DomEvent.stopPropagation(e);
-        });
 
-        L.DomEvent.addListener(divContainer, 'drag', (e) => {
-            console.log('mousedown');
-            L.DomEvent.stopPropagation(e);
-        });
         $(divContainer).append(html);
         return divContainer;
     };
 
     control.addTo(map);
+
+    // disable dragging when cursor enters the container
+    control.getContainer().addEventListener('mouseover', function () {
+        map.dragging.disable();
+    });
+
+    // Re-enable dragging when user's cursor leaves the element
+    control.getContainer().addEventListener('mouseout', function () {
+        map.dragging.enable();
+    });
 } // end creatTool();

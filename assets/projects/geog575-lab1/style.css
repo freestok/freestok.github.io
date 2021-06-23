@@ -54,8 +54,8 @@ body > div.container2 {
 
 .legendCircle {
   border-radius: 50%;
-  border: 1px solid #537898;
-  background: rgba(113, 133, 152, .6);
+  border: 1px solid #cccccc;
+  background: rgba(101, 85, 100, .6);
   display: inline-block;
 }
 
@@ -64,7 +64,12 @@ body > div.container2 {
   right: 8px;
 }
 
-/* for the modal */
-#exampleModal {
-  z-index: 100000;
+/* modify tooltip */
+.leaflet-tooltip {
+  width: 300px;
+  white-space: normal;
+}
+
+.bi {
+  font-size: 1rem;
 }
