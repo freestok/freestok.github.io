@@ -34,7 +34,7 @@ body > div.container2 {
 /* legend css */
 
 .legend, .temporal-legend {
-  padding: 6px 10px;
+  padding: 10px 40px 13px 10px;
   font: 14px/16px Arial, Helvetica, sans-serif;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -49,12 +49,12 @@ body > div.container2 {
 
 .symbolsContainer {
   float: left;
-  margin-left: 50px;
+  margin-left: 60px;
 }
 
 .legendCircle {
   border-radius: 50%;
-  border: 1px solid #cccccc;
+  border: 2px solid #ffff;
   background: rgba(101, 85, 100, .6);
   display: inline-block;
 }

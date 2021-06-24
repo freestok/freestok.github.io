@@ -1,8 +1,8 @@
 import { getToolUI } from './html.js';
 
 // global variables
-let stat = 'rp2013';
-let housing;
+let stat = 'ap2019';
+let housing, legendContainer;
 let year = 2019;
 const assets = '/assets/projects/geog575-lab1';
 
@@ -21,8 +21,8 @@ $(document).ready(() => {
         housing = L.geoJSON(data, {
             pointToLayer: (feature, latlng) => {
                 return L.circleMarker(latlng, {
-                    fillColor: '#708598',
-                    color: '#537898',
+                    fillColor: '#a299a2',
+                    color: '#6e606e',
                     radius: getRadius(feature.properties[stat]),
                     weight: 1,
                     fillOpacity: 0.6
@@ -31,7 +31,7 @@ $(document).ready(() => {
         }).addTo(map);
 
         updateSymbology();
-        createLegend(5, 50, map);
+        createLegend(map);
     });
 
     // TODO style this
@@ -42,7 +42,7 @@ $(document).ready(() => {
     // ------------------- legend --------------------------
     // TODO make this work like in the sample
     let toolHtml = getToolUI();
-    creatTool(toolHtml, map);
+    createTool(toolHtml, map);
 
     // ------------------- slider ----------------------------
     let yearVal = $('#yearRange').val();
@@ -67,12 +67,9 @@ $(document).ready(() => {
         type = e.target;
         $(type).addClass('active');
         $('#house-type').html(type.innerText);
-        console.log('type',type);
-        console.log('e',e);
         stat = `${type.id[0]}p${year}`;
-        console.log(stat);
         updateSymbology();
-        console.log(stat);
+        createLegend(map);
     });
 });
 
@@ -145,52 +142,38 @@ function getRadius(x) {
 }
 
 function getRadiusLegend() {
-    if (stat.includes('a')) {
-        if (x <= .25) return 5
-        else if (x <= .35) return 10
-        else if (x <= .45) return 15
-        else return 20
-    } else if (stat.includes('o')) {
-        if (x <= .2) return 5
-        else if (x <= .3) return 10
-        else if (x <= .4) return 15
-        else return 20
-    } else if (stat.includes('r')) {
-        if (x <= .45) return 5
-        else if (x <= .50) return 10
-        else if (x <= .55) return 15
-        else return 20
+    const statType = stat[0];
+    const labels = {
+        'a':['≤25%','≤35%','≤45%','> 45%'],
+        'o': ['≤20%','≤30%','≤40%','>40%'],
+        'r': ['≤45%','≤50%','≤55%','>55%']
     }
+    return labels[statType]
 }
 
 // legend functions ------------------------------
-function roundNumber(inNumber) {
-    return (Math.round(inNumber / 10) * 10);
-}
-function createLegend(min, max, map) {
-    if (min < 10) {
-        min = 10;
-    }
+function createLegend(map) {
+    $(legendContainer).remove();
     let legend = L.control({ position: 'bottomright' });
     legend.onAdd = () => {
-        let legendContainer = L.DomUtil.create("div", "legend");
+        legendContainer = L.DomUtil.create("div", "legend");
         let symbolsContainer = L.DomUtil.create("div", "symbolsContainer");
-        let classes = [roundNumber(min), roundNumber((max - min) / 2), roundNumber(max)];
         let legendCircle;
         let lastRadius = 0;
         let currentRadius;
         let margin;
 
         $(legendContainer).append("<h4 id='legendTitle'>% Burdened</h4>");
-        classes = [10, 18, 26, 34]
-        for (let circle of classes) {
+        let classes = getRadiusLegend();
+        let sizes = [15, 30, 45, 60]
+        for (let circle in classes) {
             legendCircle = L.DomUtil.create("div", "legendCircle");
-            currentRadius = circle;
-            margin = -currentRadius - lastRadius - 2;
+            currentRadius = sizes[circle];
+            margin = -currentRadius - lastRadius;
             $(legendCircle).attr("style", "width: " + currentRadius * 2 +
                 "px; height: " + currentRadius * 2 +
                 "px; margin-left: " + margin + "px");
-            $(legendCircle).append("<span class='legendValue'>" + circle + "</span>");
+            $(legendCircle).append("<span class='legendValue'>" + classes[circle] + "</span>");
             $(symbolsContainer).append(legendCircle);
             lastRadius = currentRadius;
         }
@@ -212,7 +195,7 @@ function createLegend(min, max, map) {
 } // end createLegend();
 
 
-function creatTool(html, map) {
+function createTool(html, map) {
     let control = L.control({ position: 'topright' });
     control.onAdd = () => {
         let divContainer = L.DomUtil.create("div", "legend");
