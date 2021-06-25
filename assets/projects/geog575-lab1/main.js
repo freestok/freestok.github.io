@@ -3,6 +3,7 @@ import { getToolUI } from './html.js';
 // global variables
 let stat = 'ap2019';
 let housing, legendContainer;
+let checked = true;
 let year = 2019;
 const assets = '/assets/projects/geog575-lab1';
 
@@ -15,18 +16,33 @@ $(document).ready(() => {
         maxZoom: 16
     }).addTo(map);
 
+    // TODO style this
+    // https://leafletjs.com/reference-1.7.1.html#path-option
+    let polyStyle = {
+        fill: true,
+        color: '#808080',
+        opacity: 0
+    }
+
+    fetchJSON(`${assets}/urban_boundaries.json`).then((data) => {
+        L.geoJSON(data, {
+            style: polyStyle,
+            interactive: false
+        }).addTo(map);
+    });
+
     // add data to the map
     fetchJSON(`${assets}/urban_final.json`).then((data) => {
         console.log('data', data);
         housing = L.geoJSON(data, {
             pointToLayer: (feature, latlng) => {
                 return L.circleMarker(latlng, {
-                    fillColor: '#a299a2',
-                    color: '#6e606e',
+                    fillColor: '#d8626b',
+                    color: '#d8626b',
                     radius: getRadius(feature.properties[stat]),
                     weight: 1,
                     fillOpacity: 0.6
-                }) // TODO add pop-up?
+                }) 
             }
         }).addTo(map);
 
@@ -34,10 +50,7 @@ $(document).ready(() => {
         createLegend(map);
     });
 
-    // TODO style this
-    // fetchJSON(`${assets}/urban_boundaries.json`).then((data) => {
-    //     L.geoJSON(data).addTo(map);
-    // });
+
 
     // ------------------- legend --------------------------
     // TODO make this work like in the sample
@@ -71,6 +84,13 @@ $(document).ready(() => {
         updateSymbology();
         createLegend(map);
     });
+
+    $('#symbolCheck').on('click', (e) => {
+        console.log('symbol click');
+        checked = e.target.checked;
+        updateSymbology();
+        createLegend(map);
+    });
 });
 
 function updateSymbology() {
@@ -98,20 +118,39 @@ function updateSymbology() {
             in10Msg += '<i class="bi bi-person"></i>'
         }
 
-        let popupContent = `
+        let popupContent;
+        if (householdType == 'All') {
+            popupContent = `
             <div id="tooltip">
                 <h5>${statName}  - ${year}</h5>
-                ${Math.round(props[stat] * 100)}% of ${householdType} households in <b>${name}</b> are cost burdened.<br><br>
-                That is about ${in10} out 10 people who are cost burdened.<br>
+                ${Math.round(props[stat] * 100)}% of ${householdType.toLocaleLowerCase()} households in <b>${name}</b> are cost burdened.<br><br>
+                That means about ${in10} out of 10 households are cost burdened.<br>
                 ${in10Msg}
             </div>
         `
+        } else {
+            popupContent = `
+            <div id="tooltip">
+                <h5>${statName}  - ${year}</h5>
+                ${Math.round(props[stat] * 100)}% of ${householdType.toLocaleLowerCase()} households in <b>${name}</b> are cost burdened.<br><br>
+                That means about ${in10} out of 10 ${householdType.toLocaleLowerCase()} households are cost burdened.<br>
+                ${in10Msg}
+            </div>
+        `
+        }
+
         layer.bindPopup(popupContent);
         // if not mobile, then tooltip
         if (!/Mobi|Android/i.test(navigator.userAgent)) {
             layer.bindTooltip(popupContent);
         }
-        layer.setRadius(getRadius(props[stat]));
+
+        if (checked) {
+            layer.setRadius(getRadius(props[stat]));
+        } else {
+            layer.setRadius(props[stat] * 30);
+        }
+        
     });
 }
 
@@ -144,9 +183,9 @@ function getRadius(x) {
 function getRadiusLegend() {
     const statType = stat[0];
     const labels = {
-        'a':['≤25%','≤35%','≤45%','> 45%'],
-        'o': ['≤20%','≤30%','≤40%','>40%'],
-        'r': ['≤45%','≤50%','≤55%','>55%']
+        'a':['≤ 25%','≤ 35%','≤ 45%','> 45%'],
+        'o': ['≤ 20%','≤ 30%','≤ 40%','> 40%'],
+        'r': ['≤ 45%','≤ 50%','≤ 55%','> 55%']
     }
     return labels[statType]
 }
@@ -164,8 +203,16 @@ function createLegend(map) {
         let margin;
 
         $(legendContainer).append("<h4 id='legendTitle'>% Burdened</h4>");
-        let classes = getRadiusLegend();
-        let sizes = [15, 30, 45, 60]
+        
+        let sizes, classes;
+        if (checked) {
+            classes = getRadiusLegend();
+            sizes = [15, 30, 45, 60];
+        } else {
+            classes = ['16%', '37%', '64%']
+            sizes = [30, 45, 60];
+        }
+        
         for (let circle in classes) {
             legendCircle = L.DomUtil.create("div", "legendCircle");
             currentRadius = sizes[circle];
