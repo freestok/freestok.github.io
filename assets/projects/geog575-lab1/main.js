@@ -2,6 +2,7 @@ import { getToolUI } from './html.js';
 
 // global variables
 let stat = 'ap2019';
+let initialExt;
 let housing, legendContainer;
 let checked = true;
 let year = 2019;
@@ -10,7 +11,7 @@ const assets = '/assets/projects/geog575-lab1';
 $(document).ready(() => {
     // set-up map and basemap
     const map = L.map('map').setView([39.47, -97.02], 4);
-
+    initialExt = map.getBounds();
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
         maxZoom: 16
@@ -91,6 +92,8 @@ $(document).ready(() => {
         updateSymbology();
         createLegend(map);
     });
+
+    $('#houseIcon').on('click', () => map.fitBounds(initialExt));
 });
 
 function updateSymbology() {

@@ -19,7 +19,7 @@ export function getToolUI() {
   <div class="form-group row">
       <label id="yearLabel" class="col-sm-3 col-form-label">Year</label>
       <div class="col-sm-9">
-          <input type="range" class="form-range pl-10" min="2011" max="2019" step="1" value="2019" id="yearRange">
+          <input type="range" class="form-range pl-10" min="2012" max="2019" step="1" value="2019" id="yearRange">
       </div>
   </div>
   <hr class="my-12"/>
