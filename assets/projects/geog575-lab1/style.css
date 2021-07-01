@@ -78,3 +78,11 @@ body > div.container2 {
 .bi-person-fill {
   color: #d8626b;
 }
+
+#houseIcon {
+  font-size: 1.5rem;
+}
+#houseIcon:hover {
+  color: #d7656e;
+  font-size: 1.5rem;
+}
