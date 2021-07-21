@@ -1,18 +1,14 @@
-.axis path,
-.axis line {
-    fill: none;
-    stroke: black;
-    stroke-width: 1px;
-    shape-rendering: crispEdges;
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 45%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
 }
-
-.axis text {
-    font-family: sans-serif;
-    font-size: 0.9em;
-}
-
-.title {
-    font-family: sans-serif;
-    font-size: 1.5em;
-    font-weight: bold;
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    padding-top: 5px;
 }
