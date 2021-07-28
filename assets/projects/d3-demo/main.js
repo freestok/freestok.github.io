@@ -68,12 +68,24 @@ function setMap() {
 
 function stateWinners(csv, fips) {
     let record = csv.filter(e => e.fips == fips);
-    console.log('record', record);
+    // console.log('record', record);
 
     if (record.length) {
         let r = record[0];
+        if (r.state == 'District of Columbia') return 'black'
         if (r.dem == '-') return 'red'
         else return 'blue'
+    } else {
+        let new_fips = fips.split('-')[0];
+        record = csv.filter(e => e.fips == new_fips);
+        let demWinner = Number(record[0].dem) > Number(record[0].rep);
+
+        if (fips.includes('-l')) {
+            if (demWinner) return 'blue';
+            else return 'red';
+        } else {
+            if (demWinner) return 'red';
+            else return 'blue';
+        }
     }
-    return 'yellow'
 }
