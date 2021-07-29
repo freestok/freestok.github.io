@@ -1,4 +1,4 @@
-year,state,state_po,county_fips,county_name,clinton,trump,total
+year,state,state_po,county_fips,county_name,dem,rep,total
 2016,ALABAMA,AL,01001,AUTAUGA,5936.0,18172.0,24973.0
 2016,ALABAMA,AL,01003,BALDWIN,18458.0,72883.0,95215.0
 2016,ALABAMA,AL,01005,BARBOUR,4871.0,5454.0,10469.0
