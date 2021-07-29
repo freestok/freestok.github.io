@@ -6,19 +6,18 @@ const height = 425;
 
 $(document).ready(() => {
     setMap();
-    // testThis();
 });
 
 //set up choropleth map
-function setMap() {
+async function setMap() {
     //use queue to parallelize asynchronous data loading
     const files = [
-        '../assets/projects/d3-demo/state16_final.csv',
-        '../assets/projects/d3-demo/state20_final.csv',
-        '../assets/projects/d3-demo/election16_modified.csv',
+        // '../assets/projects/d3-demo/state16_final.csv',
+        // '../assets/projects/d3-demo/state20_final.csv',
+        // '../assets/projects/d3-demo/election16_modified.csv',
         '../assets/projects/d3-demo/election20_modified.csv',
         '../assets/projects/d3-demo/counties.json',
-        '../assets/projects/d3-demo/states.json'
+        // '../assets/projects/d3-demo/states.json'
     ];
 
     //create new svg container for the map
@@ -32,19 +31,19 @@ function setMap() {
         //class to make it responsive
         .classed("svg-content-responsive", true); 
 
-    const promises = [];
     console.log('loading data..');
+    const promises = [];
     for (let file of files) {
         if (file.includes('.json')) promises.push(d3.json(file));
-        else if (file.includes('.csv')) promises.push(d3.csv(file));
+        else if (file.includes('.csv')) promises.push(d3.csv(file, d3.autoType));
     }
-
     Promise.all(promises).then((values) => {
-        console.log('data loaded');
-        let [state16, state20, county16, county20, counties, states] = values;
-
+        // console.log('data loaded');
+        // let [state16, state20, county16, county20, counties, states] = values;
+        let [countyData, counties] = values;
+        console.log('counties', counties);
         // createStateMap(map, states, state20, state16);
-        createCountyMap(map, counties, county16, county20);
+        createCountyMap(map, counties, countyData);
     });
 };
 
@@ -52,23 +51,20 @@ function setMap() {
 // --------------------------------------------------------
 // map creation functions ---------------------------------
 // --------------------------------------------------------
-function createCountyMap(map, counties, county16, county20) {
-    console.log('counties', counties.objects.usa_election);
-    console.log('county20', county20);
+function createCountyMap(map, counties, countyData) {
+    console.log('countyData', countyData);
     let countyTopo = topojson.feature(counties, counties.objects.usa_election);
     const projection = d3.geoAlbersUsa().fitSize([width, height], countyTopo);
     const path = d3.geoPath().projection(projection);
+    const blueScheme = d3.scaleQuantize([0.48, .97], d3.schemeBlues[9])
+    const redScheme = d3.scaleQuantize([0.48, .97], d3.schemeReds[9])
 
     map.selectAll('.counties')
         .data(countyTopo.features)
         .enter()
         .append('path')
         .attr('d', path)
-        .style('fill', d => {
-            const fips = d.properties.GEOID;
-            if (year === 2020) return countyChoropleth(county20, fips);
-            else return countyChoropleth(county16, fips)
-        })
+        .style('fill', d => countyChoropleth(countyData, d.properties.GEOID, blueScheme, redScheme))
         .style('stroke-width', '0.5')
         .style('stroke', 'black');
 }
@@ -95,13 +91,13 @@ function createStateMap(map, states, state20, state16) {
 // --------------------------------------------------------
 // styling functions --------------------------------------
 // --------------------------------------------------------
-function countyChoropleth(csv, fips) {
+function countyChoropleth(csv, fips, blueScheme, redScheme) {
     // console.log('fips', fips);
     let record = csv.filter(e => e.county_fips == fips);
     if (record.length) {
         let r = record[0];
-        if (Number(r.rep) > Number(r.dem)) return red;
-        else return blue;
+        if (r.rep > r.dem) return redScheme(r.rep/r.total);
+        else return blueScheme(r.dem/r.total);
     } else {
         console.log('fips', fips);
         return 'black';
