@@ -1,3 +1,5 @@
+import { legend } from './color-legend.js'
+
 let year = 2020;
 const blue = '#5d80b4';
 const red = '#c66154';
@@ -33,17 +35,24 @@ async function setMap() {
 
     console.log('loading data..');
     const promises = [];
-    for (let file of files) {
-        if (file.includes('.json')) promises.push(d3.json(file));
-        else if (file.includes('.csv')) promises.push(d3.csv(file, d3.autoType));
-    }
-    Promise.all(promises).then((values) => {
-        // console.log('data loaded');
-        // let [state16, state20, county16, county20, counties, states] = values;
-        let [countyData, counties] = values;
-        console.log('counties', counties);
-        // createStateMap(map, states, state20, state16);
-        createCountyMap(map, counties, countyData);
+    // for (let file of files) {
+    //     if (file.includes('.json')) promises.push(d3.json(file));
+    //     else if (file.includes('.csv')) promises.push(d3.csv(file, d3.autoType));
+    // }
+    // Promise.all(promises).then((values) => {
+    //     // console.log('data loaded');
+    //     // let [state16, state20, county16, county20, counties, states] = values;
+    //     let [countyData, counties] = values;
+    //     console.log('counties', counties);
+    //     // createStateMap(map, states, state20, state16);
+    //     createCountyMap(map, counties, countyData);
+    // });
+
+    legend({
+        color: d3.scaleDivergingSqrt([-0.1, 0, 0.1], d3.interpolateRdBu),
+        title: "Temperature (°F)",
+        svgHtml: 'svg#d3Legend',
+        tickFormat: (d, i) => ['90+', '70+', '0', '70+', '90+'][i]
     });
 };
 
@@ -56,8 +65,8 @@ function createCountyMap(map, counties, countyData) {
     let countyTopo = topojson.feature(counties, counties.objects.usa_election);
     const projection = d3.geoAlbersUsa().fitSize([width, height], countyTopo);
     const path = d3.geoPath().projection(projection);
-    const blueScheme = d3.scaleQuantize([0.48, .97], d3.schemeBlues[9])
-    const redScheme = d3.scaleQuantize([0.48, .97], d3.schemeReds[9])
+    const blueScheme = d3.scaleQuantize([0, 90], d3.schemeBlues[9])
+    const redScheme = d3.scaleQuantize([0, 90], d3.schemeReds[9])
 
     map.selectAll('.counties')
         .data(countyTopo.features)
@@ -96,8 +105,11 @@ function countyChoropleth(csv, fips, blueScheme, redScheme) {
     let record = csv.filter(e => e.county_fips == fips);
     if (record.length) {
         let r = record[0];
-        if (r.rep > r.dem) return redScheme(r.rep/r.total);
-        else return blueScheme(r.dem/r.total);
+        let repTotal = r.rep/r.total * 100;
+        let demTotal = r.dem/r.total * 100;
+        console.log('repTotal',repTotal*100);
+        if (r.rep > r.dem) return redScheme(repTotal - demTotal);
+        else return blueScheme(demTotal - repTotal);
     } else {
         console.log('fips', fips);
         return 'black';
