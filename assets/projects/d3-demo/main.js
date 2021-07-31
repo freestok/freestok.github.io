@@ -35,49 +35,144 @@ async function setMap() {
 
     console.log('loading data..');
     const promises = [];
-    // for (let file of files) {
-    //     if (file.includes('.json')) promises.push(d3.json(file));
-    //     else if (file.includes('.csv')) promises.push(d3.csv(file, d3.autoType));
-    // }
-    // Promise.all(promises).then((values) => {
-    //     // console.log('data loaded');
-    //     // let [state16, state20, county16, county20, counties, states] = values;
-    //     let [countyData, counties] = values;
-    //     console.log('counties', counties);
-    //     // createStateMap(map, states, state20, state16);
-    //     createCountyMap(map, counties, countyData);
-    // });
+    for (let file of files) {
+        if (file.includes('.json')) promises.push(d3.json(file));
+        else if (file.includes('.csv')) promises.push(d3.csv(file, d3.autoType));
+    }
+    Promise.all(promises).then((values) => {
+        // let [state16, state20, county16, county20, counties, states] = values;
+        let [countyData, counties] = values;
+        // createStateMap(map, states, state20, state16);
+        createViz(map, counties, countyData);
 
-    legend({
-        color: d3.scaleDivergingSqrt([-0.1, 0, 0.1], d3.interpolateRdBu),
-        title: "Temperature (°F)",
-        svgHtml: 'svg#d3Legend',
-        tickFormat: (d, i) => ['90+', '70+', '0', '70+', '90+'][i]
     });
+
+
 };
 
 
 // --------------------------------------------------------
 // map creation functions ---------------------------------
 // --------------------------------------------------------
+function createViz(map, counties, countyData) {
+    const divergingScheme = d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu);
+
+    // create legend
+    legend({
+        color: divergingScheme,
+        title: "",
+        svgHtml: 'svg#d3Legend',
+        tickFormat: (_, i) => ['R - 100', '50', '0', '50', '100 - D'][i]
+    });
+
+    // createCountyMap(map, counties, countyData);
+
+    // create linked view/retrieval
+
+    // createChart();
+    chart2();
+}
+
+function chart2() {
+    legend({
+        color: d3.scaleOrdinal(['a','b'], ['red','blue']),
+        title: "Unemployment rate (%)",
+        tickSize: 3,
+        ticks: 4,
+        svgHtml: 'svg#d3Chart'
+    })
+}
+
+function createChart() {
+    let data = [
+        {
+            "group": "banana",
+            "Nitrogen": "50",
+            "normal": "50",
+        }
+    ]
+    let columns = ['Nitrogen', 'normal', 'stress']
+    let margin = ({ top: 30, right: 10, bottom: 0, left: 30 })
+    let height = data.length * 25 + margin.top + margin.bottom
+    let formatValue = x => isNaN(x) ? "N/A" : x.toLocaleString("en")
+    let yAxis = g => g
+        .attr("transform", `translate(${margin.left},0)`)
+        .call(d3.axisLeft(y).tickSizeOuter(0))
+        .call(g => g.selectAll(".domain").remove())
+
+    let xAxis = g => g
+        .attr("transform", `translate(0,${margin.top})`)
+        .call(d3.axisTop(x).ticks(width / 100, "s"))
+        .call(g => g.selectAll(".domain").remove())
+
+    let series = d3.stack()
+        .keys(columns)
+        (data)
+        .map(d => (d.forEach(v => v.key = d.key), d))
+
+    let color = d3.scaleOrdinal()
+        .domain(series.map(d => d.key))
+        .range(d3.schemeSpectral[series.length])
+        .unknown("#ccc")
+
+    let y = d3.scaleBand()
+        .domain(data.map(d => d.name))
+        .range([0, 100])
+        .padding(0.08)
+
+    let x = d3.scaleLinear()
+        .domain([0, 100])
+        .range([margin.left, width - margin.right])
+
+
+
+    const svg = d3.select("#d3Chart")
+        .attr("viewBox", [0, 0, width, height]);
+
+    svg.append("g")
+        .selectAll("g")
+        .data(series)
+        .join("g")
+        .attr("fill", d => color(d.key))
+        .selectAll("rect")
+        .data(d => d)
+        .join("rect")
+        .attr("x", d => x(d[0]))
+        .attr("y", (d, i) => y(d.data.name))
+        .attr("width", 100)
+        .attr("height", 10)
+        .append("title")
+        .text(d => `
+                    ${d.data.name} ${d.key}
+                    ${formatValue(d.data[d.key])}
+        `);
+
+    svg.append("g")
+        .call(xAxis);
+
+    svg.append("g")
+        .call(yAxis);
+
+    return svg.node();
+}
+
 function createCountyMap(map, counties, countyData) {
-    console.log('countyData', countyData);
-    let countyTopo = topojson.feature(counties, counties.objects.usa_election);
+    // create map
+    const countyTopo = topojson.feature(counties, counties.objects.usa_election);
     const projection = d3.geoAlbersUsa().fitSize([width, height], countyTopo);
     const path = d3.geoPath().projection(projection);
-    const blueScheme = d3.scaleQuantize([0, 90], d3.schemeBlues[9])
-    const redScheme = d3.scaleQuantize([0, 90], d3.schemeReds[9])
-
+    
     map.selectAll('.counties')
         .data(countyTopo.features)
         .enter()
         .append('path')
         .attr('d', path)
-        .style('fill', d => countyChoropleth(countyData, d.properties.GEOID, blueScheme, redScheme))
+        .style('fill', d => countyChoropleth(countyData, d.properties.GEOID, divergingScheme))
         .style('stroke-width', '0.5')
-        .style('stroke', 'black');
+        .style('stroke', 'black')
+        .on('mouseover', d => console.log('over!',d))
+        .on('mouseout', () => console.log('out!'));
 }
-
 
 function createStateMap(map, states, state20, state16) {
     let stateTopo = topojson.feature(states, states.objects.usa_election_state);
@@ -100,7 +195,7 @@ function createStateMap(map, states, state20, state16) {
 // --------------------------------------------------------
 // styling functions --------------------------------------
 // --------------------------------------------------------
-function countyChoropleth(csv, fips, blueScheme, redScheme) {
+function countyChoropleth(csv, fips, divergingScheme) {
     // console.log('fips', fips);
     let record = csv.filter(e => e.county_fips == fips);
     if (record.length) {
@@ -108,6 +203,7 @@ function countyChoropleth(csv, fips, blueScheme, redScheme) {
         let repTotal = r.rep/r.total * 100;
         let demTotal = r.dem/r.total * 100;
         console.log('repTotal',repTotal*100);
+        return divergingScheme(demTotal - repTotal)
         if (r.rep > r.dem) return redScheme(repTotal - demTotal);
         else return blueScheme(demTotal - repTotal);
     } else {

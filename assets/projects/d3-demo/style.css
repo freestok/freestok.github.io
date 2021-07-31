@@ -2,13 +2,27 @@
     display: inline-block;
     position: relative;
     width: 100%;
-    padding-bottom: 45%; /* aspect ratio */
+    padding-bottom: 45%;
+    /* aspect ratio */
     vertical-align: top;
     overflow: hidden;
 }
+
 .svg-content-responsive {
     display: inline-block;
     position: absolute;
     left: 0;
     padding-top: 5px;
+}
+
+.col:hover, .col-4:hover, .col-md-auto:hover {
+    background: grey;
+}
+
+#details {
+    z-index: 999;
+}
+
+#details .title {
+    font-size: 1.25vmin;
 }

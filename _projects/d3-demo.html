@@ -22,15 +22,80 @@ layout: projects
   <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://unpkg.com/topojson@3"></script>
+  <script src="/assets/projects/d3-demo/main.js" type="module"></script>
 </head>
 
 <body style="margin:0;">
-  
+  <!-- As a heading -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1 text-center">Making Sense of the 2020 Election 🤔</span>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        More Info
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Info</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body align-left">
+              There are many ways to map an election, and each form represents a different kind of truth.
+              <br><br>
+              The default view shows your typical map, and it emphasizes the winners of each county, colored darker
+              by how big the win is. Given that this election was won by Joe Biden, you may find it surprising. While
+              this form is truthful in the way that it represents the winner, it under-emphasizes how many people cast
+              their
+              votes in a given county.
+              <br><br>
+              Which bring us to representing each county as a graduated (???) circle. This fairly emphasizes the amount
+              of votes each
+              candidate got by tying it to a circle's area. What we lose, however, is the true area of each county.
+              <br><br>
+              Another way is to create a choropleth where it is colored not by how much one party beat the other, but by
+              how many votes
+              were cast in total in that county.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
   <div class="container-fluid">
-    Different ways to elect some peeps
-    <div id="d3Map"></div>
+    <div class="row">
+      <div class="col-4">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">By win margin</a></li>
+            <li><a class="dropdown-item" href="#">By total population</a></li>
+            <li><a class="dropdown-item" href="#">By total population (circles)</a></li>
+            <li><a class="dropdown-item" href="#">As a cartogram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-auto">
+        <svg id="d3Legend"></svg>
+      </div>
+      <div >
+        test
+        <svg id="d3Chart"></svg>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div id="d3Map"></div>
+      </div>
+    </div>
   </div>
-  
-  
-  <script src="/assets/projects/d3-demo/main.js" type="module"></script>
 </body>
