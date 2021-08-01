@@ -1,5 +1,5 @@
 // from https://observablehq.com/@d3/color-legend
-
+'use strict';
 export function legend({
     color,
     title,
@@ -109,22 +109,10 @@ export function legend({
             .selectAll("rect")
             .data(color.domain())
             .join("rect")
-            .attr("x", (x) => {
-                console.log('x', x);
-                if (x == 'a') return 25;
-                else return 51;
-                return x
-            })
+            .attr("x", x)
             .attr("y", marginTop)
-            // .attr("width", Math.max(0, x.bandwidth() - 1))
-            .attr("width", (e) => {
-                console.log('e', e);
-                console.log(Math.max(0, x.bandwidth() - 1));
-                if (e == 'a') return 25;
-                else return 159 + 200;
-                return Math.max(0, x.bandwidth() - 1)
-            })
-            .attr("height", 50)
+            .attr("width", Math.max(0, x.bandwidth() - 1))
+            .attr("height", height - marginTop - marginBottom)
             .attr("fill", color);
 
         tickAdjust = () => { };

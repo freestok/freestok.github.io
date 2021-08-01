@@ -27,9 +27,21 @@ layout: projects
 
 <body style="margin:0;">
   <!-- As a heading -->
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1 text-center">Making Sense of the 2020 Election 🤔</span>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">By win margin</a></li>
+          <li><a class="dropdown-item" href="#">By total population</a></li>
+          <li><a class="dropdown-item" href="#">By total population (circles)</a></li>
+          <li><a class="dropdown-item" href="#">As a cartogram</a></li>
+        </ul>
+      </div>
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         More Info
@@ -71,25 +83,10 @@ layout: projects
   <div class="container-fluid">
     <div class="row">
       <div class="col-4">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown button
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">By win margin</a></li>
-            <li><a class="dropdown-item" href="#">By total population</a></li>
-            <li><a class="dropdown-item" href="#">By total population (circles)</a></li>
-            <li><a class="dropdown-item" href="#">As a cartogram</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-auto">
         <svg id="d3Legend"></svg>
       </div>
-      <div >
-        test
+      <div class="col-md-auto">
         <svg id="d3Chart"></svg>
-        
       </div>
     </div>
     <div class="row">

@@ -1,26 +1,21 @@
-import { legend } from './color-legend.js'
+'use strict';
+
+import { legend } from './color-legend.js';
 
 let year = 2020;
 const blue = '#5d80b4';
 const red = '#c66154';
 const width = 960;
-const height = 425;
+const height = 350;
 
 $(document).ready(() => {
     setMap();
 });
 
 //set up choropleth map
-async function setMap() {
+function setMap() {
     //use queue to parallelize asynchronous data loading
-    const files = [
-        // '../assets/projects/d3-demo/state16_final.csv',
-        // '../assets/projects/d3-demo/state20_final.csv',
-        // '../assets/projects/d3-demo/election16_modified.csv',
-        '../assets/projects/d3-demo/election20_modified.csv',
-        '../assets/projects/d3-demo/counties.json',
-        // '../assets/projects/d3-demo/states.json'
-    ];
+    const root = '../assets/projects/d3-demo';
 
     //create new svg container for the map
     let map = d3.select("div#d3Map")
@@ -35,20 +30,27 @@ async function setMap() {
 
     console.log('loading data..');
     const promises = [];
-    for (let file of files) {
-        if (file.includes('.json')) promises.push(d3.json(file));
-        else if (file.includes('.csv')) promises.push(d3.csv(file, d3.autoType));
-    }
+    promises.push(d3.csv(`${root}/election20_modified.csv`, (d) => {
+        return {
+            year: +d.year,
+            state: d.state,
+            state_po: d.state_po,
+            county_fips: d.county_fips,
+            county_name: d.county_name,
+            dem: +d.dem,
+            rep: +d.rep,
+            total: +d.total
+        };
+    }));
+    promises.push(d3.json(`${root}/counties.json`));
+
     Promise.all(promises).then((values) => {
-        // let [state16, state20, county16, county20, counties, states] = values;
         let [countyData, counties] = values;
         // createStateMap(map, states, state20, state16);
         createViz(map, counties, countyData);
 
     });
-
-
-};
+}
 
 
 // --------------------------------------------------------
@@ -65,98 +67,85 @@ function createViz(map, counties, countyData) {
         tickFormat: (_, i) => ['R - 100', '50', '0', '50', '100 - D'][i]
     });
 
-    // createCountyMap(map, counties, countyData);
+    createCountyMap(map, counties, countyData, divergingScheme);
 
     // create linked view/retrieval
 
-    // createChart();
-    chart2();
-}
-
-function chart2() {
-    legend({
-        color: d3.scaleOrdinal(['a','b'], ['red','blue']),
-        title: "Unemployment rate (%)",
-        tickSize: 3,
-        ticks: 4,
-        svgHtml: 'svg#d3Chart'
-    })
+    createChart();
 }
 
 function createChart() {
-    let data = [
-        {
-            "group": "banana",
-            "Nitrogen": "50",
-            "normal": "50",
-        }
-    ]
-    let columns = ['Nitrogen', 'normal', 'stress']
-    let margin = ({ top: 30, right: 10, bottom: 0, left: 30 })
-    let height = data.length * 25 + margin.top + margin.bottom
-    let formatValue = x => isNaN(x) ? "N/A" : x.toLocaleString("en")
-    let yAxis = g => g
-        .attr("transform", `translate(${margin.left},0)`)
-        .call(d3.axisLeft(y).tickSizeOuter(0))
-        .call(g => g.selectAll(".domain").remove())
+    let color = d3.scaleOrdinal(['a','b'],[red,blue]),
+        title = 'Vote Share',
+        tickSize = 6,
+        width = 320,
+        height = 44 + tickSize,
+        graphHeight = 30,
+        marginTop = 18,
+        marginRight = 0,
+        marginBottom = 16 + tickSize,
+        marginLeft = 0,
+        ticks = width / 64,
+        tickFormat,
+        tickValues,
+        svgHtml = 'svg#d3Chart';
 
-    let xAxis = g => g
-        .attr("transform", `translate(0,${margin.top})`)
-        .call(d3.axisTop(x).ticks(width / 100, "s"))
-        .call(g => g.selectAll(".domain").remove())
+    const svg = d3.select(svgHtml)
+        .attr("width", width)
+        .attr("height", height)
+        .attr("viewBox", [0, 0, width, height])
+        .style("overflow", "visible")
+        .style("display", "block");
 
-    let series = d3.stack()
-        .keys(columns)
-        (data)
-        .map(d => (d.forEach(v => v.key = d.key), d))
-
-    let color = d3.scaleOrdinal()
-        .domain(series.map(d => d.key))
-        .range(d3.schemeSpectral[series.length])
-        .unknown("#ccc")
-
-    let y = d3.scaleBand()
-        .domain(data.map(d => d.name))
-        .range([0, 100])
-        .padding(0.08)
-
-    let x = d3.scaleLinear()
-        .domain([0, 100])
-        .range([margin.left, width - margin.right])
-
-
-
-    const svg = d3.select("#d3Chart")
-        .attr("viewBox", [0, 0, width, height]);
+    let tickAdjust = g => g.selectAll(".tick line").attr("y1", marginTop + marginBottom - height);
+    let x = d3.scaleBand()
+        .domain(color.domain())
+        .rangeRound([marginLeft, width - marginRight]);
 
     svg.append("g")
-        .selectAll("g")
-        .data(series)
-        .join("g")
-        .attr("fill", d => color(d.key))
         .selectAll("rect")
-        .data(d => d)
+        .data(color.domain())
         .join("rect")
-        .attr("x", d => x(d[0]))
-        .attr("y", (d, i) => y(d.data.name))
-        .attr("width", 100)
-        .attr("height", 10)
-        .append("title")
-        .text(d => `
-                    ${d.data.name} ${d.key}
-                    ${formatValue(d.data[d.key])}
-        `);
+        .attr("x", (x) => {
+            console.log('x', x);
+            if (x === 'a') return 25;
+            else return 51;
+            return x;
+        })
+        .attr("y", marginTop)
+        // .attr("width", Math.max(0, x.bandwidth() - 1))
+        .attr("width", (e) => {
+            console.log('e', e);
+            console.log(Math.max(0, x.bandwidth() - 1));
+            if (e === 'a') return 25;
+            else return 159 + 200;
+            return Math.max(0, x.bandwidth() - 1);
+        })
+        .attr("height", graphHeight)
+        .attr("fill", color);
 
+    tickAdjust = () => { };
     svg.append("g")
-        .call(xAxis);
+        .attr("transform", `translate(0,${height - marginBottom})`)
+        // .call(d3.axisBottom(x)
+        //     .ticks(ticks, typeof tickFormat === "string" ? tickFormat : undefined)
+        //     .tickFormat(typeof tickFormat === "function" ? tickFormat : undefined)
+        //     .tickSize(tickSize)
+        //     .tickValues(tickValues))
+        // .call(tickAdjust)
+        .call(g => g.select(".domain").remove())
+        .call(g => g.append("text")
+            .attr("x", marginLeft)
+            .attr("y", marginTop + marginBottom - height - 6)
+            .attr("fill", "currentColor")
+            .attr("text-anchor", "start")
+            .attr("font-weight", "bold")
+            .text(title));
 
-    svg.append("g")
-        .call(yAxis);
-
-    return svg.node();
 }
 
-function createCountyMap(map, counties, countyData) {
+
+function createCountyMap(map, counties, countyData, divergingScheme) {
     // create map
     const countyTopo = topojson.feature(counties, counties.objects.usa_election);
     const projection = d3.geoAlbersUsa().fitSize([width, height], countyTopo);
@@ -196,34 +185,33 @@ function createStateMap(map, states, state20, state16) {
 // styling functions --------------------------------------
 // --------------------------------------------------------
 function countyChoropleth(csv, fips, divergingScheme) {
+    // console.log('countyData', csv);
     // console.log('fips', fips);
-    let record = csv.filter(e => e.county_fips == fips);
+    let record = csv.filter(e => e.county_fips === fips);
     if (record.length) {
         let r = record[0];
         let repTotal = r.rep/r.total * 100;
         let demTotal = r.dem/r.total * 100;
         console.log('repTotal',repTotal*100);
-        return divergingScheme(demTotal - repTotal)
-        if (r.rep > r.dem) return redScheme(repTotal - demTotal);
-        else return blueScheme(demTotal - repTotal);
+        return divergingScheme(demTotal - repTotal);
     } else {
-        console.log('fips', fips);
+        // console.log('fips', fips);
         return 'black';
     }
 }
 
 
 function stateWinners(csv, fips) {
-    let record = csv.filter(e => e.fips == fips);
+    let record = csv.filter(e => e.fips === fips);
     // console.log('record', record);
 
     if (record.length) {
         let r = record[0];
-        if (r.dem == '-') return red;
+        if (r.dem === '-') return red;
         else return blue;
     } else {
         let new_fips = fips.split('-')[0];
-        record = csv.filter(e => e.fips == new_fips);
+        record = csv.filter(e => e.fips === new_fips);
         let demWinner = Number(record[0].dem) > Number(record[0].rep);
 
         if (fips.includes('-l')) {
