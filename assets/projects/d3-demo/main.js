@@ -62,22 +62,19 @@ function createViz(counties, countyData) {
     createChart();
 }
 
-function createChart() {
-    let color = d3.scaleOrdinal(['a','b'],[red,blue]),
+function createChart(demShare=0.8, repShare=0.2) {
+    let color = d3.scaleOrdinal(['d','r'],[red,blue]),
         title = 'Vote Share',
         tickSize = 6,
         width = 320,
-        demShare = 0.8,
-        repShare = 0.2,
+        demShareStr = `${demShare * 100}%`,
+        repShareStr = `${repShare * 100}%`,
         height = 44 + tickSize,
         graphHeight = 30,
         marginTop = 18,
         marginRight = 0,
         marginBottom = 16 + tickSize,
         marginLeft = 0,
-        ticks = width / 64,
-        tickFormat,
-        tickValues,
         svgHtml = 'svg#d3Chart';
 
     const svg = d3.select(svgHtml)
@@ -98,7 +95,7 @@ function createChart() {
         .join("rect")
         .attr("x", (x) => {
             console.log('x', x);
-            if (x === 'a') return (width * demShare);
+            if (x === 'd') return (width * demShare);
             else return -1;
         })
         .attr("y", marginTop)
@@ -106,13 +103,12 @@ function createChart() {
         .attr("width", (e) => {
             console.log('e', e);
             console.log(Math.max(0, x.bandwidth() - 1));
-            if (e === 'a') return repShare * width;
+            if (e === 'd') return repShare * width;
             else return demShare * width;
         })
         .attr("height", graphHeight)
         .attr("fill", color);
 
-    tickAdjust = () => { };
     svg.append("g")
         .attr("transform", `translate(0,${height - marginBottom})`)
         .call(g => g.select(".domain").remove())
@@ -128,22 +124,25 @@ function createChart() {
         .attr("x", (x, i) => {
             console.log('x', i);
             if (i === 0) return (width * demShare)/2;
-            else return (width * demShare) + ((width * repShare)/2)-2;
+            else return (width * demShare) + ((width * repShare)/2);
         })
         .attr("y", (x,i) => {
-            if (i ===0) return 38;
+            if (i === 0) return 38;
             else return 10;
         })
-        .attr("fill", "currentColor")
-        // .attr("text-anchor", "start")
+        .attr("fill", "white")
+        .attr("text-anchor", "middle")
         .attr("font-weight", "bold")
         .text((txt, i) => {
             console.log('TEXT', i);
-            if (i === 0) return 'a';
-            else return 'b';
+            if (i === 0) return demShareStr;
+            else return repShareStr;
         });
 }
 
+function adjustChart(demShare, repShare) {
+    const svg = d3.select('svg#d3Chart');
+}
 
 function createCountyMap(counties, countyData, divergingScheme) {
     const width = 960;
