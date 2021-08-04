@@ -39,12 +39,12 @@ function setMap() {
             total: +d.total
         };
     }));
+    promises.push(d3.json(`${root}/states.json`));
     promises.push(d3.json(`${root}/counties.json`));
 
     Promise.all(promises).then((values) => {
-        let [countyData, counties] = values;
-        // createStateMap(map, states, state20, state16);
-        createViz(counties, countyData);
+        let [countyData, states, counties] = values;
+        createViz(counties, states, countyData);
     });
 }
 
@@ -52,7 +52,7 @@ function setMap() {
 // --------------------------------------------------------
 // map creation functions ---------------------------------
 // --------------------------------------------------------
-function createViz(counties, countyData) {
+function createViz(counties, states, countyData) {
     const divergingScheme = d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu);
 
     // create legend
@@ -64,8 +64,8 @@ function createViz(counties, countyData) {
         tickFormat: (_, i) => ['R - 100', '50', '0', '50', '100 - D'][i]
     });
 
-    createCountyMap(counties, countyData, divergingScheme);
-
+    // createCountyMap(counties, countyData, divergingScheme);
+    createCountyBubble(counties, states, countyData);
     // create linked view/retrieval
 
     createChart();
@@ -73,7 +73,7 @@ function createViz(counties, countyData) {
 
 function createChart() {
     let color = d3.scaleOrdinal(['d','r'],[red,blue]),
-        title = 'Vote Share',
+        title = 'NATIONAL',
         tickSize = 6,
         width = 320,
         demShareStr = `${(demShare * 100).toFixed(1)}%`,
@@ -123,6 +123,7 @@ function createChart() {
             .attr("x", marginLeft)
             .attr("y", marginTop + marginBottom - height - 6)
             .attr("fill", "currentColor")
+            .attr('id','chartTitle')
             .attr("text-anchor", "start")
             .attr("font-weight", "bold")
             .text(title));
@@ -169,15 +170,22 @@ function adjustChart(name, dems, reps) {
         .attr('x', -1)
         .attr('width',dems * width);
 
-            // add the percentages
-
+    // add the percentages
     d3.select('text#demTxt')
+        .style('font-size',() => {
+            if (dems < 0.13) return '.75rem';
+            else return '1rem';
+        })
         .transition()
         .duration(duration)
         .attr("x", (width * dems) / 2)
         .textTween(() =>{
             const i = d3.interpolate(demShare, dems);
-            return (t) => `${(i(t) * 100).toFixed(1)}%`;
+            if (dems < 0.13) {
+                return (t) => `${(i(t) * 100).toFixed(1)}`;
+            } else {
+                return (t) => `${(i(t) * 100).toFixed(1)}%`;
+            }
         });
     d3.select('text#repTxt')
         .transition()
@@ -188,9 +196,47 @@ function adjustChart(name, dems, reps) {
             return (t) => `${(i(t) * 100).toFixed(1)}%`;
         });
 
+    d3.select('text#chartTitle')
+        .text(name);
+
     demShare = dems;
     repShare = reps;
 }
+
+function createCountyBubble(counties, states, countyData) {
+    const width = 960;
+    const height = 350;
+    //create new svg container for the map
+    let map = d3.select("div#d3Map")
+        .append("div")
+        .classed("svg-container", true) //container class to make it responsive
+        .append("svg")
+        //responsive SVG needs these 2 attributes and no width and height attr
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", `0 0 ${width} ${height}`)
+        //class to make it responsive
+        .classed("svg-content-responsive", true);
+
+    // create map
+    const countyTopo = topojson.feature(counties, counties.objects.usa_election);
+    const stateTopo = topojson.feature(states, states.objects.usa_election_state);
+    console.log('stateTopo', stateTopo);
+    stateTopo.features = stateTopo.features.filter(e => !e.properties.STATEFIP.includes('-s'));
+    const projection = d3.geoAlbersUsa().fitSize([width, height], countyTopo);
+    const path = d3.geoPath().projection(projection);
+    
+    map.selectAll('.states')
+        .data(stateTopo.features)
+        .enter()
+        .append('path')
+        .attr('d', path)
+        .style('fill', '#ddd')
+        .style('stroke-width', '0.5')
+        .style('stroke', 'white');
+        // .on('mouseover', (event, d) => mouseOver(d.properties.GEOID, countyData));
+        // .on('mouseout', () => console.log('out!'));
+}
+
 
 function createCountyMap(counties, countyData, divergingScheme) {
     const width = 960;
@@ -227,7 +273,7 @@ function createCountyMap(counties, countyData, divergingScheme) {
 
 function mouseOver(fips, csv) {
     let r = csv.filter(e => e.county_fips === fips)[0];
-    let name = r.county_name;
+    let name = `${r.county_name}, ${r.state_po}`;
     let dems = r.dem / r.total;
     let reps = r.rep / r.total;
     adjustChart(name, dems, reps);
