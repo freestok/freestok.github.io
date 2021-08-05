@@ -27,7 +27,7 @@ function setMap() {
 
     console.log('loading data..');
     const promises = [];
-    promises.push(d3.csv(`${root}/election20_modified.csv`, (d) => {
+    promises.push(d3.csv(`${root}/election20_modified2.csv`, (d) => {
         return {
             year: +d.year,
             state: d.state,
@@ -36,7 +36,8 @@ function setMap() {
             county_name: d.county_name,
             dem: +d.dem,
             rep: +d.rep,
-            total: +d.total
+            total: +d.total,
+            position: d.position
         };
     }));
     promises.push(d3.json(`${root}/states.json`));
@@ -211,7 +212,6 @@ function createCountyBubble(counties, states, countyData) {
         .append("div")
         .classed("svg-container", true) //container class to make it responsive
         .append("svg")
-        //responsive SVG needs these 2 attributes and no width and height attr
         .attr("preserveAspectRatio", "xMinYMin meet")
         .attr("viewBox", `0 0 ${width} ${height}`)
         //class to make it responsive
@@ -221,6 +221,8 @@ function createCountyBubble(counties, states, countyData) {
     const countyTopo = topojson.feature(counties, counties.objects.usa_election);
     const stateTopo = topojson.feature(states, states.objects.usa_election_state);
     console.log('stateTopo', stateTopo);
+    console.log('countyTopo', countyTopo);
+    console.log('countyData', countyData);
     stateTopo.features = stateTopo.features.filter(e => !e.properties.STATEFIP.includes('-s'));
     const projection = d3.geoAlbersUsa().fitSize([width, height], countyTopo);
     const path = d3.geoPath().projection(projection);
@@ -235,6 +237,32 @@ function createCountyBubble(counties, states, countyData) {
         .style('stroke', 'white');
         // .on('mouseover', (event, d) => mouseOver(d.properties.GEOID, countyData));
         // .on('mouseout', () => console.log('out!'));
+        
+    const radius = d3.scaleSqrt([0, d3.max(countyData, d => d.total)], [0, 40]);
+    map.append("g")
+        .attr("fill", "brown")
+        .attr("fill-opacity", 0.5)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 0.5)
+        .selectAll("circle")
+        .data(countyData
+            .filter(d => {
+                let p = JSON.parse(d.position);
+                return p;
+            })
+            .sort((a, b) => d3.descending(a.value, b.value)))
+        .join("circle")
+        .attr("transform", d => {
+            let p = JSON.parse(d.position);
+            // console.log('p',p);
+            let position = [p[1],-p[0]];
+            // console.log('position',position);
+            return `translate(${position})`;
+        })
+        .attr("r", d => radius(d.total));
+        // .append("title")
+        // .text(d => `${d.title}
+        //             ${format(d.value)}`);
 }
 
 
