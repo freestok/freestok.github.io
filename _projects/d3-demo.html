@@ -52,25 +52,29 @@ layout: projects
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Info</h5>
+              <h5 class="modal-title" id="exampleModalLabel">On Mapping an Election</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body align-left">
               There are many ways to map an election, and each form represents a different kind of truth.
+              Here, we will examine two.
               <br><br>
-              The default view shows your typical map, and it emphasizes the winners of each county, colored darker
-              by how big the win is. Given that this election was won by Joe Biden, you may find it surprising. While
-              this form is truthful in the way that it represents the winner, it under-emphasizes how many people cast
-              their
-              votes in a given county.
+              The default view shows your typical choropleth map. It is colored by winner (Democrat or Republican) and
+              darkened by how large the win margin is. So if there was a land-slide victory for Donald Trump, you would
+              expect to see a dark-red county. 
+              
+              Visualizing it this way (instead of a simple red for a Republican win) shows a bit more nuance. We can see how
+              close the split is in a lot of counties. However, while it is <em>better</em> than a simple win/loss visualization,
+              it still has some faults. Even by accounting for near ties, one would think that Donald Trump should have won
+              (I see a lot of red). That's because this map fails to visualize something vitally important: population.
               <br><br>
-              Which bring us to representing each county as a graduated (???) circle. This fairly emphasizes the amount
-              of votes each
-              candidate got by tying it to a circle's area. What we lose, however, is the true area of each county.
+              Since land doesn't vote, and people do*, the second map still shows each winner by color, but each county is now
+              represented as a circle. The size of the circle is determined by the total amount of votes cast in each county. While this
+              map does suffer from counties obscuring one another, it gives us a sense of how many votes were cast in either
+              direction. Perhaps a better form of this map would include a <em>graduated</em> symbol instead, where populations
+              are classed into certain sizes (so we can see the incredibly tiny circles in, say, the Great Plains).
               <br><br>
-              Another way is to create a choropleth where it is colored not by how much one party beat the other, but by
-              how many votes
-              were cast in total in that county.
+              <em>*Okay fine, electors vote.</em>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -83,9 +87,8 @@ layout: projects
   <div class="container-fluid">
     <div id="row1" class="row">
       <div class="col-4">
-        <div id="d3LegendContainer">
-          <svg id="d3Legend"></svg>
-        </div>
+          <svg id="d3BubbleLegend"></svg>
+          <svg id="d3ChoroLegend"></svg>
       </div>
       <div class="col-md-auto">
         <svg id="d3Chart"></svg>
@@ -93,7 +96,8 @@ layout: projects
     </div>
     <div class="row">
       <div class="col">
-        <div id="d3Map"></div>
+        <div id="d3ChoroMap"></div>
+        <div id="d3BubbleMap"></div>
       </div>
     </div>
   </div>

@@ -30,7 +30,8 @@
     font-size: 1.25vmin;
 }
 
-#d3Legend {
+#d3ChoroLegend,
+#d3BubbleLegend {
     /* margin-left: 10px; */
     margin: 10px 0 0 10px;
 }
