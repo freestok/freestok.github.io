@@ -40,8 +40,6 @@ function setListeners() {
             $('#d3BubbleMap').show();
         }
     });
-    // console.log('activeRadio', activeRadio);
-    // console.log('id', activeRadio[0].id);
 
 
 }
@@ -49,9 +47,7 @@ function setListeners() {
 //set up choropleth map
 function setMap() {
     //use queue to parallelize asynchronous data loading
-    const root = '../assets/projects/d3-demo';
-
-    console.log('loading data..');
+    const root = '../assets/projects/geog575-lab2';
     const promises = [];
     promises.push(d3.csv(`${root}/election20_modified.csv`, (d) => {
         return {
@@ -80,19 +76,9 @@ function setMap() {
 // map creation functions ---------------------------------
 // --------------------------------------------------------
 function createViz() {
-    let activeRadio = $('input[name="flexRadioDefault"]:checked');
-    console.log('activeRadio', activeRadio);
-    console.log('id', activeRadio[0].id);
     const divergingScheme = d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu);
     createCountyMap(counties, countyData, divergingScheme);
     createCountyBubble(counties, states, countyData);
-
-    // if (activeRadio[0].id === 'choroRadio') {
-    //     const divergingScheme = d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu);
-    //     createCountyMap(counties, countyData, divergingScheme);
-    // } else {
-    //     createCountyBubble(counties, states, countyData);
-    // }
 }
 
 function createChart() {
@@ -123,7 +109,6 @@ function createChart() {
         .data(color.domain())
         .join("rect")
         .attr("id", (x) => {
-            console.log('id', x);
             if (x === 'd') return 'demBar';
             else return 'repBar';
         })
@@ -171,7 +156,6 @@ function createChart() {
         .attr("text-anchor", "middle")
         .attr("font-weight", "bold")
         .text((txt, i) => {
-            console.log('TEXT', i);
             if (i === 0) return demShareStr;
             else return repShareStr;
         });
@@ -243,9 +227,6 @@ function createCountyBubble(counties, states, countyData) {
     // create map
     const countyTopo = topojson.feature(counties, counties.objects.usa_election);
     const stateTopo = topojson.feature(states, states.objects.usa_election_state);
-    console.log('stateTopo', stateTopo);
-    console.log('countyTopo', countyTopo);
-    console.log('countyData', countyData);
     stateTopo.features = stateTopo.features.filter(e => !e.properties.STATEFIP.includes('-s'));
     const projection = d3.geoAlbersUsa().fitSize([width, height], countyTopo);
     const path = d3.geoPath().projection(projection);
@@ -303,7 +284,6 @@ function createCountyBubble(counties, states, countyData) {
     legend.append("text")
         .attr('class','texthalo')
         .attr("y", d => {
-            console.log('d', d);
             if (d === 66) return -25;
             else return -3 * radius(d);
         })
@@ -341,7 +321,6 @@ function createCountyMap(counties, countyData, divergingScheme) {
 
     // create map
     const countyTopo = topojson.feature(counties, counties.objects.usa_election);
-    console.log('countyTopo',countyTopo);
     const projection = d3.geoAlbersUsa().fitSize([width, height], countyTopo);
     const path = d3.geoPath().projection(projection);
     
@@ -354,7 +333,6 @@ function createCountyMap(counties, countyData, divergingScheme) {
         .style('stroke-width', '0.5')
         .style('stroke', 'black')
         .on('mouseover', (event, d) => mouseOver(d.properties.GEOID, countyData));
-        // .on('mouseout', () => console.log('out!'));
 }
 
 
@@ -391,24 +369,18 @@ function createStateMap(map, states, state20, state16) {
 // styling functions --------------------------------------
 // --------------------------------------------------------
 function countyChoropleth(csv, fips, divergingScheme) {
-    // console.log('countyData', csv);
-    // console.log('fips', fips);
     let record = csv.filter(e => e.county_fips === fips);
     if (record.length) {
         let r = record[0];
         let repTotal = r.rep/r.total * 100;
         let demTotal = r.dem/r.total * 100;
         return divergingScheme(demTotal - repTotal);
-    } else {
-        // console.log('fips', fips);
-        return 'black';
     }
 }
 
 
 function stateWinners(csv, fips) {
     let record = csv.filter(e => e.fips === fips);
-    // console.log('record', record);
 
     if (record.length) {
         let r = record[0];
