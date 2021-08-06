@@ -19,6 +19,9 @@
     background: grey;
 } */
 
+#row1 {
+    height: 2.5em;
+}
 #details {
     z-index: 999;
 }

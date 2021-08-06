@@ -27,7 +27,7 @@ function setMap() {
 
     console.log('loading data..');
     const promises = [];
-    promises.push(d3.csv(`${root}/election20_modified2.csv`, (d) => {
+    promises.push(d3.csv(`${root}/election20_modified.csv`, (d) => {
         return {
             year: +d.year,
             state: d.state,
@@ -55,15 +55,6 @@ function setMap() {
 // --------------------------------------------------------
 function createViz(counties, states, countyData) {
     const divergingScheme = d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu);
-
-    // create legend
-    legend({
-        color: divergingScheme,
-        title: "",
-        svgHtml: 'svg#d3Legend',
-        width: 250,
-        tickFormat: (_, i) => ['R - 100', '50', '0', '50', '100 - D'][i]
-    });
 
     // createCountyMap(counties, countyData, divergingScheme);
     createCountyBubble(counties, states, countyData);
@@ -226,6 +217,9 @@ function createCountyBubble(counties, states, countyData) {
     stateTopo.features = stateTopo.features.filter(e => !e.properties.STATEFIP.includes('-s'));
     const projection = d3.geoAlbersUsa().fitSize([width, height], countyTopo);
     const path = d3.geoPath().projection(projection);
+
+    let centroids = {};
+    countyTopo.features.map(e => centroids[e.properties.GEOID] = path.centroid(e));
     
     map.selectAll('.states')
         .data(stateTopo.features)
@@ -235,38 +229,59 @@ function createCountyBubble(counties, states, countyData) {
         .style('fill', '#ddd')
         .style('stroke-width', '0.5')
         .style('stroke', 'white');
-        // .on('mouseover', (event, d) => mouseOver(d.properties.GEOID, countyData));
-        // .on('mouseout', () => console.log('out!'));
         
-    const radius = d3.scaleSqrt([0, d3.max(countyData, d => d.total)], [0, 40]);
+    const radius = d3.scaleSqrt([0, d3.max(countyData, d => d.total)], [0.5, 25]);
     map.append("g")
-        .attr("fill", "brown")
         .attr("fill-opacity", 0.5)
         .attr("stroke", "#fff")
         .attr("stroke-width", 0.5)
         .selectAll("circle")
         .data(countyData
-            .filter(d => {
-                let p = JSON.parse(d.position);
-                return p;
-            })
-            .sort((a, b) => d3.descending(a.value, b.value)))
+            .filter(d => centroids[d.county_fips])
+            .sort((a, b) => d3.ascending(a.total, b.total)))
         .join("circle")
-        .attr("transform", d => {
-            let p = JSON.parse(d.position);
-            // console.log('p',p);
-            let position = [p[1],-p[0]];
-            // console.log('position',position);
-            return `translate(${position})`;
+        .attr("fill", d => {
+            if (d.dem > d.rep) return blue;
+            else return red;
         })
-        .attr("r", d => radius(d.total));
-        // .append("title")
-        // .text(d => `${d.title}
-        //             ${format(d.value)}`);
+        .attr("transform", d => `translate(${centroids[d.county_fips]})`)
+        .attr("r", d => radius(d.total))
+        .on('mouseover', (event, d) => mouseOver(d.county_fips, countyData));
+
+    // legend
+    const radiusLegend = d3.scaleSqrt([0, d3.max(countyData, d => d.total)], [0.5, 40]);
+
+    const legend = d3.select('svg#d3Legend')
+        .append("g")
+        .attr("fill", "black")
+        .attr("transform", "translate(50,75)")
+        .attr("text-anchor", "middle")
+        .style("font", "10px sans-serif")
+        .selectAll("g")
+        .data([66,2132216,4264365])
+        .join("g");
+
+    legend.append("circle")
+        .attr("fill", "none")
+        .attr("stroke", "#ccc")
+        .attr("cy", d => -radius(d))
+        .attr("r", radiusLegend);
+
+    legend.append("text")
+        .attr("y", d => -2.75 * radius(d))
+        .attr("dy", "1.3em")
+        .text(d => d.toLocaleString());
 }
 
-
 function createCountyMap(counties, countyData, divergingScheme) {
+    // create legend
+    legend({
+        color: divergingScheme,
+        title: "",
+        svgHtml: 'svg#d3Legend',
+        width: 250,
+        tickFormat: (_, i) => ['R - 100', '50', '0', '50', '100 - D'][i]
+    });
     const width = 960;
     const height = 350;
     //create new svg container for the map
