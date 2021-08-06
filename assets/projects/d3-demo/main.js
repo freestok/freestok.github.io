@@ -10,6 +10,7 @@ const repShareNat = 0.469;
 let demShare = demShareNat;
 let repShare = repShareNat;
 const duration = 1000;
+let counties, states, countyData;
 
 $(document).ready(() => {
     setListeners();
@@ -17,7 +18,22 @@ $(document).ready(() => {
 });
 
 function setListeners() {
-    $('#transitionTest').on('click', () => adjustChart());
+    $('input[name="flexRadioDefault"]').on('click', e => {
+        d3.select('#d3Legend > *').remove();
+        d3.select('#d3Map > *').remove();
+        // svg.selectAll()
+        createViz();
+        // let active = e.target.id;
+        // if (active === 'choroRadio') {
+            
+        // }  else {
+
+        // }
+    });
+    // console.log('activeRadio', activeRadio);
+    // console.log('id', activeRadio[0].id);
+
+
 }
 
 //set up choropleth map
@@ -44,8 +60,8 @@ function setMap() {
     promises.push(d3.json(`${root}/counties.json`));
 
     Promise.all(promises).then((values) => {
-        let [countyData, states, counties] = values;
-        createViz(counties, states, countyData);
+        [countyData, states, counties] = values;
+        createViz();
     });
 }
 
@@ -53,12 +69,16 @@ function setMap() {
 // --------------------------------------------------------
 // map creation functions ---------------------------------
 // --------------------------------------------------------
-function createViz(counties, states, countyData) {
-    const divergingScheme = d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu);
-
-    // createCountyMap(counties, countyData, divergingScheme);
-    createCountyBubble(counties, states, countyData);
-    // create linked view/retrieval
+function createViz() {
+    let activeRadio = $('input[name="flexRadioDefault"]:checked');
+    console.log('activeRadio', activeRadio);
+    console.log('id', activeRadio[0].id);
+    if (activeRadio[0].id === 'choroRadio') {
+        const divergingScheme = d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu);
+        createCountyMap(counties, countyData, divergingScheme);
+    } else {
+        createCountyBubble(counties, states, countyData);
+    }
 
     createChart();
 }
@@ -254,7 +274,7 @@ function createCountyBubble(counties, states, countyData) {
     const legend = d3.select('svg#d3Legend')
         .append("g")
         .attr("fill", "black")
-        .attr("transform", "translate(50,75)")
+        .attr("transform", "translate(50,85)")
         .attr("text-anchor", "middle")
         .style("font", "10px sans-serif")
         .selectAll("g")
@@ -268,9 +288,20 @@ function createCountyBubble(counties, states, countyData) {
         .attr("r", radiusLegend);
 
     legend.append("text")
-        .attr("y", d => -2.75 * radius(d))
-        .attr("dy", "1.3em")
+        .attr('class','texthalo')
+        .attr("y", d => {
+            console.log('d', d);
+            if (d === 66) return -25;
+            else return -3 * radius(d);
+        })
+        .attr("dy", "2em")
+        .attr('font-weight', 900)
         .text(d => d.toLocaleString());
+    legend.append('text')
+        .attr('y', -125)
+        .attr('dy','5em')
+        .attr('font-weight', 900)
+        .text('Total Population');
 }
 
 function createCountyMap(counties, countyData, divergingScheme) {

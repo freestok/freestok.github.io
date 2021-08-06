@@ -20,7 +20,7 @@
 } */
 
 #row1 {
-    height: 2.5em;
+    height: 3em;
 }
 #details {
     z-index: 999;
@@ -39,3 +39,7 @@
     margin: 10px 0 0 10px;
     /* margin-left: 10px; */
 }
+
+.texthalo {
+    text-shadow: -1px -1px white, -1px 1px white, 1px 1px white, 1px -1px white, -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  }
