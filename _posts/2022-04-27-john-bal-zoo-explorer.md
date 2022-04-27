@@ -3,7 +3,8 @@ permalink: /portfolio/:title
 title: John Ball Zoo Explorer
 thumbnail: /assets/img/john-ball-zoo/thumbnail.png
 ---
-# GEOG 777: Project 2 Report – Kray Freestone
+<img class="full-width" src="/assets/img/john-ball-zoo/thumbnail.png" 
+    alt="Map of the John Ball Zoo and a card of information on penguins, showing scientific name and conservation status (least concern for Magellenic penguins)">
 
 ## Introduction and Overview
 
