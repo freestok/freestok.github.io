@@ -63,12 +63,7 @@ With all data acquired, the spreadsheet just needs to be cleaned up and reformat
 
 And with this, the final product can be uploaded to [CARTO](https://carto.com/). The latitude and longitude do not need to be converted to a shapefile; CARTO simply recognizes those columns and converts it to something mappable.
 
-<figure>
-  <img src="donors.png" alt="my alt text"/>
-  <figcaption>Donors throughout the continental United States</figcaption>
-</figure>
+![Donors throughout the continental United States](donors.png)  
 
-<figure>
-  <img src="donors-accuracy.png" alt="my alt text"/>
-  <figcaption>Exact (grey) and non-exact (blue) matches in the Michigan area</figcaption>
-</figure>
+![Exact (grey) and non-exact (blue) matches in the Michigan area](donors-accuracy.png)  
+

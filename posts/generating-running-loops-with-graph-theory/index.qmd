@@ -5,7 +5,7 @@ image: thumbnail.png
 title: Generating Running Loops with Graph Theory
 ---
 
-::: {.callout-note}
+::: {.callout-warning}
 Due to Heroku ending their free-tier, this website is no longer live. I hope to find another host for this website.
 :::
 

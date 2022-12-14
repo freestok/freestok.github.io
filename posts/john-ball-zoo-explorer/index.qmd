@@ -5,6 +5,10 @@ categories: [programming]
 image: thumbnail.png
 ---
 
+::: {.callout-warning}
+Due to Heroku ending their free-tier, this website is no longer live. I hope to find another host for this website.
+:::
+
 ![View of Website](thumbnail.png)
 
 ## Introduction and Overview

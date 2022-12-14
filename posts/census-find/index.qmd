@@ -1,0 +1,176 @@
+---
+date: 2022-12-14
+title: Census Find
+categories: [programming]
+image: thumbnail.png
+---
+
+# Introduction
+
+This application, Census Find, intends to make access to census data
+both accessible and reproducible. While there are other tools out there
+that aim to accomplish this, I believe this tool fills a special niche
+that did not, up until this point, exist. The intended audience are
+casual users who are not used to exploring census data, nor joining in
+census data with TIGER shapefiles to make cartographic products.
+
+# Final Product and Demonstration
+
+The final product for this project is a website where a user can explore
+census data. As of this writing, the final product is not on a live
+website for others to use. However, the [[source code can be found on my
+GitHub profile]{.ul}](https://github.com/freestok/census-find) and a live demonstration can be found on YouTube.
+{{< video https://youtu.be/Jf0zjedFfbA >}}
+
+# Target Audience
+
+As stated before, this is intended to be used by casual users who have
+difficulty exploring the ins-and-outs of USA census structures. All
+variables for American Community Survey (ACS5) and Decennial (SF1)
+surveys have been cleaned so that they make sense to the end user (e.g.
+P001001 vs Total Population).
+
+In addition to casual users, I hope more advanced users find use in this
+tool. The most powerful feature of this application is the ability to
+build templates. These templates can be utilized on any geographic area
+providing reproducible analysis.
+
+# Application Overview
+
+Census Find consists of three main components: exploring data, querying
+data, and creating templates for data.
+
+## Exploring
+
+Data exploration is the first page a user is shown. On the left-hand
+side, a user can select whether they would like to explore states,
+counties, places, or census tracts. Depending on their choice, they may
+have to further filter their results by state. Next, a user can
+specifically search for a geography by name or GEOID. The search filters
+results in a table on the right-hand side.
+
+The user also must apply a template to the geography they are querying.
+If none are available, they can be created in the Template tab. Upon
+clicking a geometry on the right side of the screen, the user will get
+taken to a page showing the data they requested.
+
+Touches like searching by GEOID, or having the data page create a
+reproducible URL -- so they can go straight back to their data page
+without having to go through the explore page -- are features I hope
+advanced and repeat users appreciate.
+
+In the future, I would like to stylize the tables to be able to hide and
+show margin of errors, collapse table groups, and give warning messages
+to users when margin of error percentages are too high for useful
+analysis.
+
+## Templates
+
+This page is what sets this product apart from others. Here, users can
+choose whether to build an ACS or Decennial template.
+
+After choosing a year for their data (currently, users cannot mix years
+to compare how a certain variable has changed through time), a user can
+search for and click on variables to add to their templates. Variables
+can be searched by label or variable name (e.g. P001001).
+
+After a user has clicked on all of the variables they want, they can
+give the template a name and click \"Finish\". Then, they will be able
+to see their template on the Explore page.
+
+Currently, this page is missing some checks in place to make sure users
+do not mix variable years and ACS and Decennial data types. In the
+long-term, it would be nice if a user could mix years and survey (ACS or
+Decennial) types within one template. The database structure can already
+accommodate this, but the back-end and front-end are not ready.
+
+## Query
+
+This page lets users find geometries that match a certain criteria, such
+as, how many counties in Michigan have more than 70% of the population
+living in urban areas? Once a query is complete, the user is taken to a
+map where they can view the specific data they requested by hovering
+over a geography.
+
+Users have an option of stacking multiple queries and specifying whether
+all of the criteria needs to be met, or any of the criteria needs to be
+met. Obviously, this does not give the user as much flexibility as a SQL
+statement, but hopefully it is enough for casual and advanced users
+alike.
+
+Similar to the templates page, there are no checks to make sure a user
+is not submitting a query that mixes ACS and Decennial data, and years.
+
+Moreover, I would like to let the user query by margin of error
+percentage, so they could filter out results whose margin of error is
+too high for useful analysis. This would only apply to ACS data, since
+Decennial data consists of values and not estimates.
+
+# Implemntation
+
+There are three major parts to this application: the React front-end,
+the R back-end, and the Postgres database.
+
+## React Front-end
+
+As the name states, the front-end was built in React. The following
+libraries are mainly responsible for front-end functionality:
+
+-   [[Chakra UI]{.ul}](https://chakra-ui.com/) is responsible for all
+    HTML elements, layouts, typefaces, and colors. It is also
+    responsible for the button that switches between light and dark
+    modes.
+
+-   [[react-map-gl]{.ul}](https://visgl.github.io/react-map-gl/) is
+    responsible for visualizing the spatial data. The library gives
+    the option of using MapBox GL JS and Maplibre GL JS. I am using
+    the latter.
+
+-   [[axios]{.ul}](https://axios-http.com/) is responsible for fetching
+    data from the back-end.
+
+## R Back-end
+
+The backend is where most of the computation happens in this
+application. It is responsible for fetching variables and geometries
+from the Postgres database, as well as fetching new data from the census
+API. The back-end would not be possible without the following:
+
+-   [[Tidycensus]{.ul}](https://walker-data.com/tidycensus/) by Kyle
+    Walker is an incredibly elegant library that allows users to fetch
+    a host of census data, only some of which I exposed in the
+    front-end. It provides easy methods to retrieve data and provides
+    advanced calculations for apportioning non-standard geometries to
+    census geometries (said calculations are not currently used in
+    this application).
+
+-   [[Plumber]{.ul}](https://www.rplumber.io/) is responsible for the
+    back-end API. The library made building an API quite fast.
+
+-   The [[tidyverse]{.ul}](https://www.tidyverse.org/) is a host of
+    packages in R that is intended for working with data, whether that
+    is data preparation or analysis. This was used to prepare data
+    from Tidycensus before I sent it to the front-end.
+
+## Postgres Database with PostGIS Enabled
+
+This is responsible for hosting all census variables and geometries. The
+database is populated by scripts in R so that the base deployment can be
+reproduced anywhere. PostGIS is only used to store the geometries which
+are then returned through the R package
+[[sf]{.ul}](https://r-spatial.github.io/sf/).
+
+# Conclusion
+
+There is plenty of room for growth in this application, but I believe I
+have a solid application to start with. I hope that I can find time in
+the future to further improve on this. My main goal, however, is to get
+this product out to some website where people can test it out.
+
+Building this was a great learning experience. I have used React before,
+but I am always learning something new with the framework. Using R on
+the back-end was an actual delight, and I will be using it more down the
+road, outside of this context.
+
+I hope others find use out of this application, and that maybe others
+will even contribute to it.

@@ -1,6 +1,6 @@
 ---
 date: 2021-04-26
-categories: [programming]
+categories: [cartography]
 image: imhof.png
 title: Tanaka Contours on Mars
 ---

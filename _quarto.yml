@@ -9,6 +9,8 @@ website:
       - about.qmd
       - icon: github
         href: https://github.com/freestok
+      - icon: linkedin
+        href: https://www.linkedin.com/in/kray-freestone/
       - icon: twitter
         href: https://twitter.com/spatialKray
 format:
