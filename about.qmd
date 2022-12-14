@@ -1,19 +1,21 @@
 ---
 title: "About"
-image: profile.jpg
+image: assets/kray.jpg
 about:
   template: jolla
   links:
     - icon: twitter
       text: Twitter
-      href: https://twitter.com
+      href: https://twitter.com/spatialKray
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/kray-freestone/
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/freestok
 
 ---
 
-About this blog
+Hello, I'm Kray Freestone, a GIS Web Application Developer at [North Point Geographic Solutions](https://www.northpointgis.com/) and a recent graduate of [UW-Madison's Masters Program in GIS Development](https://geography.wisc.edu/gis/onlinemasters/).  
+
+[You can see my resume here](assets/resume.pdf).

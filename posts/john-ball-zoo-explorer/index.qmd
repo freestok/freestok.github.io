@@ -4,8 +4,8 @@ title: John Ball Zoo Explorer
 categories: [programming]
 image: thumbnail.png
 ---
-<img class="full-width" src="thumbnail.png" 
-    alt="Map of the John Ball Zoo and a card of information on penguins, showing scientific name and conservation status (least concern for Magellenic penguins)">
+
+![View of Website](thumbnail.png)
 
 ## Introduction and Overview
 

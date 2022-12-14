@@ -20,5 +20,23 @@
   {
     "listing": "/projects.html",
     "items": []
+  },
+  {
+    "listing": "/portfolio.html",
+    "items": [
+      "/posts/john-ball-zoo-explorer/index.html",
+      "/posts/varieties-of-democracy/index.html",
+      "/posts/the-tour-de-iberia/index.html",
+      "/posts/tanaka-contours-on-mars/index.html",
+      "/posts/mapping-gondor-and-mordor/index.html",
+      "/posts/visualizing-democratic-backsliding/index.html",
+      "/posts/visualizing-the-riot-on-the-capitol/index.html",
+      "/posts/generating-running-loops-with-graph-theory/index.html",
+      "/posts/mapping-code-violations-in-grand-rapids/index.html",
+      "/posts/demographic-analysis-with-python/index.html",
+      "/posts/city-of-grand-rapids-cemeteries/index.html",
+      "/posts/geocoding-with-python/index.html",
+      "/posts/mesopotamian-marshes/index.html"
+    ]
   }
 ]
