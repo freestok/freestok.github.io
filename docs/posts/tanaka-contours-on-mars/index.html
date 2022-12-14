@@ -85,12 +85,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/freestok"><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/spatialKray"><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -139,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
 <p><img class="full-width" src="oxia.png" alt="mars"></p>
 <section id="background" class="level1">
 <h1>Background</h1>
-<p><a href="http://wiki.gis.com/wiki/index.php/Tanaka_contours">Tanaka contours</a>, also known as illuminated contours, are a unique way of visualizing elevation. Tanaka Kitiro (developer of said method), used light from a northwesterly direction and varying line width &amp; color based on the line�s angle.</p>
+<p><a href="http://wiki.gis.com/wiki/index.php/Tanaka_contours">Tanaka contours</a>, also known as illuminated contours, are a unique way of visualizing elevation. Tanaka Kitiro (developer of said method), used light from a northwesterly direction and varying line width &amp; color based on the line’s angle.</p>
 <figure class="figure">
 <img src="tanaka-og.jpg" alt="japan map" class="figure-img">
 <figcaption class="figure-caption">
@@ -157,11 +157,11 @@ Map of Japan by Kitiro Tanaka (1950s)
 Kasei Valles
 </figcaption>
 </figure>
-<p>If you’re curious why Mars looks this way, I used <a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/steal-this-imhof-like-topography-style-please/">John Nelson’s custom Imhof Style</a> on a 200m DEM of Mars (<a href="https://astrogeology.usgs.gov/search/map/Mars/Topography/HRSC_MOLA_Blend/Mars_HRSC_MOLA_BlendDEM_Global_200mp_v2">from the USGS</a>). Sure, Mars doesn�t have the lush landscape of Switzerland, but it looks pretty neat!</p>
+<p>If you’re curious why Mars looks this way, I used <a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/steal-this-imhof-like-topography-style-please/">John Nelson’s custom Imhof Style</a> on a 200m DEM of Mars (<a href="https://astrogeology.usgs.gov/search/map/Mars/Topography/HRSC_MOLA_Blend/Mars_HRSC_MOLA_BlendDEM_Global_200mp_v2">from the USGS</a>). Sure, Mars doesn’t have the lush landscape of Switzerland, but it looks pretty neat!</p>
 </section>
 <section id="clipping-the-raster" class="level1">
 <h1>Clipping the Raster</h1>
-<p>This isn�t strictly necessary, but it will help speed up processing down the road. This can be accomplished via the <strong>Clip Raster</strong> tool in ArcGIS Pro, or through this GDAL command (in this instance, it said my source and target ellipsoids were not on the same celestial body, which was strange because both were in the same projection).</p>
+<p>This isn’t strictly necessary, but it will help speed up processing down the road. This can be accomplished via the <strong>Clip Raster</strong> tool in ArcGIS Pro, or through this GDAL command (in this instance, it said my source and target ellipsoids were not on the same celestial body, which was strange because both were in the same projection).</p>
 <pre><code>gdalwarp -cutline clip.shp -crop\_to\_cutline mars.tif kasei.tif</code></pre>
 <figure class="figure">
 <img src="clip-raster.png" class="figure-img">
@@ -171,7 +171,7 @@ Kasei Valles
 <h1>Creating Contours</h1>
 <p>This could be as easy as this GDAL command</p>
 <pre><code>gdal\_contour -a elev input.tif output.shp -i 200.0</code></pre>
-<p>While this will create accurate contours, I�m looking for something smooth and aesthetically pleasing. In order to create smooth contours, the DEM needs to be generalized (this is possible with <a href="https://gis.stackexchange.com/questions/30627/smoothing-reinterpolating-raster-with-gdal">some more GDAL commands</a> and <a href="https://gis.stackexchange.com/questions/9431/what-raster-smoothing-generalization-tools-are-available">maybe some Python</a>, but I’m not going to go into that here).</p>
+<p>While this will create accurate contours, I’m looking for something smooth and aesthetically pleasing. In order to create smooth contours, the DEM needs to be generalized (this is possible with <a href="https://gis.stackexchange.com/questions/30627/smoothing-reinterpolating-raster-with-gdal">some more GDAL commands</a> and <a href="https://gis.stackexchange.com/questions/9431/what-raster-smoothing-generalization-tools-are-available">maybe some Python</a>, but I’m not going to go into that here).</p>
 In ArcGIS Pro, the DEM needs to be run through the <strong>Focal Statistics</strong> tool. Depending on the size of the DEM and the scale you are working with, your width and height parameters will be different. Play around with the settings until you find something appropriately smooth.
 <figure class="figure">
 <img src="focal-stats.png" class="figure-img">
@@ -202,7 +202,7 @@ Original contours in red, smoothed in blue
 <p>This code was adapted from the <a href="https://qgis.org/api/qgspoint_8cpp_source.html#l00716">QGIS function</a> <code>azimuth()</code>.</p>
 <p>For the color calculation, create another field and call the following code block with <code>get_color(!azimuth!):</code></p>
 <script src="https://gist.github.com/freestok/4f907877e65e664bc16db360c9026989.js"></script>
-<p>This is to make it look like the sun is based in the north west (-45�).</p>
+<p>This is to make it look like the sun is based in the north west (-45°).</p>
 <p>The width calculation will be similar in concept. Line segments that are in the sun or shadow will be thicker, while those in the orthogonal direction (meaning at right angles) will be thinner. Call the following code block with <code>get_width(!azimuth!)</code></p>
 <script src="https://gist.github.com/freestok/3ce60daca4031e843d7e0c31c0a1b59b.js"></script>
 </section>

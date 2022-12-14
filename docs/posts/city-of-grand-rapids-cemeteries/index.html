@@ -85,12 +85,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/freestok"><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/spatialKray"><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -136,16 +136,16 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>The purpose of <a href="http://grandrapids.maps.arcgis.com/apps/webappviewer/index.html?id=53514aa28a584dbd8f07e7a3ced8af17">this project</a> was to allow any citizen to view cemeteries online so that they can search for occupants in any of Grand Rapids� six cemeteries. This project was based on four phases: implementing surveying maps, reconciling polygon data with cemetery records, automating much of the workflow in Python, and visualizing it all in ArcGIS Online.</p>
+<p>The purpose of <a href="http://grandrapids.maps.arcgis.com/apps/webappviewer/index.html?id=53514aa28a584dbd8f07e7a3ced8af17">this project</a> was to allow any citizen to view cemeteries online so that they can search for occupants in any of Grand Rapids’ six cemeteries. This project was based on four phases: implementing surveying maps, reconciling polygon data with cemetery records, automating much of the workflow in Python, and visualizing it all in ArcGIS Online.</p>
 <figure class="figure">
 <img src="survey-map.png" alt="Surveying map of woodlawn west cemetery" class="figure-img">
 <figcaption class="figure-caption">
 Survey Map of Woodlawn West
 </figcaption>
 </figure>
-<p>The first phase of the project dealt largely with georeferencing the surveying maps, converting the image to editable features, and cleaning up said features. Though there are six cemeteries, there were eight different maps, each of which being georeferenced to their respective cemetery. After georeferencing, the survey maps were converted into editable features via the <strong>Raster to Polygon</strong> tool. From there, over 20,000 polygons from eight maps were cleaned up and labeled (e.g.&nbsp;deleting the numbers that were turned into polygons, inserting �blocks� and �lots� metadata into each polygon).</p>
-<p>The second phase consisted of reconciling the polygons, which contained the bare metadata of �cemetery�, �block�, and �lot�, with the richer data of a spreadsheet derived from the city�s cemetery database. This proved to somewhat of a challenge given that there were multiple occupants per lot, for the survey�s smallest unit was not a <strong>grave</strong> but a <strong>lot</strong>. With multiple occupants per lot, there were only two options: a many-to-one <strong>relate</strong> or building a query table in order to do a many-to-one <strong>join</strong>. I chose the latter. While relating the information would be easiest and is possible in ArcGIS Online, the service�s online search function did not support data from relates, therefore, I had to build a query table.</p>
-<p>It should be noted that there are some inherent flaws when working with surveying maps from the mid to late 1900s. Some data that existed in the up-to-date cemetery database was not reflected in the surveying maps, therefore, some lots � and subsequently occupants � do not appear in the final project. Moreover, if certain lots appeared in the surveying maps but did not appear in the spreadsheet, the query table operation then deleted empty polygons. Interestingly, even though the map appears to have fewer polygons, there are actually more: in a many-to-one query table join, polygons are stacked on top of each other when sharing the same space.</p>
+<p>The first phase of the project dealt largely with georeferencing the surveying maps, converting the image to editable features, and cleaning up said features. Though there are six cemeteries, there were eight different maps, each of which being georeferenced to their respective cemetery. After georeferencing, the survey maps were converted into editable features via the <strong>Raster to Polygon</strong> tool. From there, over 20,000 polygons from eight maps were cleaned up and labeled (e.g.&nbsp;deleting the numbers that were turned into polygons, inserting “blocks” and “lots” metadata into each polygon).</p>
+<p>The second phase consisted of reconciling the polygons, which contained the bare metadata of “cemetery”, “block”, and “lot”, with the richer data of a spreadsheet derived from the city’s cemetery database. This proved to somewhat of a challenge given that there were multiple occupants per lot, for the survey’s smallest unit was not a <strong>grave</strong> but a <strong>lot</strong>. With multiple occupants per lot, there were only two options: a many-to-one <strong>relate</strong> or building a query table in order to do a many-to-one <strong>join</strong>. I chose the latter. While relating the information would be easiest and is possible in ArcGIS Online, the service’s online search function did not support data from relates, therefore, I had to build a query table.</p>
+<p>It should be noted that there are some inherent flaws when working with surveying maps from the mid to late 1900s. Some data that existed in the up-to-date cemetery database was not reflected in the surveying maps, therefore, some lots — and subsequently occupants — do not appear in the final project. Moreover, if certain lots appeared in the surveying maps but did not appear in the spreadsheet, the query table operation then deleted empty polygons. Interestingly, even though the map appears to have fewer polygons, there are actually more: in a many-to-one query table join, polygons are stacked on top of each other when sharing the same space.</p>
 <figure class="figure">
 <img src="pre-query.png" alt="map of cemetery blocks" class="figure-img">
 <figcaption class="figure-caption">
@@ -161,7 +161,7 @@ After Query Table Join
 <p>For the third phase, I automated most of the workflow with Python. At a high level, the program:</p>
 <ol type="1">
 <li>Creates a one-to-many join via a query table with the cemetery spreadsheet and the cemetery shapefile</li>
-<li>Splits the query table result into eight different shapefiles (if we use only one shapefile for the web application, it would have to search through approximately 100,000 features � the maximum amount it can handle is around 20,000 features)</li>
+<li>Splits the query table result into eight different shapefiles (if we use only one shapefile for the web application, it would have to search through approximately 100,000 features; the maximum amount it can handle is around 20,000 features)</li>
 <li>Uploads the shapefiles to ArcGIS Online</li>
 <li>Creates Tile Layers from the shapefiles in ArcGIS Online (the Tile Layers help visualize the data more easily in the web applications)</li>
 </ol>
@@ -170,8 +170,8 @@ After Query Table Join
 <script src="https://gist.github.com/freestok/1ec23833dcc8182e54d6dcd15e3f1380.js"></script>
 <p>Next, the query table needs to be split into eight different parts (the end result of this project is eight different web applications for their respective cemeteries).</p>
 <script src="https://gist.github.com/freestok/c48bcff6133343796657d9ba509c6e0b.js"></script>
-<p>The <strong>ArcPy</strong> library � used above � that comes with ArcGIS for Desktop is built on Python 2.7. The <a href="https://developers.arcgis.com/python/">ArcGIS API for Python</a> (which allows me to easily manipulate files in ArcGIS Online) is built on Python 3.5 (and above). So, I started a new script for this different library. The end function should overwrite shapefiles and create new tiles layers in ArcGIS Online.</p>
-<p>The following function searches for shapefiles, feature services, and map services (tile layers) that match the cemetery�s name. If there is a match, they will be deleted.</p>
+<p>The <strong>ArcPy</strong> library (used above) that comes with ArcGIS for Desktop is built on Python 2.7. The <a href="https://developers.arcgis.com/python/">ArcGIS API for Python</a> (which allows me to easily manipulate files in ArcGIS Online) is built on Python 3.5 (and above). So, I started a new script for this different library. The end function should overwrite shapefiles and create new tiles layers in ArcGIS Online.</p>
+<p>The following function searches for shapefiles, feature services, and map services (tile layers) that match the cemetery’s name. If there is a match, they will be deleted.</p>
 <script src="https://gist.github.com/freestok/68bb70c4a5a260ec2d112f891e417976.js"></script>
 <p>After the files are deleted, the program uploads new shapefiles and creates tile layers from them.</p>
 <script src="https://gist.github.com/freestok/914c366c3b4b114c6bd8a66a3b708dfc.js"></script>
