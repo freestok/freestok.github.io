@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2021-04-26">
+
+<title>Kray’s Portfolio - Tanaka Contours on Mars</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Kray’s Portfolio</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Tanaka Contours on Mars</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">programming</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 26, 2021</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><img class="full-width" src="oxia.png" alt="mars"></p>
+<section id="background" class="level1">
+<h1>Background</h1>
+<p><a href="http://wiki.gis.com/wiki/index.php/Tanaka_contours">Tanaka contours</a>, also known as illuminated contours, are a unique way of visualizing elevation. Tanaka Kitiro (developer of said method), used light from a northwesterly direction and varying line width &amp; color based on the line�s angle.</p>
+<figure class="figure">
+<img src="tanaka-og.jpg" alt="japan map" class="figure-img">
+<figcaption class="figure-caption">
+Map of Japan by Kitiro Tanaka (1950s)
+</figcaption>
+</figure>
+<p>This guide is an adaption of <a href="https://anitagraser.com/">Anita Graser</a>’s excellent guide to <a href="https://anitagraser.com/2015/05/24/how-to-create-illuminated-contours-tanaka-style/">creating Tanaka contours in QGIS</a>. Here, I will show how to accomplish the same thing in ArcGIS Pro (with some notes on data preparation).</p>
+</section>
+<section id="select-a-location" class="level1">
+<h1>Select a Location</h1>
+<p>First, find an area where you want to create contours. For me it was Kasei Valles on Mars.</p>
+<figure class="figure">
+<img src="imhof.png" alt="kasei valles" class="figure-img">
+<figcaption class="figure-caption">
+Kasei Valles
+</figcaption>
+</figure>
+<p>If you’re curious why Mars looks this way, I used <a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/steal-this-imhof-like-topography-style-please/">John Nelson’s custom Imhof Style</a> on a 200m DEM of Mars (<a href="https://astrogeology.usgs.gov/search/map/Mars/Topography/HRSC_MOLA_Blend/Mars_HRSC_MOLA_BlendDEM_Global_200mp_v2">from the USGS</a>). Sure, Mars doesn�t have the lush landscape of Switzerland, but it looks pretty neat!</p>
+</section>
+<section id="clipping-the-raster" class="level1">
+<h1>Clipping the Raster</h1>
+<p>This isn�t strictly necessary, but it will help speed up processing down the road. This can be accomplished via the <strong>Clip Raster</strong> tool in ArcGIS Pro, or through this GDAL command (in this instance, it said my source and target ellipsoids were not on the same celestial body, which was strange because both were in the same projection).</p>
+<pre><code>gdalwarp -cutline clip.shp -crop\_to\_cutline mars.tif kasei.tif</code></pre>
+<figure class="figure">
+<img src="clip-raster.png" class="figure-img">
+</figure>
+</section>
+<section id="creating-contours" class="level1">
+<h1>Creating Contours</h1>
+<p>This could be as easy as this GDAL command</p>
+<pre><code>gdal\_contour -a elev input.tif output.shp -i 200.0</code></pre>
+<p>While this will create accurate contours, I�m looking for something smooth and aesthetically pleasing. In order to create smooth contours, the DEM needs to be generalized (this is possible with <a href="https://gis.stackexchange.com/questions/30627/smoothing-reinterpolating-raster-with-gdal">some more GDAL commands</a> and <a href="https://gis.stackexchange.com/questions/9431/what-raster-smoothing-generalization-tools-are-available">maybe some Python</a>, but I’m not going to go into that here).</p>
+In ArcGIS Pro, the DEM needs to be run through the <strong>Focal Statistics</strong> tool. Depending on the size of the DEM and the scale you are working with, your width and height parameters will be different. Play around with the settings until you find something appropriately smooth.
+<figure class="figure">
+<img src="focal-stats.png" class="figure-img">
+</figure>
+<figure class="figure">
+<img src="dem-blur.png" class="figure-img">
+<figcaption class="figure-caption">
+It’s pretty squid-like
+</figcaption>
+</figure>
+<p>The contours created with the smoothed DEM look a lot better than the ones created with the raw DEM. The contour interval for others will depend on the scale of your layout (mine is approximately 1:3 million).</p>
+<figure class="figure">
+<img src="contour.png" class="figure-img">
+</figure>
+<figure class="figure">
+<img src="compare.png" class="figure-img">
+<figcaption class="figure-caption">
+Original contours in red, smoothed in blue
+</figcaption>
+</figure>
+</section>
+<section id="calculating-the-azimuth-color-and-width" class="level1">
+<h1>Calculating the Azimuth, Color, and Width</h1>
+<p>Since line color and width is dependent on a line segment’s azimuth, the line needs to be split by its vertices. This can be accomplished through the <strong>Split Line at Vertices</strong> tool in Pro.</p>
+<p>After the contours have been split, I added three fields (all with the type float): azimuth, width, and height.</p>
+<p>For the azimuth calculation, open up the field calculator on your split contours and call the following code block with <code>get_azimuth(!Shape!)</code> on the azimuth field:</p>
+<script src="https://gist.github.com/freestok/2911012ab2ea071c860e4a2b997532a1.js"></script>
+<p>This code was adapted from the <a href="https://qgis.org/api/qgspoint_8cpp_source.html#l00716">QGIS function</a> <code>azimuth()</code>.</p>
+<p>For the color calculation, create another field and call the following code block with <code>get_color(!azimuth!):</code></p>
+<script src="https://gist.github.com/freestok/4f907877e65e664bc16db360c9026989.js"></script>
+<p>This is to make it look like the sun is based in the north west (-45�).</p>
+<p>The width calculation will be similar in concept. Line segments that are in the sun or shadow will be thicker, while those in the orthogonal direction (meaning at right angles) will be thinner. Call the following code block with <code>get_width(!azimuth!)</code></p>
+<script src="https://gist.github.com/freestok/3ce60daca4031e843d7e0c31c0a1b59b.js"></script>
+</section>
+<section id="styling-the-map" class="level1">
+<h1>Styling the Map</h1>
+<p>Click on the processed contours, select the <strong>Appearance</strong> tab, and set the <strong>Layer Blend</strong> to <strong>Overlay</strong>.</p>
+<p>With the contours still selected, go to the Symbology pane, navigate to <strong>Vary symbology by attribute</strong>, and set the <strong>Color</strong> field to color and the <strong>Size</strong> field to width.</p>
+<figure class="figure">
+<img src="color.png" class="figure-img">
+</figure>
+<p>The default for the color ramp is acceptable, but in the <strong>Size</strong> area, check the <strong>Enable size range</strong> checkbox, and set the range from 1pt to 2 pt (or however thick you would like your lines).</p>
+<figure class="figure">
+<img src="size.png" class="figure-img">
+</figure>
+<p>Then, assuming your blurred DEM is still the back-drop, your map should look like this:</p>
+<figure class="figure">
+<img src="kasei-bw.png" class="figure-img">
+</figure>
+<p>Mess around with the color ramp on your DEM to get the look you’re going for. I tried one with an “earthy” look to it:</p>
+<figure class="figure">
+<img src="kasei-earth.png" class="figure-img">
+</figure>
+<p>That’s all there is to it. This workflow can be repeated anywhere and adjusted to your liking. Thanks for reading.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
