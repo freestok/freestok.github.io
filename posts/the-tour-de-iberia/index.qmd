@@ -1,22 +1,24 @@
 ---
 date: 2021-05-09
 title: The Tour de Iberia
-categories: [programming]
+categories: [cartography]
 image: thumbnail.png
 ---
-<figure>
+<!-- <figure>
   <img src="route.png" alt=""/>
   <figcaption>The Fictional Tour de Iberia</figcaption>
-</figure>
+</figure> -->
+![The Fictional Tour de Iberia](route.png)
 
 This is my attempt at creating a fictional bike route, akin to the Tour de France. While trying to figure out the most punishing route through the Pyrenees was enjoyable, the best part of this project was visualizing the Iberian Peninsula's beautiful terrain.  
 
 The terrain itself consists of three main components: a hillshade, simplified land-use, and water. Since the terrain is my favorite part, I made another version of this map just showcasing the natural beauty:
 
-<figure>
+<!-- <figure>
   <img src="physical.png" alt=""/>
   <figcaption>The Iberian Peninsula</figcaption>
-</figure>
+</figure> -->
+![The Fictional Tour de Iberia](physical.png)
 
 The data preparation was done with ArcGIS Pro & GDAL, shaded relief in Blender, overlay of simplified land use and water done in Photoshop, and labeling finalized in Illustrator.
 
