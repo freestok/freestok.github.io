@@ -1,0 +1,59 @@
+---
+date: 2022-12-01
+title: Map Challenge 2021 & 2022
+categories: [cartography]
+image: thumbnail.jpg
+---
+
+I have been meaning to compile these maps for a while, so here is a compilation of my maps for the [#30DayMapChallenge](https://github.com/tjukanovt/30DayMapChallenge) (years 2021 and 2022).
+
+# 2021
+
+## Day 5 - OpenStreetMap
+
+![Electric London](day5-2021.jpg)
+
+## Day 8 - Blue
+
+![The Great Lakes (with relative depths)](day8-2021.jpg)
+
+## Day 9 - Monochrome
+
+![Kasei Valles, Mars](day9-2021.jpg)
+
+## Day 11 - 3D
+
+![Elevation Ridgline Plot of Montserrat, Spain](day11-2021.jpg)
+
+Made in Blender. It's 3D, I promise.
+
+## Day 17 - Land
+
+![Rim to Rim trail of the Grand Canyon (Bright Angel excluded)](day17-2021.jpg)
+
+## Day 19 - Island(s)
+
+![Plan oblique view of Haleakala National Park on Maui](day19-2021.jpg)
+
+Thanks to John Nelson for his [tutorial](https://youtu.be/J0PWED9Orr4).
+
+## Day 21 - Elevation
+
+![Another view of Montserrat in Spain](day21-elevation.jpg)
+
+Played around with a more densified joy plot and controlling the emission by z-value.
+
+# 2022
+
+## Day 9 - Space
+
+![Tears in the Urban Fabric: Parking Lots in Downtown Grand Rapids](day9-2022.jpg)
+
+My urban planning professor in college called them tears in the urban fabric, so I'm showing them as voids in the felt style made by John Nelson.
+
+## Day 14 - Hexagons
+
+![Muppet Place Names in the Contentinal US](day14-2022.jpg)
+All "Muppet" place names in the continental US (e.g. Kermit, Gonzo, Animal, Janice, Pepe, Ms. Piggy, Rizzo, Scooter, Statler & Waldorf)  
+
+Data source: Geographic Names from USGS

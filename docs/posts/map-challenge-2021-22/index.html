@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-12-14">
+<meta name="dcterms.date" content="2022-12-01">
 
-<title>Kray’s Portfolio - Census Find</title>
+<title>Kray’s Portfolio - Map Challenge 2021 &amp; 2022</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,9 +109,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Census Find</h1>
+      <h1 class="title">Map Challenge 2021 &amp; 2022</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">programming</div>
+                <div class="quarto-category">cartography</div>
               </div>
                   </div>
   </div>
@@ -123,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 14, 2022</p>
+        <p class="date">December 1, 2022</p>
       </div>
     </div>
     
@@ -141,78 +141,95 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>This application, Census Find, intends to make access to census data both accessible and reproducible. While there are other tools out there that aim to accomplish this, I believe this tool fills a special niche that did not, up until this point, exist. The intended audience are casual users who are not used to exploring census data, nor joining in census data with TIGER shapefiles to make cartographic products.</p>
+<p>I have been meaning to compile these maps for a while, so here is a compilation of my maps for the <a href="https://github.com/tjukanovt/30DayMapChallenge">#30DayMapChallenge</a> (years 2021 and 2022).</p>
+<section id="section" class="level1">
+<h1>2021</h1>
+<section id="day-5---openstreetmap" class="level2">
+<h2 class="anchored" data-anchor-id="day-5---openstreetmap">Day 5 - OpenStreetMap</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="day5-2021.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Electric London</figcaption><p></p>
+</figure>
+</div>
 </section>
-<section id="final-product-and-demonstration" class="level1">
-<h1>Final Product and Demonstration</h1>
-<p>The final product for this project is a website where a user can explore census data. The website can <a href="https://census-find.netlify.app/">be found here</a>, the source code can be <a href="https://github.com/freestok/census-find">found on GitHub</a>, and a live demonstration can be found on YouTube.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/Jf0zjedFfbA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="day-8---blue" class="level2">
+<h2 class="anchored" data-anchor-id="day-8---blue">Day 8 - Blue</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="day8-2021.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The Great Lakes (with relative depths)</figcaption><p></p>
+</figure>
+</div>
 </section>
-<section id="target-audience" class="level1">
-<h1>Target Audience</h1>
-<p>As stated before, this is intended to be used by casual users who have difficulty exploring the ins-and-outs of USA census structures. All variables for American Community Survey (ACS5) and Decennial (SF1) surveys have been cleaned so that they make sense to the end user (e.g. P001001 vs Total Population).</p>
-<p>In addition to casual users, I hope more advanced users find use in this tool. The most powerful feature of this application is the ability to build templates. These templates can be utilized on any geographic area providing reproducible analysis.</p>
+<section id="day-9---monochrome" class="level2">
+<h2 class="anchored" data-anchor-id="day-9---monochrome">Day 9 - Monochrome</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="day9-2021.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Kasei Valles, Mars</figcaption><p></p>
+</figure>
+</div>
 </section>
-<section id="application-overview" class="level1">
-<h1>Application Overview</h1>
-<p>Census Find consists of three main components: exploring data, querying data, and creating templates for data.</p>
-<section id="exploring" class="level2">
-<h2 class="anchored" data-anchor-id="exploring">Exploring</h2>
-<p>Data exploration is the first page a user is shown. On the left-hand side, a user can select whether they would like to explore states, counties, places, or census tracts. Depending on their choice, they may have to further filter their results by state. Next, a user can specifically search for a geography by name or GEOID. The search filters results in a table on the right-hand side.</p>
-<p>The user also must apply a template to the geography they are querying. If none are available, they can be created in the Template tab. Upon clicking a geometry on the right side of the screen, the user will get taken to a page showing the data they requested.</p>
-<p>Touches like searching by GEOID, or having the data page create a reproducible URL – so they can go straight back to their data page without having to go through the explore page – are features I hope advanced and repeat users appreciate.</p>
-<p>In the future, I would like to stylize the tables to be able to hide and show margin of errors, collapse table groups, and give warning messages to users when margin of error percentages are too high for useful analysis.</p>
+<section id="day-11---3d" class="level2">
+<h2 class="anchored" data-anchor-id="day-11---3d">Day 11 - 3D</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="day11-2021.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Elevation Ridgline Plot of Montserrat, Spain</figcaption><p></p>
+</figure>
+</div>
+<p>Made in Blender. It’s 3D, I promise.</p>
 </section>
-<section id="templates" class="level2">
-<h2 class="anchored" data-anchor-id="templates">Templates</h2>
-<p>This page is what sets this product apart from others. Here, users can choose whether to build an ACS or Decennial template.</p>
-<p>After choosing a year for their data (currently, users cannot mix years to compare how a certain variable has changed through time), a user can search for and click on variables to add to their templates. Variables can be searched by label or variable name (e.g.&nbsp;P001001).</p>
-<p>After a user has clicked on all of the variables they want, they can give the template a name and click "Finish". Then, they will be able to see their template on the Explore page.</p>
-<p>Currently, this page is missing some checks in place to make sure users do not mix variable years and ACS and Decennial data types. In the long-term, it would be nice if a user could mix years and survey (ACS or Decennial) types within one template. The database structure can already accommodate this, but the back-end and front-end are not ready.</p>
+<section id="day-17---land" class="level2">
+<h2 class="anchored" data-anchor-id="day-17---land">Day 17 - Land</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="day17-2021.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Rim to Rim trail of the Grand Canyon (Bright Angel excluded)</figcaption><p></p>
+</figure>
+</div>
 </section>
-<section id="query" class="level2">
-<h2 class="anchored" data-anchor-id="query">Query</h2>
-<p>This page lets users find geometries that match a certain criteria, such as, how many counties in Michigan have more than 70% of the population living in urban areas? Once a query is complete, the user is taken to a map where they can view the specific data they requested by hovering over a geography.</p>
-<p>Users have an option of stacking multiple queries and specifying whether all of the criteria needs to be met, or any of the criteria needs to be met. Obviously, this does not give the user as much flexibility as a SQL statement, but hopefully it is enough for casual and advanced users alike.</p>
-<p>Similar to the templates page, there are no checks to make sure a user is not submitting a query that mixes ACS and Decennial data, and years.</p>
-<p>Moreover, I would like to let the user query by margin of error percentage, so they could filter out results whose margin of error is too high for useful analysis. This would only apply to ACS data, since Decennial data consists of values and not estimates.</p>
+<section id="day-19---islands" class="level2">
+<h2 class="anchored" data-anchor-id="day-19---islands">Day 19 - Island(s)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="day19-2021.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Plan oblique view of Haleakala National Park on Maui</figcaption><p></p>
+</figure>
+</div>
+<p>Thanks to John Nelson for his <a href="https://youtu.be/J0PWED9Orr4">tutorial</a>.</p>
 </section>
-</section>
-<section id="implemntation" class="level1">
-<h1>Implemntation</h1>
-<p>There are three major parts to this application: the React front-end, the R back-end, and the Postgres database.</p>
-<section id="react-front-end" class="level2">
-<h2 class="anchored" data-anchor-id="react-front-end">React Front-end</h2>
-<p>As the name states, the front-end was built in React. The following libraries are mainly responsible for front-end functionality:</p>
-<ul>
-<li><p><a href="https://chakra-ui.com/"><u>Chakra UI</u></a> is responsible for all HTML elements, layouts, typefaces, and colors. It is also responsible for the button that switches between light and dark modes.</p></li>
-<li><p><a href="https://visgl.github.io/react-map-gl/"><u>react-map-gl</u></a> is responsible for visualizing the spatial data. The library gives the option of using MapBox GL JS and Maplibre GL JS. I am using the latter.</p></li>
-<li><p><a href="https://axios-http.com/"><u>axios</u></a> is responsible for fetching data from the back-end.</p></li>
-</ul>
-</section>
-<section id="r-back-end" class="level2">
-<h2 class="anchored" data-anchor-id="r-back-end">R Back-end</h2>
-<p>The backend is where most of the computation happens in this application. It is responsible for fetching variables and geometries from the Postgres database, as well as fetching new data from the census API. The back-end would not be possible without the following:</p>
-<ul>
-<li><p><a href="https://walker-data.com/tidycensus/"><u>Tidycensus</u></a> by Kyle Walker is an incredibly elegant library that allows users to fetch a host of census data, only some of which I exposed in the front-end. It provides easy methods to retrieve data and provides advanced calculations for apportioning non-standard geometries to census geometries (said calculations are not currently used in this application).</p></li>
-<li><p><a href="https://www.rplumber.io/"><u>Plumber</u></a> is responsible for the back-end API. The library made building an API quite fast.</p></li>
-<li><p>The <a href="https://www.tidyverse.org/"><u>tidyverse</u></a> is a host of packages in R that is intended for working with data, whether that is data preparation or analysis. This was used to prepare data from Tidycensus before I sent it to the front-end.</p></li>
-</ul>
-</section>
-<section id="postgres-database-with-postgis-enabled" class="level2">
-<h2 class="anchored" data-anchor-id="postgres-database-with-postgis-enabled">Postgres Database with PostGIS Enabled</h2>
-<p>This is responsible for hosting all census variables and geometries. The database is populated by scripts in R so that the base deployment can be reproduced anywhere. PostGIS is only used to store the geometries which are then returned through the R package <a href="https://r-spatial.github.io/sf/"><u>sf</u></a>.</p>
+<section id="day-21---elevation" class="level2">
+<h2 class="anchored" data-anchor-id="day-21---elevation">Day 21 - Elevation</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="day21-elevation.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Another view of Montserrat in Spain</figcaption><p></p>
+</figure>
+</div>
+<p>Played around with a more densified joy plot and controlling the emission by z-value.</p>
 </section>
 </section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
-<p>There is plenty of room for growth in this application, but I believe I have a solid application to start with. I hope that I can find time in the future to further improve on this. My main goal, however, is to get this product out to some website where people can test it out.</p>
-<p>Building this was a great learning experience. I have used React before, but I am always learning something new with the framework. Using R on the back-end was an actual delight, and I will be using it more down the road, outside of this context.</p>
-<p>I hope others find use out of this application, and that maybe others will even contribute to it.</p>
+<section id="section-1" class="level1">
+<h1>2022</h1>
+<section id="day-9---space" class="level2">
+<h2 class="anchored" data-anchor-id="day-9---space">Day 9 - Space</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="day9-2022.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Tears in the Urban Fabric: Parking Lots in Downtown Grand Rapids</figcaption><p></p>
+</figure>
+</div>
+<p>My urban planning professor in college called them tears in the urban fabric, so I’m showing them as voids in the felt style made by John Nelson.</p>
+</section>
+<section id="day-14---hexagons" class="level2">
+<h2 class="anchored" data-anchor-id="day-14---hexagons">Day 14 - Hexagons</h2>
+<p><img src="day14-2022.jpg" class="img-fluid" alt="Muppet Place Names in the Contentinal US"> All “Muppet” place names in the continental US (e.g.&nbsp;Kermit, Gonzo, Animal, Janice, Pepe, Ms.&nbsp;Piggy, Rizzo, Scooter, Statler &amp; Waldorf)</p>
+<p>Data source: Geographic Names from USGS</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

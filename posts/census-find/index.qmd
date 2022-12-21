@@ -17,9 +17,7 @@ census data with TIGER shapefiles to make cartographic products.
 # Final Product and Demonstration
 
 The final product for this project is a website where a user can explore
-census data. As of this writing, the final product is not on a live
-website for others to use. However, the [[source code can be found on my
-GitHub profile]{.ul}](https://github.com/freestok/census-find) and a live demonstration can be found on YouTube.
+census data. The website can [be found here](https://census-find.netlify.app/), the source code can be [found on GitHub](https://github.com/freestok/census-find), and a live demonstration can be found on YouTube.
 {{< video https://youtu.be/Jf0zjedFfbA >}}
 
 # Target Audience
