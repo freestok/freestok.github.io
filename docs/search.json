@@ -119,6 +119,76 @@
     "text": "Application Architecture\nTechnically, since the application is hosted through Heroku, it treats the entire application as one front-end. In reality, which is reflected in the GitHub repository, the front-end uses React and the back-end uses Flask. Routing has to match between the two in order to work.\nTo expand on that, Heroku is looking for a python project. Flask runs, and it serves up a single index.html file, which is the output of the react-scripts build process. When running this application locally, one must open two terminals, one running \"npm start\" and the other running \"npm run server\". It also assumes that the terminal running \"npm run server\" is in a proper conda environment that has all the dependencies installed (which should be found in the project's root level requirements.txt file).\nAside from serving the assets, the back-end also handles the requests to get and set ratings. If it receives a GET request, it returns the specific animal's rating, and if it receives a POST request, it will create a rating for the animal. I did not spend the time to implement robust state tracking, so once a larger card is closed, a user could simply reopen it and re-submit a rating. However, while they are in the card, it no longer gives them the option to submit another rating.\nOn the React side of the application, the UI is split into two main parts: the map and the sidebar. There is a navbar as well, but it simply hosts a link to the GitHub repository and shows a help dialog box to give the user an idea about the application.\nThe sidebar contains animal \"cards\" which give the user information about each animal. It also hosts the ratings functionality. They are each broken into multiple components:\n\nSidebar\n\nCard container\n\nCard accordion\n\nSmall Card\nExpanded Card\n\nFive star rating\n\nFive star modal (showing the graph)\n\n\n\n\n\nMap\n\nWidgets (home, layer list, legend, search)"
   },
   {
+    "objectID": "posts/map-challenge-2021-22/index.html",
+    "href": "posts/map-challenge-2021-22/index.html",
+    "title": "Map Challenge 2021 & 2022",
+    "section": "",
+    "text": "I have been meaning to compile these maps for a while, so here is a compilation of my maps for the #30DayMapChallenge (years 2021 and 2022)."
+  },
+  {
+    "objectID": "posts/map-challenge-2021-22/index.html#day-5---openstreetmap",
+    "href": "posts/map-challenge-2021-22/index.html#day-5---openstreetmap",
+    "title": "Map Challenge 2021 & 2022",
+    "section": "Day 5 - OpenStreetMap",
+    "text": "Day 5 - OpenStreetMap\n\n\n\nElectric London"
+  },
+  {
+    "objectID": "posts/map-challenge-2021-22/index.html#day-8---blue",
+    "href": "posts/map-challenge-2021-22/index.html#day-8---blue",
+    "title": "Map Challenge 2021 & 2022",
+    "section": "Day 8 - Blue",
+    "text": "Day 8 - Blue\n\n\n\nThe Great Lakes (with relative depths)"
+  },
+  {
+    "objectID": "posts/map-challenge-2021-22/index.html#day-9---monochrome",
+    "href": "posts/map-challenge-2021-22/index.html#day-9---monochrome",
+    "title": "Map Challenge 2021 & 2022",
+    "section": "Day 9 - Monochrome",
+    "text": "Day 9 - Monochrome\n\n\n\nKasei Valles, Mars"
+  },
+  {
+    "objectID": "posts/map-challenge-2021-22/index.html#day-11---3d",
+    "href": "posts/map-challenge-2021-22/index.html#day-11---3d",
+    "title": "Map Challenge 2021 & 2022",
+    "section": "Day 11 - 3D",
+    "text": "Day 11 - 3D\n\n\n\nElevation Ridgline Plot of Montserrat, Spain\n\n\nMade in Blender. It’s 3D, I promise."
+  },
+  {
+    "objectID": "posts/map-challenge-2021-22/index.html#day-17---land",
+    "href": "posts/map-challenge-2021-22/index.html#day-17---land",
+    "title": "Map Challenge 2021 & 2022",
+    "section": "Day 17 - Land",
+    "text": "Day 17 - Land\n\n\n\nRim to Rim trail of the Grand Canyon (Bright Angel excluded)"
+  },
+  {
+    "objectID": "posts/map-challenge-2021-22/index.html#day-19---islands",
+    "href": "posts/map-challenge-2021-22/index.html#day-19---islands",
+    "title": "Map Challenge 2021 & 2022",
+    "section": "Day 19 - Island(s)",
+    "text": "Day 19 - Island(s)\n\n\n\nPlan oblique view of Haleakala National Park on Maui\n\n\nThanks to John Nelson for his tutorial."
+  },
+  {
+    "objectID": "posts/map-challenge-2021-22/index.html#day-21---elevation",
+    "href": "posts/map-challenge-2021-22/index.html#day-21---elevation",
+    "title": "Map Challenge 2021 & 2022",
+    "section": "Day 21 - Elevation",
+    "text": "Day 21 - Elevation\n\n\n\nAnother view of Montserrat in Spain\n\n\nPlayed around with a more densified joy plot and controlling the emission by z-value."
+  },
+  {
+    "objectID": "posts/map-challenge-2021-22/index.html#day-9---space",
+    "href": "posts/map-challenge-2021-22/index.html#day-9---space",
+    "title": "Map Challenge 2021 & 2022",
+    "section": "Day 9 - Space",
+    "text": "Day 9 - Space\n\n\n\nTears in the Urban Fabric: Parking Lots in Downtown Grand Rapids\n\n\nMy urban planning professor in college called them tears in the urban fabric, so I’m showing them as voids in the felt style made by John Nelson."
+  },
+  {
+    "objectID": "posts/map-challenge-2021-22/index.html#day-14---hexagons",
+    "href": "posts/map-challenge-2021-22/index.html#day-14---hexagons",
+    "title": "Map Challenge 2021 & 2022",
+    "section": "Day 14 - Hexagons",
+    "text": "Day 14 - Hexagons\n All “Muppet” place names in the continental US (e.g. Kermit, Gonzo, Animal, Janice, Pepe, Ms. Piggy, Rizzo, Scooter, Statler & Waldorf)\nData source: Geographic Names from USGS"
+  },
+  {
     "objectID": "posts/mapping-code-violations-in-grand-rapids/index.html",
     "href": "posts/mapping-code-violations-in-grand-rapids/index.html",
     "title": "Mapping Code Violations in Grand Rapids",
@@ -187,82 +257,5 @@
     "title": "Projects",
     "section": "",
     "text": "No matching items"
-  },
-  {
-    "objectID": "posts/map-challenge-2021-22/index.html",
-    "href": "posts/map-challenge-2021-22/index.html",
-    "title": "Map Challenge 2021 & 2022",
-    "section": "",
-    "text": "I have been meaning to compile these maps for a while, so here is a compilation of my maps for the #30DayMapChallenge (years 2021 and 2022)."
-  },
-  {
-    "objectID": "posts/map-challenge-2021-22/index.html#day-5",
-    "href": "posts/map-challenge-2021-22/index.html#day-5",
-    "title": "Map Challenge 2021 & 2022",
-    "section": "Day 5",
-    "text": "Day 5\ntest"
-  },
-  {
-    "objectID": "posts/map-challenge-2021-22/index.html#day-5---openstreetmap",
-    "href": "posts/map-challenge-2021-22/index.html#day-5---openstreetmap",
-    "title": "Map Challenge 2021 & 2022",
-    "section": "Day 5 - OpenStreetMap",
-    "text": "Day 5 - OpenStreetMap\n\n\n\nElectric London"
-  },
-  {
-    "objectID": "posts/map-challenge-2021-22/index.html#day-8---blue",
-    "href": "posts/map-challenge-2021-22/index.html#day-8---blue",
-    "title": "Map Challenge 2021 & 2022",
-    "section": "Day 8 - Blue",
-    "text": "Day 8 - Blue\n\n\n\nThe Great Lakes (with relative depths)"
-  },
-  {
-    "objectID": "posts/map-challenge-2021-22/index.html#day-9---monochrome",
-    "href": "posts/map-challenge-2021-22/index.html#day-9---monochrome",
-    "title": "Map Challenge 2021 & 2022",
-    "section": "Day 9 - Monochrome",
-    "text": "Day 9 - Monochrome\n\n\n\nKasei Valles, Mars"
-  },
-  {
-    "objectID": "posts/map-challenge-2021-22/index.html#day-11---3d",
-    "href": "posts/map-challenge-2021-22/index.html#day-11---3d",
-    "title": "Map Challenge 2021 & 2022",
-    "section": "Day 11 - 3D",
-    "text": "Day 11 - 3D\n\n\n\nElevation Ridgline Plot of Montserrat, Spain\n\n\nMade in Blender. It’s 3D, I promise."
-  },
-  {
-    "objectID": "posts/map-challenge-2021-22/index.html#day-17---land",
-    "href": "posts/map-challenge-2021-22/index.html#day-17---land",
-    "title": "Map Challenge 2021 & 2022",
-    "section": "Day 17 - Land",
-    "text": "Day 17 - Land\n\n\n\nRim to Rim trail of the Grand Canyon (Bright Angel excluded)"
-  },
-  {
-    "objectID": "posts/map-challenge-2021-22/index.html#day-19---islands",
-    "href": "posts/map-challenge-2021-22/index.html#day-19---islands",
-    "title": "Map Challenge 2021 & 2022",
-    "section": "Day 19 - Island(s)",
-    "text": "Day 19 - Island(s)\n\n\n\nPlan oblique view of Haleakala National Park on Maui\n\n\nThanks to John Nelson for his tutorial."
-  },
-  {
-    "objectID": "posts/map-challenge-2021-22/index.html#day-21---elevation",
-    "href": "posts/map-challenge-2021-22/index.html#day-21---elevation",
-    "title": "Map Challenge 2021 & 2022",
-    "section": "Day 21 - Elevation",
-    "text": "Day 21 - Elevation\n\n\n\nAnother view of Montserrat in Spain\n\n\nPlayed around with a more densified joy plot and controlling the emission by z-value."
-  },
-  {
-    "objectID": "posts/map-challenge-2021-22/index.html#day-9---space",
-    "href": "posts/map-challenge-2021-22/index.html#day-9---space",
-    "title": "Map Challenge 2021 & 2022",
-    "section": "Day 9 - Space",
-    "text": "Day 9 - Space\n\n\n\nTears in the Urban Fabric: Parking Lots in Downtown Grand Rapids\n\n\nMy urban planning professor in college called them tears in the urban fabric, so I’m showing them as voids in the felt style made by John Nelson."
-  },
-  {
-    "objectID": "posts/map-challenge-2021-22/index.html#day-14---hexagons",
-    "href": "posts/map-challenge-2021-22/index.html#day-14---hexagons",
-    "title": "Map Challenge 2021 & 2022",
-    "section": "Day 14 - Hexagons",
-    "text": "Day 14 - Hexagons\n All “Muppet” place names in the continental US (e.g. Kermit, Gonzo, Animal, Janice, Pepe, Ms. Piggy, Rizzo, Scooter, Statler & Waldorf)\nData source: Geographic Names from USGS"
   }
 ]
