@@ -1,0 +1,13 @@
+---
+date: 2023-01-16
+title: Benefits of Urban Tree Cover
+categories: [data visualization]
+image: thumbnail.png
+---
+
+This project uses data from [American Forests](https://www.americanforests.org/) and explores 
+the correlation between certain health metrics and tree cover in a given census tract.  
+
+![Negative correlation between tree cover and asthma](asthma.png)  
+
+Graphs were made with plotly in Python, and the bivariate maps were created in ArcGIS Pro. [Click here to see the full data exploration.](https://freestok.herokuapp.com/scrolly-map/)

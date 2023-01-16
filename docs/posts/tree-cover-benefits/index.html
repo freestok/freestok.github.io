@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-04-27">
+<meta name="dcterms.date" content="2023-01-16">
 
-<title>Kray’s Portfolio - John Ball Zoo Explorer</title>
+<title>Kray’s Portfolio - Benefits of Urban Tree Cover</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,9 +109,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">John Ball Zoo Explorer</h1>
+      <h1 class="title">Benefits of Urban Tree Cover</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">programming</div>
+                <div class="quarto-category">data visualization</div>
               </div>
                   </div>
   </div>
@@ -123,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 27, 2022</p>
+        <p class="date">January 16, 2023</p>
       </div>
     </div>
     
@@ -141,57 +141,16 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<p>This project uses data from <a href="https://www.americanforests.org/">American Forests</a> and explores the correlation between certain health metrics and tree cover in a given census tract.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="thumbnail.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">View of Website</figcaption><p></p>
+<p><img src="asthma.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Negative correlation between tree cover and asthma</figcaption><p></p>
 </figure>
 </div>
-<section id="introduction-and-overview" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-and-overview">Introduction and Overview</h2>
-<p>The goal of this project was to create a mobile-friendly web application that showcased a park, real or fictitious. I chose to use John Ball Zoo in Grand Rapids, MI.</p>
-<p>This application allows users to click on exhibits, and then click on an animal's "card" to view extra information, such as seeing a larger picture (credits for each image is included), their Wikipedia article, and their conservation status. Each card also lets the user submit a rating (on a five-star scale). Once there are ratings on an animal, the user can view the break down of all ratings, and the card will update the average score.</p>
-<p>The application URL is below, though it should be noted that in production, the SVG symbols for the facilities do not show up properly in Firefox. Please use Chrome or Edge instead.</p>
-<p><a href="https://freestok.herokuapp.com/john-ball-zoo/">https://freestok.herokuapp.com/john-ball-zoo/</a></p>
-</section>
-<section id="user-stories" class="level2">
-<h2 class="anchored" data-anchor-id="user-stories">User Stories</h2>
-<p>I was planning on this application to be used by the public. The user I had in mind had a goal of exploring the zoo easily. They were not researchers, nor were they advanced users that required advanced workflows to view animals at the zoo. Therefore, the imagined person is a casual user, wanting to take the least amount of clicks possible to find information on animals at the zoo, as well as facilities and buildings that are nearby.</p>
-<p>The UI is built to make everything easy, painless, and to require as few clicks as possible. Moreover, feedback is included in the application so that user knows what the purpose of each interaction is.</p>
-</section>
-<section id="application-architecture" class="level2">
-<h2 class="anchored" data-anchor-id="application-architecture">Application Architecture</h2>
-<p>Technically, since the application is hosted through Heroku, it treats the entire application as one front-end. In reality, which is <a href="https://github.com/freestok/heroku">reflected in the GitHub repository</a>, the front-end uses React and the back-end uses Flask. Routing has to match between the two in order to work.</p>
-<p>To expand on that, Heroku is looking for a python project. Flask runs, and it serves up a single index.html file, which is the output of the react-scripts build process. When running this application locally, one must open two terminals, one running "npm start" and the other running "npm run server". It also assumes that the terminal running "npm run server" is in a proper conda environment that has all the dependencies installed (which should be found in the project's root level requirements.txt file).</p>
-<p>Aside from serving the assets, the back-end also handles the requests to get and set ratings. If it receives a GET request, it returns the specific animal's rating, and if it receives a POST request, it will create a rating for the animal. I did not spend the time to implement robust state tracking, so once a larger card is closed, a user could simply reopen it and re-submit a rating. However, while they are in the card, it no longer gives them the option to submit another rating.</p>
-<p>On the React side of the application, the UI is split into two main parts: the map and the sidebar. There is a navbar as well, but it simply hosts a link to the GitHub repository and shows a help dialog box to give the user an idea about the application.</p>
-<p>The sidebar contains animal "cards" which give the user information about each animal. It also hosts the ratings functionality. They are each broken into multiple components:</p>
-<ul>
-<li>Sidebar
-<ul>
-<li>Card container
-<ul>
-<li>Card accordion
-<ul>
-<li>Small Card</li>
-<li>Expanded Card
-<ul>
-<li>Five star rating
-<ul>
-<li>Five star modal (showing the graph)</li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>Map
-<ul>
-<li>Widgets (home, layer list, legend, search)</li>
-</ul></li>
-</ul>
+<p>Graphs were made with plotly in Python, and the bivariate maps were created in ArcGIS Pro. <a href="https://freestok.herokuapp.com/scrolly-map/">Click here to see the full data exploration.</a></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

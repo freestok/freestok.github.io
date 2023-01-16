@@ -1,13 +1,11 @@
 ---
 date: 2021-02-22
-categories: [cartography]
+categories: [data visualization]
 image: thumbnail.png
 title: Visualizing Democratic Backsliding
 ---
 
-<figure>
-  <img src="infographic.png" alt="infographic"/>
-</figure>
+![Infographic](infographic.jpg)
 
 Very short write-up here. This was created with [data from the V-Dem institute](https://www.v-dem.net/en/data/data/v-dem-dataset/), and was inspired by their article on [toxic polarization and democratic backsliding](https://www.v-dem.net/en/news/polarization-global-threat-democracy/).
 

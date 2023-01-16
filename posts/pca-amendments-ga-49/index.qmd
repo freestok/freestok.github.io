@@ -1,0 +1,228 @@
+---
+date: 2023-01-16
+title: Tracking the PCA's Amendments (GA 49)
+categories: [data visualization]
+image: thumbnail.png
+format: 
+  html:
+    css: styles.css
+execute:
+    echo: true
+code-fold: true
+---
+
+# Some background
+Every year, the [Presbyterian Church in America (PCA)](https://pcanet.org/) meets at what is called a "General Assembly". Overtures (amendments) are submitted and voted on. If an amendment gets a majority of "Yeas", then it goes to be voted on by each presbytery. If an amendment passes two-thirds of presbyteries, then it is voted on again at the next General Assembly. If it passes in this stage, the amendment is adopted.  
+
+This notebook can also be viewed on [ObservableHQ](https://observablehq.com/d/636785102b8443f8).  
+
+Data comes from [@SEdburg](https://twitter.com/SEdburg) and can be found in his [Google Drive sheet](https://docs.google.com/spreadsheets/d/1zHPyYMQohB26zup97N2UPOCAuo21tOxrCwtmRIGokng/edit)  
+
+Code for keeping the data in sync with Scott's spreadsheet lives in my [pca-amendments](https://github.com/freestok/pca-amendments) GitHub repository. A small Python script uses `pandas` to read from Scott's spreadsheet, prepares the data for this notebook, and then outputs it into the same repository. This script is initalized through GitHub Actions. 
+
+# Vote tracking
+Change boundary type to see the vote results change on the map. Select an item to see the vote counts for each item (results reflected in the bar chart and map). 
+```{ojs}
+//| echo: false
+viewof boundaries = Inputs.select(presbyteries, {label: "Boundary Type", format: x => x.name, value: presbyteries.find(t => t.name === "PCA Boundaries")})
+```
+
+```{ojs}
+//| echo: false
+viewof activeItem = Inputs.select(["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10", "Item 11", "Item 12"], {label: "Select an item"})
+```
+
+```{ojs}
+Plot.plot({
+  x: {
+    grid: true,
+    label: 'vote count'
+  },
+  y: {
+    label: null
+  },
+  marks: [
+    // Plot.line([59], {fillOpacity: 1, stroke: 'black'}), 
+    // Plot.barX([59], {fillOpacity: 0.4, stroke: 'black'}),
+    // Plot.barX([88], {fill: "orange", fillOpacity: 0.4}),
+    Plot.barX(votes, {x: "count", y: "vote", fill: d => d.vote === 'for' ? forColor : againstColor}),
+    Plot.ruleX([59], {stroke: "black"}),
+    Plot.ruleX([88], {stroke: "red", opacity: 0}),
+    Plot.text(votes, {
+      x: "count",
+      y: "vote",
+      text: d => d.count,
+      fill: "black",
+      // dy: -5
+      dx: 7
+    }),
+    Plot.text(['59 to pass'], {
+      frameAnchor: "top",
+      fontSize: 12,
+      x: 60, // paragraph number
+      lineWidth: 20,
+      textAnchor: "start",
+      lineHeight: 1.3,
+      // monospace: true,
+      // clip: true
+    }),
+    Plot.ruleX([0])
+  ],
+  // .plot({x: {label: "units →"}})
+})
+```
+```{ojs}
+map = {
+  function resetHighlight(e) {
+    geojson.resetStyle(e.target);
+    info.update();
+  }
+
+  function onEachFeature(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
+  }
+  function highlightFeature(e) {
+      var layer = e.target;
+  
+      layer.setStyle({
+          weight: 5,
+          color: '#666',
+          dashArray: '',
+          fillOpacity: 1
+      });
+  
+      layer.bringToFront();
+      info.update(layer.feature.properties);
+  }
+  function zoomToFeature(e) {
+      map.fitBounds(e.target.getBounds());
+  }
+  const container = yield htl.html`<div style="height: 500px;">`;
+  const map = L.map(container).setView([50.774, -100.423], 3);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© <a href=https://www.openstreetmap.org/copyright>OpenStreetMap</a> contributors"
+  }).addTo(map);
+  var geojson;
+  geojson = L.geoJson(boundaries.geo, {
+    style: style,
+    onEachFeature: onEachFeature
+  }).addTo(map);
+
+  var info = L.control();
+
+  info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+      this.update();
+      return this._div;
+  };
+  
+  // method that we will use to update the control based on feature properties passed
+  info.update = function (props) {
+      let str = ''
+      if (props) {
+        let res = presDataObj[`${props.name}-${activeItem}`]
+        str += props.name
+        if (res.for) {
+          str += `
+            </br>
+            For: ${res.for} </br>
+            Against: ${res.against}
+          `
+        } 
+      } else {
+        str += 'Hover over a presbytery'
+      }
+      this._div.innerHTML = str;
+  };
+  
+  info.addTo(map);
+}
+```
+# Code to make this all work
+## Map Settings and Functions
+
+```{ojs}
+
+function style(feature) {
+    return {
+        fillColor: getColor(feature.properties),
+        weight: 1,
+        opacity: 1,
+        color: 'white',
+        // dashArray: '3',
+        fillOpacity: 0.9
+    };
+}
+function getColor(d) {
+    let res = presDataObj[`${d.name}-${activeItem}`]
+    // let res = presData.find(e => e.presbytery === d.properties.name && e.item === 'Item 1')
+    console.log('res', res)
+    if (res == null) {
+      return 'black'
+    } else if (res.for === null && res.against === null) {
+      return '#d3d3d3'
+    } else if (res.for > res.against) {
+      return forColor
+    } else {
+      return againstColor
+    }
+}
+forColor = '#fdc086'
+againstColor = '#beaed4'
+```
+## Geometry Data
+```{ojs}
+pcaBounds = FileAttachment("pca.geojson").json()
+pcaKoreanBounds = FileAttachment("pca_korean.geojson").json()
+
+presbyteries = [
+  {
+    name: "PCA Boundaries",
+    geo: pcaBounds,
+    value: feature => feature.properties.POP_EST,
+  },
+  {
+    name: "PCA Boundaries (Korean)", 
+    geo: pcaKoreanBounds,
+    value: feature => feature.properties.POP_EST,
+  }
+]
+
+data = boundaries.geo
+```
+## Get CSV Data and Prepare Data
+```{ojs}
+presData = d3.csv("https://raw.githubusercontent.com/freestok/pca-amendments/main/presbytery_data.csv", d3.autoType)
+
+presDataObj = {
+  let presDataObj = {}
+  for (let row of presData) {
+    presDataObj[`${row.presbytery}-${row.item}`] = row
+  }
+  return presDataObj
+}
+
+votesForPassing = 59
+
+votes = {
+  let filteredData = presData.filter(e => e.item === activeItem)
+  let forVotes = filteredData.filter(e => (e.for != null && e.against != null) && e.for > e.against).length
+  let againstVotes = filteredData.filter(e => (e.for != null && e.against != null) && e.for <= e.against).length
+  return [
+    {vote: 'for', count: forVotes},
+    {vote: 'against', count: againstVotes}
+  ]
+}
+```
+
+## Imports
+```{ojs}
+
+
+d3 = require('d3')
+import {legend, Swatches} from "@d3/color-legend"
+```

@@ -1,6 +1,6 @@
 ---
 date: 2021-01-15
-categories: [programming]
+categories: [data visualization]
 image: preview.png
 title: Visualizing the Riot on the Capitol
 ---
